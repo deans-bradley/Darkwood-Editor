@@ -45,7 +45,7 @@
         public List<object> nightSpawnedObjectsIDs { get; set; }
         public List<object> randomObjectsIDs { get; set; }
         public string biomeName { get; set; }
-        public List<int> colliderSize { get; set; }
+        public List<double> colliderSize { get; set; }
         public bool isBorderChunk { get; set; }
         public bool hasHideout { get; set; }
         public int locationId { get; set; }
@@ -87,12 +87,12 @@
         public bool hadDreamAtLvl7 { get; set; }
         public bool wantToDream { get; set; }
         public object dreamName { get; set; }
-        public int timeCopy { get; set; }
+        public double timeCopy { get; set; }
         public int placeStartedDreamingID { get; set; }
         public EffectsCopy effectsCopy { get; set; }
         public List<object> inventorySlotsCopy { get; set; }
         public List<object> hotbarSlotsCopy { get; set; }
-        public List<int> positionCopy { get; set; }
+        public List<double> positionCopy { get; set; }
     }
 
     public class EffectsCopy
@@ -113,7 +113,7 @@
         public bool startedToday { get; set; }
         public bool randomizeOnNewDay { get; set; }
         public bool removeOnFire { get; set; }
-        public int chance { get; set; }
+        public double chance { get; set; }
         public string Value { get; set; }
     }
 
@@ -150,9 +150,9 @@
 
     public class GridState
     {
-        public List<int> position { get; set; }
-        public int xSize { get; set; }
-        public int ySize { get; set; }
+        public List<double> position { get; set; }
+        public double xSize { get; set; }
+        public double ySize { get; set; }
         public List<object> gNodesStates { get; set; }
         public List<object> cullables { get; set; }
         public object name { get; set; }
@@ -192,8 +192,8 @@
         public bool isOnMap { get; set; }
         public bool dontInitialize { get; set; }
         public string elementName { get; set; }
-        public int rotation { get; set; }
-        public int yOffset { get; set; }
+        public double rotation { get; set; }
+        public double yOffset { get; set; }
         public bool selectable { get; set; }
         public string nameOverride { get; set; }
         public string spriteOverride { get; set; }
@@ -239,7 +239,7 @@
     {
         public List<object> spawnedLocationsKeys { get; set; }
         public List<object> spawnedLocationsValuesIDs { get; set; }
-        public List<int> positionCopy { get; set; }
+        public List<double> positionCopy { get; set; }
         public int timeCopy { get; set; }
         public bool playerInOutsideLocation { get; set; }
         public string currentLocationName { get; set; }
@@ -251,8 +251,8 @@
     {
         public List<double> pos { get; set; }
         public List<double> rot { get; set; }
-        public int health { get; set; }
-        public int stamina { get; set; }
+        public double health { get; set; }
+        public double stamina { get; set; }
         public int experience { get; set; }
         public int currentLevel { get; set; }
         public int healthUpgrades { get; set; }
@@ -260,7 +260,7 @@
         public int hotbarUpgrades { get; set; }
         public int inventoryUpgrades { get; set; }
         public int lastTimeAte { get; set; }
-        public int saturation { get; set; }
+        public double saturation { get; set; }
         public bool fedToday { get; set; }
         public int lifes { get; set; }
         public List<object> recipes { get; set; }
@@ -277,11 +277,11 @@
     {
         public bool raining { get; set; }
         public bool rainToday { get; set; }
-        public int timeToStart { get; set; }
-        public int lightningTime { get; set; }
+        public double timeToStart { get; set; }
+        public double lightningTime { get; set; }
         public bool preRainLightning { get; set; }
-        public int preRainLightningTime { get; set; }
-        public int duration { get; set; }
+        public double preRainLightningTime { get; set; }
+        public double duration { get; set; }
         public TimeToFadeInFog timeToFadeInFog { get; set; }
         public TimeToFadeOutFog timeToFadeOutFog { get; set; }
         public bool fogFadedOutToday { get; set; }
@@ -366,8 +366,8 @@
     {
         public string name { get; set; }
         public List<object> elementIDs { get; set; }
-        public int scale { get; set; }
-        public List<int> iconOffset { get; set; }
+        public double scale { get; set; }
+        public List<double> iconOffset { get; set; }
     }
 
     public class WorldGenS

@@ -17,3 +17,4 @@ C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditor\obj\Debug\net8.0-windo
 C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditor\obj\Debug\net8.0-windows\DarkwoodEditor.pdb
 C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditor\obj\Debug\net8.0-windows\DarkwoodEditor.genruntimeconfig.cache
 C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditor\obj\Debug\net8.0-windows\ref\DarkwoodEditor.dll
+C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditor\obj\Debug\net8.0-windows\DarkwoodEditor.sourcelink.json
