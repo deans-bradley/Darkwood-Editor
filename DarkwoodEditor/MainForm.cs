@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Windows.Forms;
 
 namespace DarkwoodEditor
 {
@@ -25,8 +26,12 @@ namespace DarkwoodEditor
 
                 Root rootData = loadRoot();
 
-                majorVerTxtBox.Text = rootData.majorVersion.ToString();
-                minorVerTxtBox.Text = rootData.minorVersion.ToString();
+                majVerLbl.Text += rootData.majorVersion;
+                minVerLbl.Text += rootData.minorVersion;
+                majVerComLbl.Text += rootData.majorVersionCompatibility;
+                minVerComLbl.Text += rootData.minorVersionCompatibility;
+                rcVerLbl.Text += rootData.RCVersion;
+                rcVerComLbl.Text += rootData.RCVersionCompatibility;
             }
             else
             {
@@ -59,6 +64,26 @@ namespace DarkwoodEditor
         {
             string json = File.ReadAllText(filePath);
             return JsonConvert.DeserializeObject<Root>(json);
+        }
+
+        private void closeMenuItem_Click(object sender, EventArgs e)
+        {
+            majVerLbl.Text = Properties.Resources.majVer;
+            minVerLbl.Text = Properties.Resources.minVer;
+            majVerComLbl.Text = Properties.Resources.majrVerCom;
+            minVerComLbl.Text = Properties.Resources.minVerCom;
+            rcVerLbl.Text = Properties.Resources.rcVer;
+            rcVerComLbl.Text = Properties.Resources.rcVerCom;
+        }
+
+        private void InitializeDataGridView()
+        {
+            // TODO
+        }
+
+        private void PopulateDataGridView()
+        {
+            // TODO
         }
     }
 }
