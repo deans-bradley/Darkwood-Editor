@@ -61,6 +61,16 @@ namespace DarkwoodEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mainFormBg {
+            get {
+                object obj = ResourceManager.GetObject("mainFormBg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Major Version Compatibility: .
         /// </summary>
         internal static string majrVerCom {

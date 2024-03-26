@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DarkwoodEditor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e8c60efa62cde4c46f86bfcdc30b51e85230ac4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23f660858a96c1de1b5b527e642235aea0636057")]
 [assembly: System.Reflection.AssemblyProductAttribute("DarkwoodEditor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DarkwoodEditor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
