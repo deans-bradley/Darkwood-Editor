@@ -12,6 +12,7 @@ namespace DarkwoodEditor
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new MainForm());
+            Application.EnableVisualStyles();
         }
     }
 }

@@ -86,41 +86,54 @@
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openMenuItem, saveMenuItem, closeMenuItem, toolStripSeparator1, exitMenuItem });
             fileToolStripMenuItem.ForeColor = Color.White;
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(46, 24);
+            fileToolStripMenuItem.Padding = new Padding(0);
+            fileToolStripMenuItem.Size = new Size(36, 24);
             fileToolStripMenuItem.Text = "File";
             // 
             // openMenuItem
             // 
+            openMenuItem.BackColor = Color.Transparent;
+            openMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            openMenuItem.ForeColor = Color.White;
             openMenuItem.Name = "openMenuItem";
+            openMenuItem.Padding = new Padding(0, 4, 0, 4);
             openMenuItem.ShortcutKeys = Keys.Control | Keys.O;
-            openMenuItem.Size = new Size(181, 26);
+            openMenuItem.Size = new Size(224, 32);
             openMenuItem.Text = "Open";
             openMenuItem.Click += openItm_Click;
             // 
             // saveMenuItem
             // 
+            saveMenuItem.BackColor = Color.Transparent;
+            saveMenuItem.ForeColor = Color.White;
             saveMenuItem.Name = "saveMenuItem";
             saveMenuItem.ShortcutKeys = Keys.Control | Keys.S;
-            saveMenuItem.Size = new Size(181, 26);
+            saveMenuItem.Size = new Size(224, 26);
             saveMenuItem.Text = "Save";
             // 
             // closeMenuItem
             // 
+            closeMenuItem.BackColor = Color.Transparent;
+            closeMenuItem.ForeColor = Color.White;
             closeMenuItem.Name = "closeMenuItem";
-            closeMenuItem.Size = new Size(181, 26);
+            closeMenuItem.Size = new Size(224, 26);
             closeMenuItem.Text = "Close File";
             closeMenuItem.Click += closeMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
+            toolStripSeparator1.BackColor = Color.Transparent;
+            toolStripSeparator1.ForeColor = Color.Transparent;
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(178, 6);
+            toolStripSeparator1.Size = new Size(221, 6);
             // 
             // exitMenuItem
             // 
+            exitMenuItem.BackColor = Color.Transparent;
+            exitMenuItem.ForeColor = Color.White;
             exitMenuItem.Name = "exitMenuItem";
             exitMenuItem.ShortcutKeys = Keys.Alt | Keys.F4;
-            exitMenuItem.Size = new Size(181, 26);
+            exitMenuItem.Size = new Size(224, 26);
             exitMenuItem.Text = "Exit";
             exitMenuItem.Click += exitMenuItem_Click;
             // 
@@ -135,30 +148,35 @@
             // 
             // playerToolStripMenuItem
             // 
+            playerToolStripMenuItem.ForeColor = Color.White;
             playerToolStripMenuItem.Name = "playerToolStripMenuItem";
-            playerToolStripMenuItem.Size = new Size(213, 26);
+            playerToolStripMenuItem.Size = new Size(224, 26);
             playerToolStripMenuItem.Text = "Player";
             // 
             // worldToolStripMenuItem
             // 
+            worldToolStripMenuItem.ForeColor = Color.White;
             worldToolStripMenuItem.Name = "worldToolStripMenuItem";
-            worldToolStripMenuItem.Size = new Size(213, 26);
+            worldToolStripMenuItem.Size = new Size(224, 26);
             worldToolStripMenuItem.Text = "Enviroment";
             // 
             // storyToolStripMenuItem
             // 
+            storyToolStripMenuItem.ForeColor = Color.White;
             storyToolStripMenuItem.Name = "storyToolStripMenuItem";
-            storyToolStripMenuItem.Size = new Size(213, 26);
+            storyToolStripMenuItem.Size = new Size(224, 26);
             storyToolStripMenuItem.Text = "World";
             // 
             // timeAndWeatherToolStripMenuItem
             // 
+            timeAndWeatherToolStripMenuItem.ForeColor = Color.White;
             timeAndWeatherToolStripMenuItem.Name = "timeAndWeatherToolStripMenuItem";
-            timeAndWeatherToolStripMenuItem.Size = new Size(213, 26);
+            timeAndWeatherToolStripMenuItem.Size = new Size(224, 26);
             timeAndWeatherToolStripMenuItem.Text = "Time and Weather";
             // 
             // helpToolStripMenuItem
             // 
+            helpToolStripMenuItem.BackColor = Color.Transparent;
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { howToUseDwConfigToolStripMenuItem, aboutToolStripMenuItem, licenceToolStripMenuItem });
             helpToolStripMenuItem.ForeColor = Color.White;
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
@@ -167,18 +185,21 @@
             // 
             // howToUseDwConfigToolStripMenuItem
             // 
+            howToUseDwConfigToolStripMenuItem.ForeColor = Color.White;
             howToUseDwConfigToolStripMenuItem.Name = "howToUseDwConfigToolStripMenuItem";
             howToUseDwConfigToolStripMenuItem.Size = new Size(237, 26);
             howToUseDwConfigToolStripMenuItem.Text = "How to use DwConfig";
             // 
             // aboutToolStripMenuItem
             // 
+            aboutToolStripMenuItem.ForeColor = Color.White;
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             aboutToolStripMenuItem.Size = new Size(237, 26);
             aboutToolStripMenuItem.Text = "About";
             // 
             // licenceToolStripMenuItem
             // 
+            licenceToolStripMenuItem.ForeColor = Color.White;
             licenceToolStripMenuItem.Name = "licenceToolStripMenuItem";
             licenceToolStripMenuItem.Size = new Size(237, 26);
             licenceToolStripMenuItem.Text = "Licence";
@@ -360,11 +381,6 @@
         #endregion
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
-        private ToolStripMenuItem openMenuItem;
-        private ToolStripMenuItem saveMenuItem;
-        private ToolStripMenuItem closeMenuItem;
-        private ToolStripSeparator toolStripSeparator1;
-        private ToolStripMenuItem exitMenuItem;
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem playerToolStripMenuItem;
         private ToolStripMenuItem worldToolStripMenuItem;
@@ -387,5 +403,10 @@
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private FolderBrowserDialog folderBrowserDialog1;
+        private ToolStripMenuItem openMenuItem;
+        private ToolStripMenuItem saveMenuItem;
+        private ToolStripMenuItem closeMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem exitMenuItem;
     }
 }
