@@ -123,5 +123,25 @@ namespace DarkwoodEditor.Properties {
                 return ResourceManager.GetString("rcVerCom", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap roundedRectangle {
+            get {
+                object obj = ResourceManager.GetObject("roundedRectangle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap roundedRectangle1 {
+            get {
+                object obj = ResourceManager.GetObject("roundedRectangle1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

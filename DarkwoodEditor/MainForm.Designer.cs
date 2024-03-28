@@ -30,8 +30,12 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            majVerLbl = new Label();
+            rcVerLbl = new Label();
+            minVerLbl = new Label();
+            majVerComLbl = new Label();
+            minVerComLbl = new Label();
+            rcVerComLbl = new Label();
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             openMenuItem = new ToolStripMenuItem();
@@ -48,27 +52,54 @@
             howToUseDwConfigToolStripMenuItem = new ToolStripMenuItem();
             aboutToolStripMenuItem = new ToolStripMenuItem();
             licenceToolStripMenuItem = new ToolStripMenuItem();
-            majVerLbl = new Label();
-            minVerLbl = new Label();
-            majVerComLbl = new Label();
-            minVerComLbl = new Label();
-            rcVerLbl = new Label();
-            rcVerComLbl = new Label();
-            savDataGridView = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
             rootBindingSource = new BindingSource(components);
-            panel1 = new Panel();
-            panel2 = new Panel();
             folderBrowserDialog1 = new FolderBrowserDialog();
             fileSystemWatcher1 = new FileSystemWatcher();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)savDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rootBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
+            // 
+            // majVerLbl
+            // 
+            resources.ApplyResources(majVerLbl, "majVerLbl");
+            majVerLbl.ForeColor = Color.White;
+            majVerLbl.Name = "majVerLbl";
+            // 
+            // rcVerLbl
+            // 
+            resources.ApplyResources(rcVerLbl, "rcVerLbl");
+            rcVerLbl.ForeColor = Color.White;
+            rcVerLbl.Name = "rcVerLbl";
+            // 
+            // minVerLbl
+            // 
+            resources.ApplyResources(minVerLbl, "minVerLbl");
+            minVerLbl.ForeColor = Color.White;
+            minVerLbl.Name = "minVerLbl";
+            // 
+            // majVerComLbl
+            // 
+            resources.ApplyResources(majVerComLbl, "majVerComLbl");
+            majVerComLbl.ForeColor = Color.White;
+            majVerComLbl.Name = "majVerComLbl";
+            // 
+            // minVerComLbl
+            // 
+            resources.ApplyResources(minVerComLbl, "minVerComLbl");
+            minVerComLbl.ForeColor = Color.White;
+            minVerComLbl.Name = "minVerComLbl";
+            // 
+            // rcVerComLbl
+            // 
+            resources.ApplyResources(rcVerComLbl, "rcVerComLbl");
+            rcVerComLbl.ForeColor = Color.White;
+            rcVerComLbl.Name = "rcVerComLbl";
             // 
             // menuStrip1
             // 
@@ -186,111 +217,6 @@
             licenceToolStripMenuItem.ForeColor = Color.White;
             licenceToolStripMenuItem.Name = "licenceToolStripMenuItem";
             // 
-            // majVerLbl
-            // 
-            resources.ApplyResources(majVerLbl, "majVerLbl");
-            majVerLbl.ForeColor = Color.White;
-            majVerLbl.Name = "majVerLbl";
-            // 
-            // minVerLbl
-            // 
-            resources.ApplyResources(minVerLbl, "minVerLbl");
-            minVerLbl.ForeColor = Color.White;
-            minVerLbl.Name = "minVerLbl";
-            // 
-            // majVerComLbl
-            // 
-            resources.ApplyResources(majVerComLbl, "majVerComLbl");
-            majVerComLbl.ForeColor = Color.White;
-            majVerComLbl.Name = "majVerComLbl";
-            // 
-            // minVerComLbl
-            // 
-            resources.ApplyResources(minVerComLbl, "minVerComLbl");
-            minVerComLbl.ForeColor = Color.White;
-            minVerComLbl.Name = "minVerComLbl";
-            // 
-            // rcVerLbl
-            // 
-            resources.ApplyResources(rcVerLbl, "rcVerLbl");
-            rcVerLbl.ForeColor = Color.White;
-            rcVerLbl.Name = "rcVerLbl";
-            // 
-            // rcVerComLbl
-            // 
-            resources.ApplyResources(rcVerComLbl, "rcVerComLbl");
-            rcVerComLbl.ForeColor = Color.White;
-            rcVerComLbl.Name = "rcVerComLbl";
-            // 
-            // savDataGridView
-            // 
-            resources.ApplyResources(savDataGridView, "savDataGridView");
-            savDataGridView.AllowUserToAddRows = false;
-            savDataGridView.AllowUserToDeleteRows = false;
-            savDataGridView.AllowUserToOrderColumns = true;
-            savDataGridView.AllowUserToResizeColumns = false;
-            savDataGridView.AllowUserToResizeRows = false;
-            savDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            savDataGridView.BackgroundColor = Color.FromArgb(40, 40, 40);
-            savDataGridView.BorderStyle = BorderStyle.None;
-            savDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            savDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            savDataGridView.ColumnHeadersVisible = false;
-            savDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = Color.Gainsboro;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Gainsboro;
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            savDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            savDataGridView.GridColor = SystemColors.ButtonShadow;
-            savDataGridView.Name = "savDataGridView";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(40, 40, 40);
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            savDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            savDataGridView.RowHeadersVisible = false;
-            savDataGridView.CellValidating += savDataGridView_CellValidating;
-            savDataGridView.EditingControlShowing += savDataGridView_EditingControlShowing;
-            savDataGridView.RowsAdded += savDataGridView_RowsAdded;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(Column1, "Column1");
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            resources.ApplyResources(Column2, "Column2");
-            Column2.Name = "Column2";
-            // 
-            // panel1
-            // 
-            resources.ApplyResources(panel1, "panel1");
-            panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(savDataGridView);
-            panel1.Name = "panel1";
-            // 
-            // panel2
-            // 
-            resources.ApplyResources(panel2, "panel2");
-            panel2.BackColor = Color.Transparent;
-            panel2.Controls.Add(majVerLbl);
-            panel2.Controls.Add(minVerLbl);
-            panel2.Controls.Add(rcVerComLbl);
-            panel2.Controls.Add(majVerComLbl);
-            panel2.Controls.Add(rcVerLbl);
-            panel2.Controls.Add(minVerComLbl);
-            panel2.Name = "panel2";
-            // 
             // folderBrowserDialog1
             // 
             resources.ApplyResources(folderBrowserDialog1, "folderBrowserDialog1");
@@ -299,6 +225,31 @@
             // 
             fileSystemWatcher1.EnableRaisingEvents = true;
             fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(panel1, "panel1");
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(minVerLbl);
+            panel1.Controls.Add(majVerLbl);
+            panel1.Controls.Add(minVerComLbl);
+            panel1.Controls.Add(rcVerLbl);
+            panel1.Controls.Add(rcVerComLbl);
+            panel1.Controls.Add(majVerComLbl);
+            panel1.Name = "panel1";
+            // 
+            // panel2
+            // 
+            resources.ApplyResources(panel2, "panel2");
+            panel2.BackColor = Color.Transparent;
+            panel2.Controls.Add(flowLayoutPanel1);
+            panel2.Name = "panel2";
+            // 
+            // flowLayoutPanel1
+            // 
+            resources.ApplyResources(flowLayoutPanel1, "flowLayoutPanel1");
+            flowLayoutPanel1.BackColor = Color.Transparent;
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // MainForm
             // 
@@ -313,12 +264,11 @@
             Name = "MainForm";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)savDataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)rootBindingSource).EndInit();
-            panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -341,12 +291,7 @@
         private Label minVerComLbl;
         private Label rcVerLbl;
         private Label rcVerComLbl;
-        private DataGridView savDataGridView;
         private BindingSource rootBindingSource;
-        private Panel panel1;
-        private Panel panel2;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
         private FolderBrowserDialog folderBrowserDialog1;
         private ToolStripMenuItem openMenuItem;
         private ToolStripMenuItem saveMenuItem;
@@ -354,5 +299,8 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem exitMenuItem;
         private FileSystemWatcher fileSystemWatcher1;
+        private Panel panel1;
+        private Panel panel2;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
