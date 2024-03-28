@@ -13,8 +13,12 @@ namespace DarkwoodEditor
         public MainForm()
         {
             InitializeComponent();
-            savDataGridView.RowsAdded += savDataGridView_RowsAdded;
+            
             ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new CustomColorTable());
+
+            savDataGridView.EditingControlShowing += savDataGridView_EditingControlShowing;
+            savDataGridView.CellValidating += savDataGridView_CellValidating;
+            savDataGridView.RowsAdded += savDataGridView_RowsAdded;
         }
 
         private void openItm_Click(object sender, EventArgs e)
@@ -102,8 +106,23 @@ namespace DarkwoodEditor
             savDataGridView.Rows.Add("Lifes", root.pS.lifes);
             savDataGridView.Rows.Add("Got hit atleast once", root.pS.gotHitAtLeastOnce);
             savDataGridView.Rows.Add("Died atleast once", root.pS.diedAtLeastOnce);
+
+            int rowIndex = savDataGridView.Rows.Add("Recipes");
+
+            DataGridViewComboBoxCell comboBoxCell = new DataGridViewComboBoxCell();
+            comboBoxCell.FlatStyle = FlatStyle.Standard;
+            comboBoxCell.DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
+
+            foreach (var item in root.pS.recipes)
+            {
+                comboBoxCell.Items.AddRange(item);
+                comboBoxCell.Value = item;
+            }
+
+            savDataGridView.Rows[rowIndex].Cells[1] = comboBoxCell;
         }
 
+        // Check the data type of the cell and covert cell to appropriate cell type
         private void savDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             int columnIndex = 1;
@@ -112,6 +131,7 @@ namespace DarkwoodEditor
             foreach (DataGridViewRow row in savDataGridView.Rows)
             {
                 if (row.IsNewRow) continue;
+                if (row.Cells[columnIndex].Value == null) continue;
 
                 string cell = row.Cells[columnIndex].Value.ToString();
 
@@ -120,6 +140,34 @@ namespace DarkwoodEditor
                     DataGridViewCheckBoxCell checkBoxCell = new DataGridViewCheckBoxCell();
                     checkBoxCell.Value = value;
                     row.Cells[columnIndex] = checkBoxCell;
+                }
+            }
+        }
+
+        // Check the data type of the cell and covert cell to appropriate cell type
+        private void savDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (e.Control is ComboBox comboBox)
+            {
+                comboBox.DropDownStyle = ComboBoxStyle.DropDown;
+                comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
+        }
+
+        private void savDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            // Check if cell is a DataGridViewComboBoxCell
+            if (savDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewComboBoxCell)
+            {
+                if (e.ColumnIndex == 1)
+                {
+                    DataGridViewComboBoxCell comboBoxCell = savDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewComboBoxCell;
+
+                    if (!comboBoxCell.Items.Contains(e.FormattedValue))
+                    {
+                        comboBoxCell.Items.Add(e.FormattedValue);
+                    }
                 }
             }
         }

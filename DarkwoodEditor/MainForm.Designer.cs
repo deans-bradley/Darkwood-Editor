@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             openMenuItem = new ToolStripMenuItem();
@@ -61,222 +61,176 @@
             panel1 = new Panel();
             panel2 = new Panel();
             folderBrowserDialog1 = new FolderBrowserDialog();
+            fileSystemWatcher1 = new FileSystemWatcher();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)savDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rootBindingSource).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
             // 
+            resources.ApplyResources(menuStrip1, "menuStrip1");
             menuStrip1.BackColor = Color.Transparent;
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, helpToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(942, 28);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
+            resources.ApplyResources(fileToolStripMenuItem, "fileToolStripMenuItem");
             fileToolStripMenuItem.BackColor = Color.Transparent;
             fileToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openMenuItem, saveMenuItem, closeMenuItem, toolStripSeparator1, exitMenuItem });
             fileToolStripMenuItem.ForeColor = Color.White;
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Padding = new Padding(0);
-            fileToolStripMenuItem.Size = new Size(36, 24);
-            fileToolStripMenuItem.Text = "File";
             // 
             // openMenuItem
             // 
+            resources.ApplyResources(openMenuItem, "openMenuItem");
             openMenuItem.BackColor = Color.Transparent;
             openMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
             openMenuItem.ForeColor = Color.White;
             openMenuItem.Name = "openMenuItem";
             openMenuItem.Padding = new Padding(0, 4, 0, 4);
-            openMenuItem.ShortcutKeys = Keys.Control | Keys.O;
-            openMenuItem.Size = new Size(224, 32);
-            openMenuItem.Text = "Open";
             openMenuItem.Click += openItm_Click;
             // 
             // saveMenuItem
             // 
+            resources.ApplyResources(saveMenuItem, "saveMenuItem");
             saveMenuItem.BackColor = Color.Transparent;
             saveMenuItem.ForeColor = Color.White;
             saveMenuItem.Name = "saveMenuItem";
-            saveMenuItem.ShortcutKeys = Keys.Control | Keys.S;
-            saveMenuItem.Size = new Size(224, 26);
-            saveMenuItem.Text = "Save";
             // 
             // closeMenuItem
             // 
+            resources.ApplyResources(closeMenuItem, "closeMenuItem");
             closeMenuItem.BackColor = Color.Transparent;
             closeMenuItem.ForeColor = Color.White;
             closeMenuItem.Name = "closeMenuItem";
-            closeMenuItem.Size = new Size(224, 26);
-            closeMenuItem.Text = "Close File";
             closeMenuItem.Click += closeMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
+            resources.ApplyResources(toolStripSeparator1, "toolStripSeparator1");
             toolStripSeparator1.BackColor = Color.Transparent;
             toolStripSeparator1.ForeColor = Color.Transparent;
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(221, 6);
             // 
             // exitMenuItem
             // 
+            resources.ApplyResources(exitMenuItem, "exitMenuItem");
             exitMenuItem.BackColor = Color.Transparent;
             exitMenuItem.ForeColor = Color.White;
             exitMenuItem.Name = "exitMenuItem";
-            exitMenuItem.ShortcutKeys = Keys.Alt | Keys.F4;
-            exitMenuItem.Size = new Size(224, 26);
-            exitMenuItem.Text = "Exit";
             exitMenuItem.Click += exitMenuItem_Click;
             // 
             // editToolStripMenuItem
             // 
+            resources.ApplyResources(editToolStripMenuItem, "editToolStripMenuItem");
             editToolStripMenuItem.DisplayStyle = ToolStripItemDisplayStyle.Text;
             editToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { playerToolStripMenuItem, worldToolStripMenuItem, storyToolStripMenuItem, timeAndWeatherToolStripMenuItem });
             editToolStripMenuItem.ForeColor = Color.White;
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(49, 24);
-            editToolStripMenuItem.Text = "Edit";
             // 
             // playerToolStripMenuItem
             // 
+            resources.ApplyResources(playerToolStripMenuItem, "playerToolStripMenuItem");
             playerToolStripMenuItem.ForeColor = Color.White;
             playerToolStripMenuItem.Name = "playerToolStripMenuItem";
-            playerToolStripMenuItem.Size = new Size(224, 26);
-            playerToolStripMenuItem.Text = "Player";
             // 
             // worldToolStripMenuItem
             // 
+            resources.ApplyResources(worldToolStripMenuItem, "worldToolStripMenuItem");
             worldToolStripMenuItem.ForeColor = Color.White;
             worldToolStripMenuItem.Name = "worldToolStripMenuItem";
-            worldToolStripMenuItem.Size = new Size(224, 26);
-            worldToolStripMenuItem.Text = "Enviroment";
             // 
             // storyToolStripMenuItem
             // 
+            resources.ApplyResources(storyToolStripMenuItem, "storyToolStripMenuItem");
             storyToolStripMenuItem.ForeColor = Color.White;
             storyToolStripMenuItem.Name = "storyToolStripMenuItem";
-            storyToolStripMenuItem.Size = new Size(224, 26);
-            storyToolStripMenuItem.Text = "World";
             // 
             // timeAndWeatherToolStripMenuItem
             // 
+            resources.ApplyResources(timeAndWeatherToolStripMenuItem, "timeAndWeatherToolStripMenuItem");
             timeAndWeatherToolStripMenuItem.ForeColor = Color.White;
             timeAndWeatherToolStripMenuItem.Name = "timeAndWeatherToolStripMenuItem";
-            timeAndWeatherToolStripMenuItem.Size = new Size(224, 26);
-            timeAndWeatherToolStripMenuItem.Text = "Time and Weather";
             // 
             // helpToolStripMenuItem
             // 
+            resources.ApplyResources(helpToolStripMenuItem, "helpToolStripMenuItem");
             helpToolStripMenuItem.BackColor = Color.Transparent;
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { howToUseDwConfigToolStripMenuItem, aboutToolStripMenuItem, licenceToolStripMenuItem });
             helpToolStripMenuItem.ForeColor = Color.White;
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(55, 24);
-            helpToolStripMenuItem.Text = "Help";
             // 
             // howToUseDwConfigToolStripMenuItem
             // 
+            resources.ApplyResources(howToUseDwConfigToolStripMenuItem, "howToUseDwConfigToolStripMenuItem");
             howToUseDwConfigToolStripMenuItem.ForeColor = Color.White;
             howToUseDwConfigToolStripMenuItem.Name = "howToUseDwConfigToolStripMenuItem";
-            howToUseDwConfigToolStripMenuItem.Size = new Size(237, 26);
-            howToUseDwConfigToolStripMenuItem.Text = "How to use DwConfig";
             // 
             // aboutToolStripMenuItem
             // 
+            resources.ApplyResources(aboutToolStripMenuItem, "aboutToolStripMenuItem");
             aboutToolStripMenuItem.ForeColor = Color.White;
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(237, 26);
-            aboutToolStripMenuItem.Text = "About";
             // 
             // licenceToolStripMenuItem
             // 
+            resources.ApplyResources(licenceToolStripMenuItem, "licenceToolStripMenuItem");
             licenceToolStripMenuItem.ForeColor = Color.White;
             licenceToolStripMenuItem.Name = "licenceToolStripMenuItem";
-            licenceToolStripMenuItem.Size = new Size(237, 26);
-            licenceToolStripMenuItem.Text = "Licence";
             // 
             // majVerLbl
             // 
-            majVerLbl.AutoSize = true;
+            resources.ApplyResources(majVerLbl, "majVerLbl");
             majVerLbl.ForeColor = Color.White;
-            majVerLbl.Location = new Point(10, 10);
-            majVerLbl.Margin = new Padding(0, 0, 0, 6);
             majVerLbl.Name = "majVerLbl";
-            majVerLbl.Size = new Size(107, 20);
-            majVerLbl.TabIndex = 2;
-            majVerLbl.Text = "Major Version: ";
             // 
             // minVerLbl
             // 
-            minVerLbl.AutoSize = true;
+            resources.ApplyResources(minVerLbl, "minVerLbl");
             minVerLbl.ForeColor = Color.White;
-            minVerLbl.Location = new Point(10, 36);
-            minVerLbl.Margin = new Padding(0, 0, 0, 6);
             minVerLbl.Name = "minVerLbl";
-            minVerLbl.Size = new Size(107, 20);
-            minVerLbl.TabIndex = 3;
-            minVerLbl.Text = "Minor Version: ";
             // 
             // majVerComLbl
             // 
-            majVerComLbl.AutoSize = true;
+            resources.ApplyResources(majVerComLbl, "majVerComLbl");
             majVerComLbl.ForeColor = Color.White;
-            majVerComLbl.Location = new Point(10, 62);
-            majVerComLbl.Margin = new Padding(0, 0, 0, 6);
             majVerComLbl.Name = "majVerComLbl";
-            majVerComLbl.Size = new Size(201, 20);
-            majVerComLbl.TabIndex = 4;
-            majVerComLbl.Text = "Major Version Compatibility: ";
             // 
             // minVerComLbl
             // 
-            minVerComLbl.AutoSize = true;
+            resources.ApplyResources(minVerComLbl, "minVerComLbl");
             minVerComLbl.ForeColor = Color.White;
-            minVerComLbl.Location = new Point(10, 88);
-            minVerComLbl.Margin = new Padding(0, 0, 0, 6);
             minVerComLbl.Name = "minVerComLbl";
-            minVerComLbl.Size = new Size(201, 20);
-            minVerComLbl.TabIndex = 5;
-            minVerComLbl.Text = "Minor Version Compatibility: ";
             // 
             // rcVerLbl
             // 
-            rcVerLbl.AutoSize = true;
+            resources.ApplyResources(rcVerLbl, "rcVerLbl");
             rcVerLbl.ForeColor = Color.White;
-            rcVerLbl.Location = new Point(10, 114);
-            rcVerLbl.Margin = new Padding(0, 0, 0, 6);
             rcVerLbl.Name = "rcVerLbl";
-            rcVerLbl.Size = new Size(86, 20);
-            rcVerLbl.TabIndex = 6;
-            rcVerLbl.Text = "RC Version: ";
             // 
             // rcVerComLbl
             // 
-            rcVerComLbl.AutoSize = true;
+            resources.ApplyResources(rcVerComLbl, "rcVerComLbl");
             rcVerComLbl.ForeColor = Color.White;
-            rcVerComLbl.Location = new Point(10, 140);
-            rcVerComLbl.Margin = new Padding(0, 0, 0, 6);
             rcVerComLbl.Name = "rcVerComLbl";
-            rcVerComLbl.Size = new Size(180, 20);
-            rcVerComLbl.TabIndex = 7;
-            rcVerComLbl.Text = "RC Version Compatibility: ";
             // 
             // savDataGridView
             // 
+            resources.ApplyResources(savDataGridView, "savDataGridView");
             savDataGridView.AllowUserToAddRows = false;
             savDataGridView.AllowUserToDeleteRows = false;
             savDataGridView.AllowUserToOrderColumns = true;
             savDataGridView.AllowUserToResizeColumns = false;
             savDataGridView.AllowUserToResizeRows = false;
+            savDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             savDataGridView.BackgroundColor = Color.FromArgb(40, 40, 40);
             savDataGridView.BorderStyle = BorderStyle.None;
             savDataGridView.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -291,9 +245,7 @@
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(40, 40, 40);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             savDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
-            savDataGridView.Dock = DockStyle.Fill;
             savDataGridView.GridColor = SystemColors.ButtonShadow;
-            savDataGridView.Location = new Point(10, 10);
             savDataGridView.Name = "savDataGridView";
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(40, 40, 40);
@@ -304,39 +256,32 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             savDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             savDataGridView.RowHeadersVisible = false;
-            savDataGridView.RowHeadersWidth = 51;
-            savDataGridView.Size = new Size(551, 517);
-            savDataGridView.TabIndex = 8;
+            savDataGridView.CellValidating += savDataGridView_CellValidating;
+            savDataGridView.EditingControlShowing += savDataGridView_EditingControlShowing;
             savDataGridView.RowsAdded += savDataGridView_RowsAdded;
             // 
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.HeaderText = "Name";
-            Column1.MinimumWidth = 6;
+            resources.ApplyResources(Column1, "Column1");
             Column1.Name = "Column1";
             // 
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Value";
-            Column2.MinimumWidth = 6;
+            resources.ApplyResources(Column2, "Column2");
             Column2.Name = "Column2";
             // 
             // panel1
             // 
+            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(savDataGridView);
-            panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(371, 28);
-            panel1.Margin = new Padding(0);
             panel1.Name = "panel1";
-            panel1.Padding = new Padding(10, 10, 10, 38);
-            panel1.Size = new Size(571, 565);
-            panel1.TabIndex = 9;
             // 
             // panel2
             // 
+            resources.ApplyResources(panel2, "panel2");
             panel2.BackColor = Color.Transparent;
             panel2.Controls.Add(majVerLbl);
             panel2.Controls.Add(minVerLbl);
@@ -344,29 +289,28 @@
             panel2.Controls.Add(majVerComLbl);
             panel2.Controls.Add(rcVerLbl);
             panel2.Controls.Add(minVerComLbl);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 28);
-            panel2.Margin = new Padding(0);
             panel2.Name = "panel2";
-            panel2.Padding = new Padding(10);
-            panel2.Size = new Size(371, 565);
-            panel2.TabIndex = 10;
+            // 
+            // folderBrowserDialog1
+            // 
+            resources.ApplyResources(folderBrowserDialog1, "folderBrowserDialog1");
+            // 
+            // fileSystemWatcher1
+            // 
+            fileSystemWatcher1.EnableRaisingEvents = true;
+            fileSystemWatcher1.SynchronizingObject = this;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
+            resources.ApplyResources(this, "$this");
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.DimGray;
             BackgroundImage = Properties.Resources.mainFormBg;
-            BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(942, 593);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
-            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
-            Text = "Darkwood Editor";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)savDataGridView).EndInit();
@@ -374,6 +318,7 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -408,5 +353,6 @@
         private ToolStripMenuItem closeMenuItem;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem exitMenuItem;
+        private FileSystemWatcher fileSystemWatcher1;
     }
 }
