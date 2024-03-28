@@ -1,8 +1,4 @@
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System.Diagnostics;
-using System.Windows.Forms;
-using static DarkwoodEditor.MainForm;
 
 namespace DarkwoodEditor
 {
@@ -15,10 +11,6 @@ namespace DarkwoodEditor
             InitializeComponent();
             
             ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new CustomColorTable());
-
-            savDataGridView.EditingControlShowing += savDataGridView_EditingControlShowing;
-            savDataGridView.CellValidating += savDataGridView_CellValidating;
-            savDataGridView.RowsAdded += savDataGridView_RowsAdded;
         }
 
         private void openItm_Click(object sender, EventArgs e)
@@ -42,7 +34,7 @@ namespace DarkwoodEditor
                 rcVerLbl.Text += rootData.RCVersion;
                 rcVerComLbl.Text += rootData.RCVersionCompatibility;
 
-                PopulateDataGridView(rootData);
+                // Load data into Control
             }
             else if (openFile.CheckFileExists == false)
             {
@@ -85,91 +77,11 @@ namespace DarkwoodEditor
             minVerComLbl.Text = Properties.Resources.minVerCom;
             rcVerLbl.Text = Properties.Resources.rcVer;
             rcVerComLbl.Text = Properties.Resources.rcVerCom;
-
-            savDataGridView.Rows.Clear();
         }
 
-        private void PopulateDataGridView(Root root)
+        private void AddItemsToFlowLayout()
         {
-            // PS
-            savDataGridView.Rows.Add("Health", root.pS.health);
-            savDataGridView.Rows.Add("Stamina", root.pS.stamina);
-            savDataGridView.Rows.Add("Experience", root.pS.experience);
-            savDataGridView.Rows.Add("Current level", root.pS.currentLevel);
-            savDataGridView.Rows.Add("Health upgrades", root.pS.healthUpgrades);
-            savDataGridView.Rows.Add("Stamina upgrades", root.pS.staminaUpgrades);
-            savDataGridView.Rows.Add("Hotbar upgrades", root.pS.hotbarUpgrades);
-            savDataGridView.Rows.Add("Inventory upgrades", root.pS.inventoryUpgrades);
-            savDataGridView.Rows.Add("Last time ate", root.pS.lastTimeAte);
-            savDataGridView.Rows.Add("Saturation", root.pS.saturation);
-            savDataGridView.Rows.Add("Fed today", root.pS.fedToday);
-            savDataGridView.Rows.Add("Lifes", root.pS.lifes);
-            savDataGridView.Rows.Add("Got hit atleast once", root.pS.gotHitAtLeastOnce);
-            savDataGridView.Rows.Add("Died atleast once", root.pS.diedAtLeastOnce);
-
-            int rowIndex = savDataGridView.Rows.Add("Recipes");
-
-            DataGridViewComboBoxCell comboBoxCell = new DataGridViewComboBoxCell();
-            comboBoxCell.FlatStyle = FlatStyle.Standard;
-            comboBoxCell.DisplayStyle = DataGridViewComboBoxDisplayStyle.ComboBox;
-
-            foreach (var item in root.pS.recipes)
-            {
-                comboBoxCell.Items.AddRange(item);
-                comboBoxCell.Value = item;
-            }
-
-            savDataGridView.Rows[rowIndex].Cells[1] = comboBoxCell;
-        }
-
-        // Check the data type of the cell and covert cell to appropriate cell type
-        private void savDataGridView_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-            int columnIndex = 1;
-            bool value;
-
-            foreach (DataGridViewRow row in savDataGridView.Rows)
-            {
-                if (row.IsNewRow) continue;
-                if (row.Cells[columnIndex].Value == null) continue;
-
-                string cell = row.Cells[columnIndex].Value.ToString();
-
-                if (bool.TryParse(cell, out value))
-                {
-                    DataGridViewCheckBoxCell checkBoxCell = new DataGridViewCheckBoxCell();
-                    checkBoxCell.Value = value;
-                    row.Cells[columnIndex] = checkBoxCell;
-                }
-            }
-        }
-
-        // Check the data type of the cell and covert cell to appropriate cell type
-        private void savDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            if (e.Control is ComboBox comboBox)
-            {
-                comboBox.DropDownStyle = ComboBoxStyle.DropDown;
-                comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-                comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
-            }
-        }
-
-        private void savDataGridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
-        {
-            // Check if cell is a DataGridViewComboBoxCell
-            if (savDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex] is DataGridViewComboBoxCell)
-            {
-                if (e.ColumnIndex == 1)
-                {
-                    DataGridViewComboBoxCell comboBoxCell = savDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewComboBoxCell;
-
-                    if (!comboBoxCell.Items.Contains(e.FormattedValue))
-                    {
-                        comboBoxCell.Items.Add(e.FormattedValue);
-                    }
-                }
-            }
+            // TODO: Create and add Custom Items to flowLayoutPanel1
         }
 
         // CREDIT: https://stackoverflow.com/questions/36767478/color-change-for-menuitem
