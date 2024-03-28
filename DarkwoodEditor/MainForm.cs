@@ -5,11 +5,11 @@ namespace DarkwoodEditor
     public partial class MainForm : Form
     {
         static string? filePath;
-
+        static Dictionary<string, string> dataMap = new Dictionary<string, string>();
+        
         public MainForm()
         {
             InitializeComponent();
-
             ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new CustomColorTable());
         }
 
@@ -42,6 +42,54 @@ namespace DarkwoodEditor
             }
         }
 
+        private Root loadRoot()
+        {
+            string json = File.ReadAllText(filePath);
+            return JsonConvert.DeserializeObject<Root>(json);
+        }
+
+        private void addItemsToFlowLayout(Root rootData)
+        {
+            dataMap.Add("Health", rootData.pS.health.ToString());
+            dataMap.Add("Stamina", rootData.pS.stamina.ToString());
+            dataMap.Add("Experience", rootData.pS.experience.ToString());
+            dataMap.Add("Current level", rootData.pS.currentLevel.ToString());
+            dataMap.Add("Health upgrades", rootData.pS.healthUpgrades.ToString());
+            dataMap.Add("Stamina upgrades", rootData.pS.staminaUpgrades.ToString());
+            dataMap.Add("Hotbar upgrades", rootData.pS.hotbarUpgrades.ToString());
+            dataMap.Add("Inventory upgrades", rootData.pS.inventoryUpgrades.ToString());
+            dataMap.Add("Last time ate", rootData.pS.lastTimeAte.ToString());
+            dataMap.Add("Saturation", rootData.pS.saturation.ToString());
+            dataMap.Add("Fed today", rootData.pS.fedToday.ToString());
+            dataMap.Add("Lifes", rootData.pS.lifes.ToString());
+            dataMap.Add("Got hit atleast once", rootData.pS.gotHitAtLeastOnce.ToString());
+            dataMap.Add("Died atleast once", rootData.pS.diedAtLeastOnce.ToString());
+
+            foreach (var kvp in dataMap)
+            {
+                DwTextUserControl dwText = new DwTextUserControl();
+                dwText.SetData(kvp.Key, kvp.Value);
+                flowLayoutPanel1.Controls.Add(dwText);
+            }
+        }
+
+        private void saveSavFile()
+        {
+
+        }
+
+        private void closeMenuItem_Click(object sender, EventArgs e)
+        {
+            majVerLbl.Text = Properties.Resources.majVer;
+            minVerLbl.Text = Properties.Resources.minVer;
+            majVerComLbl.Text = Properties.Resources.majrVerCom;
+            minVerComLbl.Text = Properties.Resources.minVerCom;
+            rcVerLbl.Text = Properties.Resources.rcVer;
+            rcVerComLbl.Text = Properties.Resources.rcVerCom;
+
+            flowLayoutPanel1.Controls.Clear();
+        }
+
         private void exitMenuItem_Click(object sender, EventArgs e)
         {
             Close();
@@ -61,40 +109,6 @@ namespace DarkwoodEditor
                 // do something else
             }
             */
-        }
-
-        private Root loadRoot()
-        {
-            string json = File.ReadAllText(filePath);
-            return JsonConvert.DeserializeObject<Root>(json);
-        }
-
-        private void closeMenuItem_Click(object sender, EventArgs e)
-        {
-            majVerLbl.Text = Properties.Resources.majVer;
-            minVerLbl.Text = Properties.Resources.minVer;
-            majVerComLbl.Text = Properties.Resources.majrVerCom;
-            minVerComLbl.Text = Properties.Resources.minVerCom;
-            rcVerLbl.Text = Properties.Resources.rcVer;
-            rcVerComLbl.Text = Properties.Resources.rcVerCom;
-        }
-
-        private void addItemsToFlowLayout(Root rootData)
-        {
-            Dictionary<string, string> dataMap = new Dictionary<string, string>()
-            {
-                { "Health", rootData.pS.health.ToString() },
-                { "Stamina", rootData.pS.stamina.ToString() },
-                { "Experience", rootData.pS.experience.ToString() },
-                { "Current level", rootData.pS.currentLevel.ToString() }
-            };
-
-            foreach (var kvp in dataMap)
-            {
-                DwTextUserControl dwText = new DwTextUserControl();
-                dwText.SetData(kvp.Key, kvp.Value);
-                flowLayoutPanel1.Controls.Add(dwText);
-            }
         }
 
         // CREDIT: https://stackoverflow.com/questions/36767478/color-change-for-menuitem
