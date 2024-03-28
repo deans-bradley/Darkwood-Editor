@@ -22,3 +22,4 @@ C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditor\obj\Debug\net8.0-windo
 C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditor\bin\Debug\net8.0-windows\en\DarkwoodEditor.resources.dll
 C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditor\obj\Debug\net8.0-windows\DarkwoodEditor.MainForm.en.resources
 C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditor\obj\Debug\net8.0-windows\en\DarkwoodEditor.resources.dll
+C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditor\obj\Debug\net8.0-windows\DarkwoodEditor.DwTextUserControl.resources

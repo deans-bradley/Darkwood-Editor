@@ -9,7 +9,7 @@ namespace DarkwoodEditor
         public MainForm()
         {
             InitializeComponent();
-            
+
             ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new CustomColorTable());
         }
 
@@ -34,7 +34,7 @@ namespace DarkwoodEditor
                 rcVerLbl.Text += rootData.RCVersion;
                 rcVerComLbl.Text += rootData.RCVersionCompatibility;
 
-                // Load data into Control
+                addItemsToFlowLayout(rootData);
             }
             else if (openFile.CheckFileExists == false)
             {
@@ -79,9 +79,22 @@ namespace DarkwoodEditor
             rcVerComLbl.Text = Properties.Resources.rcVerCom;
         }
 
-        private void AddItemsToFlowLayout()
+        private void addItemsToFlowLayout(Root rootData)
         {
-            // TODO: Create and add Custom Items to flowLayoutPanel1
+            Dictionary<string, string> dataMap = new Dictionary<string, string>()
+            {
+                { "Health", rootData.pS.health.ToString() },
+                { "Stamina", rootData.pS.stamina.ToString() },
+                { "Experience", rootData.pS.experience.ToString() },
+                { "Current level", rootData.pS.currentLevel.ToString() }
+            };
+
+            foreach (var kvp in dataMap)
+            {
+                DwTextUserControl dwText = new DwTextUserControl();
+                dwText.SetData(kvp.Key, kvp.Value);
+                flowLayoutPanel1.Controls.Add(dwText);
+            }
         }
 
         // CREDIT: https://stackoverflow.com/questions/36767478/color-change-for-menuitem
