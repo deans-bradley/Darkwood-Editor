@@ -12,6 +12,11 @@
         },
         "runtime": {
           "DarkwoodEditor.dll": {}
+        },
+        "resources": {
+          "en/DarkwoodEditor.resources.dll": {
+            "locale": "en"
+          }
         }
       },
       "Newtonsoft.Json/13.0.3": {
