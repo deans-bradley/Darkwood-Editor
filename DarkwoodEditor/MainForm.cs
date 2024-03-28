@@ -5,8 +5,7 @@ namespace DarkwoodEditor
     public partial class MainForm : Form
     {
         static string? filePath;
-        static Dictionary<string, string> dataMap = new Dictionary<string, string>();
-        
+
         public MainForm()
         {
             InitializeComponent();
@@ -50,20 +49,23 @@ namespace DarkwoodEditor
 
         private void addItemsToFlowLayout(Root rootData)
         {
-            dataMap.Add("Health", rootData.pS.health.ToString());
-            dataMap.Add("Stamina", rootData.pS.stamina.ToString());
-            dataMap.Add("Experience", rootData.pS.experience.ToString());
-            dataMap.Add("Current level", rootData.pS.currentLevel.ToString());
-            dataMap.Add("Health upgrades", rootData.pS.healthUpgrades.ToString());
-            dataMap.Add("Stamina upgrades", rootData.pS.staminaUpgrades.ToString());
-            dataMap.Add("Hotbar upgrades", rootData.pS.hotbarUpgrades.ToString());
-            dataMap.Add("Inventory upgrades", rootData.pS.inventoryUpgrades.ToString());
-            dataMap.Add("Last time ate", rootData.pS.lastTimeAte.ToString());
-            dataMap.Add("Saturation", rootData.pS.saturation.ToString());
-            dataMap.Add("Fed today", rootData.pS.fedToday.ToString());
-            dataMap.Add("Lifes", rootData.pS.lifes.ToString());
-            dataMap.Add("Got hit atleast once", rootData.pS.gotHitAtLeastOnce.ToString());
-            dataMap.Add("Died atleast once", rootData.pS.diedAtLeastOnce.ToString());
+            Dictionary<string, string> dataMap = new Dictionary<string, string>
+            {
+                { "Health", rootData.pS.health.ToString() },
+                { "Stamina", rootData.pS.stamina.ToString() },
+                { "Experience", rootData.pS.experience.ToString() },
+                { "Current level", rootData.pS.currentLevel.ToString() },
+                { "Health upgrades", rootData.pS.healthUpgrades.ToString() },
+                { "Stamina upgrades", rootData.pS.staminaUpgrades.ToString() },
+                { "Hotbar upgrades", rootData.pS.hotbarUpgrades.ToString() },
+                { "Inventory upgrades", rootData.pS.inventoryUpgrades.ToString() },
+                { "Last time ate", rootData.pS.lastTimeAte.ToString() },
+                { "Saturation", rootData.pS.saturation.ToString() },
+                { "Fed today", rootData.pS.fedToday.ToString() },
+                { "Lifes", rootData.pS.lifes.ToString() },
+                { "Got hit atleast once", rootData.pS.gotHitAtLeastOnce.ToString() },
+                { "Died atleast once", rootData.pS.diedAtLeastOnce.ToString() }
+            };
 
             foreach (var kvp in dataMap)
             {
@@ -71,11 +73,6 @@ namespace DarkwoodEditor
                 dwText.SetData(kvp.Key, kvp.Value);
                 flowLayoutPanel1.Controls.Add(dwText);
             }
-        }
-
-        private void saveSavFile()
-        {
-
         }
 
         private void closeMenuItem_Click(object sender, EventArgs e)
