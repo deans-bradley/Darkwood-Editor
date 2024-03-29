@@ -1,10 +1,12 @@
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace DarkwoodEditor
 {
     public partial class MainForm : Form
     {
         static string? filePath;
+        static List<DwTextUserControl> dwControl = new List<DwTextUserControl>();
 
         public MainForm()
         {
@@ -70,7 +72,11 @@ namespace DarkwoodEditor
             foreach (var kvp in dataMap)
             {
                 DwTextUserControl dwText = new DwTextUserControl();
-                dwText.SetData(kvp.Key, kvp.Value);
+
+                dwText.Name = kvp.Key;
+                dwText.Value = kvp.Value;
+
+                dwControl.Add(dwText);
                 flowLayoutPanel1.Controls.Add(dwText);
             }
         }

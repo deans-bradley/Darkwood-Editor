@@ -7,10 +7,16 @@
             InitializeComponent();
         }
 
-        public void SetData(string name, string value)
+        public string Name
         {
-            nameLbl.Text = name;
-            valueTxtBox.Text = value;
+            get { return nameLbl.Text; }
+            set { nameLbl.Text = value; }
+        }
+
+        public string Value
+        {
+            get { return valueTxtBox.Text; }
+            set { valueTxtBox.Text = value; }
         }
     }
 }
