@@ -5,8 +5,8 @@ namespace DarkwoodEditor
 {
     public partial class MainForm : Form
     {
-        static string? filePath;
-        static List<DwTextUserControl> dwControl = new List<DwTextUserControl>();
+        string? filePath;
+        List<DwTextUserControl> dwControl = new List<DwTextUserControl>();
 
         public MainForm()
         {
