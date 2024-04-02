@@ -7,6 +7,7 @@ namespace DarkwoodEditor
     {
         string? filePath;
         List<DwTextUserControl> dwControl = new List<DwTextUserControl>();
+        List<DwTextUserControl> dwEdit = new List<DwTextUserControl>();
 
         public MainForm()
         {
@@ -71,12 +72,11 @@ namespace DarkwoodEditor
 
             foreach (var kvp in dataMap)
             {
-                DwTextUserControl dwText = new DwTextUserControl();
-
-                dwText.Name = kvp.Key;
-                dwText.Value = kvp.Value;
+                DwTextUserControl dwText = new DwTextUserControl(kvp.Key, kvp.Value);
 
                 dwControl.Add(dwText);
+                dwEdit.Add(dwText);
+
                 flowLayoutPanel1.Controls.Add(dwText);
             }
         }
@@ -84,16 +84,7 @@ namespace DarkwoodEditor
         // TESTING
         private void saveMenuItem_Click(object sender, EventArgs e)
         {
-            string value;
-            Root root = new Root();
 
-            root.pS.health = Double.Parse(dwControl[0].Value);
-            root.pS.stamina = Double.Parse(dwControl[1].Value);
-            root.pS.experience = Int32.Parse(dwControl[2].Value);
-            root.pS.currentLevel = Int32.Parse(dwControl[3].Value);
-
-            value = JsonConvert.SerializeObject(root, Formatting.Indented);
-            Debug.WriteLine(value);
         }
 
         private void closeMenuItem_Click(object sender, EventArgs e)
@@ -110,21 +101,23 @@ namespace DarkwoodEditor
 
         private void exitMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
-
-            /* 
-            * TODO: Check if current file has been modified
-            * and confirm exit with MessageBox.
-            *
-            DialogResult dialogResult = MessageBox.Show("Sure?", "Title", MessageBoxButtons.YesNo);
-
-            if (dialogResult == DialogResult.Yes)
+            /*
+            if ()
             {
-                // do something
+                DialogResult dialogResult = MessageBox.Show("Current file has not been saved.\nAre you sure you want to exit?", "Sure?", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
             }
-            else if (dialogResult == DialogResult.No)
+            else
             {
-                // do something else
+                MessageBox.Show("No difference");
             }
             */
         }

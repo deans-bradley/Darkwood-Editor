@@ -2,9 +2,11 @@
 {
     public partial class DwTextUserControl : UserControl
     {
-        public DwTextUserControl()
+        public DwTextUserControl(string name, string value)
         {
             InitializeComponent();
+            Name = name;
+            Value = value;
         }
 
         public string Name
