@@ -81,6 +81,21 @@ namespace DarkwoodEditor
             }
         }
 
+        // TESTING
+        private void saveMenuItem_Click(object sender, EventArgs e)
+        {
+            string value;
+            Root root = new Root();
+
+            root.pS.health = Double.Parse(dwControl[0].Value);
+            root.pS.stamina = Double.Parse(dwControl[1].Value);
+            root.pS.experience = Int32.Parse(dwControl[2].Value);
+            root.pS.currentLevel = Int32.Parse(dwControl[3].Value);
+
+            value = JsonConvert.SerializeObject(root, Formatting.Indented);
+            Debug.WriteLine(value);
+        }
+
         private void closeMenuItem_Click(object sender, EventArgs e)
         {
             majVerLbl.Text = Properties.Resources.majVer;

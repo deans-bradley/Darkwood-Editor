@@ -135,6 +135,8 @@
             saveMenuItem.BackColor = Color.Transparent;
             saveMenuItem.ForeColor = Color.White;
             saveMenuItem.Name = "saveMenuItem";
+            saveMenuItem.Padding = new Padding(0, 4, 0, 4);
+            saveMenuItem.Click += saveMenuItem_Click;
             // 
             // closeMenuItem
             // 
@@ -142,6 +144,7 @@
             closeMenuItem.BackColor = Color.Transparent;
             closeMenuItem.ForeColor = Color.White;
             closeMenuItem.Name = "closeMenuItem";
+            closeMenuItem.Padding = new Padding(0, 4, 0, 4);
             closeMenuItem.Click += closeMenuItem_Click;
             // 
             // toolStripSeparator1
@@ -157,6 +160,7 @@
             exitMenuItem.BackColor = Color.Transparent;
             exitMenuItem.ForeColor = Color.White;
             exitMenuItem.Name = "exitMenuItem";
+            exitMenuItem.Padding = new Padding(0, 4, 0, 4);
             exitMenuItem.Click += exitMenuItem_Click;
             // 
             // editToolStripMenuItem
@@ -172,24 +176,28 @@
             resources.ApplyResources(playerToolStripMenuItem, "playerToolStripMenuItem");
             playerToolStripMenuItem.ForeColor = Color.White;
             playerToolStripMenuItem.Name = "playerToolStripMenuItem";
+            playerToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
             // 
             // worldToolStripMenuItem
             // 
             resources.ApplyResources(worldToolStripMenuItem, "worldToolStripMenuItem");
             worldToolStripMenuItem.ForeColor = Color.White;
             worldToolStripMenuItem.Name = "worldToolStripMenuItem";
+            worldToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
             // 
             // storyToolStripMenuItem
             // 
             resources.ApplyResources(storyToolStripMenuItem, "storyToolStripMenuItem");
             storyToolStripMenuItem.ForeColor = Color.White;
             storyToolStripMenuItem.Name = "storyToolStripMenuItem";
+            storyToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
             // 
             // timeAndWeatherToolStripMenuItem
             // 
             resources.ApplyResources(timeAndWeatherToolStripMenuItem, "timeAndWeatherToolStripMenuItem");
             timeAndWeatherToolStripMenuItem.ForeColor = Color.White;
             timeAndWeatherToolStripMenuItem.Name = "timeAndWeatherToolStripMenuItem";
+            timeAndWeatherToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
             // 
             // helpToolStripMenuItem
             // 
@@ -204,18 +212,21 @@
             resources.ApplyResources(howToUseDwConfigToolStripMenuItem, "howToUseDwConfigToolStripMenuItem");
             howToUseDwConfigToolStripMenuItem.ForeColor = Color.White;
             howToUseDwConfigToolStripMenuItem.Name = "howToUseDwConfigToolStripMenuItem";
+            howToUseDwConfigToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
             // 
             // aboutToolStripMenuItem
             // 
             resources.ApplyResources(aboutToolStripMenuItem, "aboutToolStripMenuItem");
             aboutToolStripMenuItem.ForeColor = Color.White;
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
             // 
             // licenceToolStripMenuItem
             // 
             resources.ApplyResources(licenceToolStripMenuItem, "licenceToolStripMenuItem");
             licenceToolStripMenuItem.ForeColor = Color.White;
             licenceToolStripMenuItem.Name = "licenceToolStripMenuItem";
+            licenceToolStripMenuItem.Padding = new Padding(0, 4, 0, 4);
             // 
             // folderBrowserDialog1
             // 
