@@ -1,13 +1,12 @@
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Runtime.Intrinsics.X86;
 
 namespace DarkwoodEditor
 {
     public partial class MainForm : Form
     {
         string? filePath;
-        List<DwTextUserControl> dwControl = new List<DwTextUserControl>();
-        List<DwTextUserControl> dwEdit = new List<DwTextUserControl>();
 
         public MainForm()
         {
@@ -29,13 +28,7 @@ namespace DarkwoodEditor
 
                 Root rootData = loadRoot();
 
-                majVerLbl.Text += rootData.majorVersion;
-                minVerLbl.Text += rootData.minorVersion;
-                majVerComLbl.Text += rootData.majorVersionCompatibility;
-                minVerComLbl.Text += rootData.minorVersionCompatibility;
-                rcVerLbl.Text += rootData.RCVersion;
-                rcVerComLbl.Text += rootData.RCVersionCompatibility;
-
+                addItemsToLabels(rootData);
                 addItemsToFlowLayout(rootData);
             }
             else if (openFile.CheckFileExists == false)
@@ -48,6 +41,16 @@ namespace DarkwoodEditor
         {
             string json = File.ReadAllText(filePath);
             return JsonConvert.DeserializeObject<Root>(json);
+        }
+
+        private void addItemsToLabels(Root rootData)
+        {
+            majVerLbl.Text += rootData.majorVersion;
+            minVerLbl.Text += rootData.minorVersion;
+            majVerComLbl.Text += rootData.majorVersionCompatibility;
+            minVerComLbl.Text += rootData.minorVersionCompatibility;
+            rcVerLbl.Text += rootData.RCVersion;
+            rcVerComLbl.Text += rootData.RCVersionCompatibility;
         }
 
         private void addItemsToFlowLayout(Root rootData)
@@ -72,22 +75,80 @@ namespace DarkwoodEditor
 
             foreach (var kvp in dataMap)
             {
-                DwTextUserControl dwText = new DwTextUserControl(kvp.Key, kvp.Value);
+                DwTextUserControl dwText = new DwTextUserControl();
+                DwCheckUserControl dwCheck = new DwCheckUserControl();
 
-                dwControl.Add(dwText);
-                dwEdit.Add(dwText);
+                bool value;
+                if (bool.TryParse(kvp.Value, out value))
+                {
+                    dwCheck.Name = kvp.Key;
+                    dwCheck.Value = value;
 
-                flowLayoutPanel1.Controls.Add(dwText);
+                    flowLayoutPanel1.Controls.Add(dwCheck);
+                }
+                else
+                {
+                    dwText.Name = kvp.Key;
+                    dwText.Value = kvp.Value;
+
+                    flowLayoutPanel1.Controls.Add(dwText);
+                }
             }
         }
 
-        // TESTING
         private void saveMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
         private void closeMenuItem_Click(object sender, EventArgs e)
+        {
+            bool fileChanged = isFileChanged();
+
+            if (fileChanged)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to close the current file?", "File not saved", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    updateFileChangedStatus();
+                    clearFile();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            else if (!fileChanged)
+            {
+                clearFile();
+            }
+        }
+
+        private void exitMenuItem_Click(object sender, EventArgs e)
+        {
+            bool fileChanged = isFileChanged();
+
+            if (fileChanged)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit?", "File not saved", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Close();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            else if (!fileChanged)
+            {
+                Close();
+            }
+        }
+
+        private void clearFile()
         {
             majVerLbl.Text = Properties.Resources.majVer;
             minVerLbl.Text = Properties.Resources.minVer;
@@ -99,27 +160,37 @@ namespace DarkwoodEditor
             flowLayoutPanel1.Controls.Clear();
         }
 
-        private void exitMenuItem_Click(object sender, EventArgs e)
+        private bool isFileChanged()
         {
-            /*
-            if ()
+            foreach (Control control in flowLayoutPanel1.Controls)
             {
-                DialogResult dialogResult = MessageBox.Show("Current file has not been saved.\nAre you sure you want to exit?", "Sure?", MessageBoxButtons.YesNo);
+                if (control is DwTextUserControl dwText)
+                {
+                    if (dwText.ValueChanged)
+                    {
+                        return true;
+                    }
+                }
+                else if (control is DwCheckUserControl dwCheck)
+                {
+                    if (dwCheck.ValueChanged)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
 
-                if (dialogResult == DialogResult.Yes)
-                {
-                    Close();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    return;
-                }
-            }
-            else
+        private void updateFileChangedStatus()
+        {
+            foreach (Control control in flowLayoutPanel1.Controls)
             {
-                MessageBox.Show("No difference");
+                if (control is DwTextUserControl dwControl)
+                {
+                    dwControl.UpdateOriginalValue();
+                }
             }
-            */
         }
 
         // CREDIT: https://stackoverflow.com/questions/36767478/color-change-for-menuitem
@@ -189,6 +260,11 @@ namespace DarkwoodEditor
             {
                 get { return Color.FromArgb(50, 255, 255, 255); }
             }
+        }
+
+        private void testBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

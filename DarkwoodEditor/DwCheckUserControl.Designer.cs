@@ -1,6 +1,6 @@
 ﻿namespace DarkwoodEditor
 {
-    partial class DwTextUserControl
+    partial class DwCheckUserControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             nameLbl = new Label();
-            valueTxtBox = new TextBox();
+            valueChkBox = new CheckBox();
             SuspendLayout();
             // 
             // nameLbl
@@ -44,27 +44,27 @@
             nameLbl.TabIndex = 0;
             nameLbl.Text = "Name";
             // 
-            // valueTxtBox
+            // valueChkBox
             // 
-            valueTxtBox.BackColor = Color.FromArgb(80, 80, 80);
-            valueTxtBox.BorderStyle = BorderStyle.FixedSingle;
-            valueTxtBox.ForeColor = Color.White;
-            valueTxtBox.Location = new Point(290, 10);
-            valueTxtBox.Margin = new Padding(0);
-            valueTxtBox.Name = "valueTxtBox";
-            valueTxtBox.Size = new Size(300, 27);
-            valueTxtBox.TabIndex = 1;
-            valueTxtBox.TextChanged += valueTxtBox_TextChanged;
+            valueChkBox.AutoSize = true;
+            valueChkBox.ForeColor = Color.White;
+            valueChkBox.Location = new Point(566, 21);
+            valueChkBox.Margin = new Padding(6);
+            valueChkBox.Name = "valueChkBox";
+            valueChkBox.Size = new Size(18, 17);
+            valueChkBox.TabIndex = 1;
+            valueChkBox.UseVisualStyleBackColor = true;
+            valueChkBox.CheckedChanged += valueChkBox_CheckedChanged;
             // 
-            // DwTextUserControl
+            // DwCheckUserControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 40);
-            Controls.Add(valueTxtBox);
+            Controls.Add(valueChkBox);
             Controls.Add(nameLbl);
             Margin = new Padding(0, 0, 0, 2);
-            Name = "DwTextUserControl";
+            Name = "DwCheckUserControl";
             Padding = new Padding(10);
             Size = new Size(600, 54);
             ResumeLayout(false);
@@ -74,6 +74,6 @@
         #endregion
 
         private Label nameLbl;
-        private TextBox valueTxtBox;
+        private CheckBox valueChkBox;
     }
 }

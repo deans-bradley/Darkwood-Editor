@@ -119,85 +119,79 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="majVerLbl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>PF Tempesta Seven, 7.8pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
   </data>
   <data name="majVerLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 16</value>
   </data>
   <data name="majVerLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 21</value>
+    <value>111, 16</value>
   </data>
   <data name="rcVerLbl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>PF Tempesta Seven, 7.8pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
   </data>
   <data name="rcVerLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 146</value>
   </data>
   <data name="rcVerLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
+    <value>93, 16</value>
   </data>
   <data name="minVerLbl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>PF Tempesta Seven, 7.8pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
   </data>
   <data name="minVerLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 49</value>
   </data>
   <data name="minVerLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 21</value>
+    <value>110, 16</value>
   </data>
   <data name="majVerComLbl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>PF Tempesta Seven, 7.8pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
   </data>
   <data name="majVerComLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 82</value>
   </data>
   <data name="majVerComLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 21</value>
+    <value>205, 16</value>
   </data>
   <data name="minVerComLbl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>PF Tempesta Seven, 7.8pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
   </data>
   <data name="minVerComLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 114</value>
   </data>
   <data name="minVerComLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 21</value>
+    <value>204, 16</value>
   </data>
   <data name="rcVerComLbl.Font" type="System.Drawing.Font, System.Drawing">
-    <value>PF Tempesta Seven, 7.8pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
   </data>
   <data name="rcVerComLbl.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 179</value>
   </data>
   <data name="rcVerComLbl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 21</value>
-  </data>
-  <data name="openMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
+    <value>187, 16</value>
   </data>
   <data name="saveMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
+    <value>181, 32</value>
   </data>
   <data name="closeMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 6</value>
+    <value>181, 32</value>
   </data>
   <data name="exitMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
+    <value>181, 32</value>
   </data>
   <data name="playerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
+    <value>213, 32</value>
   </data>
   <data name="worldToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
+    <value>213, 32</value>
   </data>
   <data name="storyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
+    <value>213, 32</value>
   </data>
   <data name="timeAndWeatherToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 32</value>
+    <value>213, 32</value>
   </data>
   <data name="howToUseDwConfigToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>237, 32</value>
@@ -240,6 +234,18 @@
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="testBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 539</value>
+  </data>
+  <data name="testBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 34</value>
+  </data>
+  <data name="testBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="testBtn.Text" xml:space="preserve">
+    <value>Test</value>
   </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>

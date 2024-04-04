@@ -58,6 +58,7 @@
             panel1 = new Panel();
             panel2 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            testBtn = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)rootBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)fileSystemWatcher1).BeginInit();
@@ -241,6 +242,7 @@
             // 
             resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(testBtn);
             panel1.Controls.Add(minVerLbl);
             panel1.Controls.Add(majVerLbl);
             panel1.Controls.Add(minVerComLbl);
@@ -261,6 +263,13 @@
             resources.ApplyResources(flowLayoutPanel1, "flowLayoutPanel1");
             flowLayoutPanel1.BackColor = Color.Transparent;
             flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
+            // testBtn
+            // 
+            resources.ApplyResources(testBtn, "testBtn");
+            testBtn.Name = "testBtn";
+            testBtn.UseVisualStyleBackColor = true;
+            testBtn.Click += testBtn_Click;
             // 
             // MainForm
             // 
@@ -313,5 +322,6 @@
         private Panel panel1;
         private Panel panel2;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Button testBtn;
     }
 }
