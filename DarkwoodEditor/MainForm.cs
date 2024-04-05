@@ -6,11 +6,13 @@ namespace DarkwoodEditor
 {
     public partial class MainForm : Form
     {
+        private MainController mainController;
         string? filePath;
 
         public MainForm()
         {
             InitializeComponent();
+            mainController = new MainController(this);
             ToolStripManager.Renderer = new ToolStripProfessionalRenderer(new CustomColorTable());
         }
 
@@ -25,74 +27,14 @@ namespace DarkwoodEditor
             if (openFile.CheckFileExists && openFile.FileName != String.Empty)
             {
                 filePath = openFile.FileName;
+                string json = File.ReadAllText(filePath);
+                Root root = JsonConvert.DeserializeObject<Root>(json);
 
-                Root rootData = loadRoot();
-
-                addItemsToLabels(rootData);
-                addItemsToFlowLayout(rootData);
+                mainController.LoadRootData(root);
             }
             else if (openFile.CheckFileExists == false)
             {
                 MessageBox.Show("File does not exist.");
-            }
-        }
-
-        private Root loadRoot()
-        {
-            string json = File.ReadAllText(filePath);
-            return JsonConvert.DeserializeObject<Root>(json);
-        }
-
-        private void addItemsToLabels(Root rootData)
-        {
-            majVerLbl.Text += rootData.majorVersion;
-            minVerLbl.Text += rootData.minorVersion;
-            majVerComLbl.Text += rootData.majorVersionCompatibility;
-            minVerComLbl.Text += rootData.minorVersionCompatibility;
-            rcVerLbl.Text += rootData.RCVersion;
-            rcVerComLbl.Text += rootData.RCVersionCompatibility;
-        }
-
-        private void addItemsToFlowLayout(Root rootData)
-        {
-            Dictionary<string, string> dataMap = new Dictionary<string, string>
-            {
-                { "Health", rootData.pS.health.ToString() },
-                { "Stamina", rootData.pS.stamina.ToString() },
-                { "Experience", rootData.pS.experience.ToString() },
-                { "Current level", rootData.pS.currentLevel.ToString() },
-                { "Health upgrades", rootData.pS.healthUpgrades.ToString() },
-                { "Stamina upgrades", rootData.pS.staminaUpgrades.ToString() },
-                { "Hotbar upgrades", rootData.pS.hotbarUpgrades.ToString() },
-                { "Inventory upgrades", rootData.pS.inventoryUpgrades.ToString() },
-                { "Last time ate", rootData.pS.lastTimeAte.ToString() },
-                { "Saturation", rootData.pS.saturation.ToString() },
-                { "Fed today", rootData.pS.fedToday.ToString() },
-                { "Lifes", rootData.pS.lifes.ToString() },
-                { "Got hit atleast once", rootData.pS.gotHitAtLeastOnce.ToString() },
-                { "Died atleast once", rootData.pS.diedAtLeastOnce.ToString() }
-            };
-
-            foreach (var kvp in dataMap)
-            {
-                DwTextUserControl dwText = new DwTextUserControl();
-                DwCheckUserControl dwCheck = new DwCheckUserControl();
-
-                bool value;
-                if (bool.TryParse(kvp.Value, out value))
-                {
-                    dwCheck.Name = kvp.Key;
-                    dwCheck.Value = value;
-
-                    flowLayoutPanel1.Controls.Add(dwCheck);
-                }
-                else
-                {
-                    dwText.Name = kvp.Key;
-                    dwText.Value = kvp.Value;
-
-                    flowLayoutPanel1.Controls.Add(dwText);
-                }
             }
         }
 
@@ -103,52 +45,47 @@ namespace DarkwoodEditor
 
         private void closeMenuItem_Click(object sender, EventArgs e)
         {
-            bool fileChanged = isFileChanged();
 
-            if (fileChanged)
-            {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to close the current file?", "File not saved", MessageBoxButtons.YesNo);
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    updateFileChangedStatus();
-                    clearFile();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    return;
-                }
-            }
-            else if (!fileChanged)
-            {
-                clearFile();
-            }
         }
 
         private void exitMenuItem_Click(object sender, EventArgs e)
         {
-            bool fileChanged = isFileChanged();
 
-            if (fileChanged)
+        }
+
+        public void AddToLabels(Root rootData)
+        {
+            majVerLbl.Text += rootData.majorVersion;
+            minVerLbl.Text += rootData.minorVersion;
+            majVerComLbl.Text += rootData.majorVersionCompatibility;
+            minVerComLbl.Text += rootData.minorVersionCompatibility;
+            rcVerLbl.Text += rootData.RCVersion;
+            rcVerComLbl.Text += rootData.RCVersionCompatibility;
+        }
+
+        public void AddToFlowLayout(string name, string value)
+        {
+            DwTextUserControl dwText = new DwTextUserControl();
+            DwCheckUserControl dwCheck = new DwCheckUserControl();
+
+            bool boolValue;
+            if (bool.TryParse(value, out boolValue))
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to exit?", "File not saved", MessageBoxButtons.YesNo);
+                dwCheck.Name = name;
+                dwCheck.Value = boolValue;
 
-                if (dialogResult == DialogResult.Yes)
-                {
-                    Close();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    return;
-                }
+                flowLayoutPanel1.Controls.Add(dwCheck);
             }
-            else if (!fileChanged)
+            else
             {
-                Close();
+                dwText.Name = name;
+                dwText.Value = value;
+
+                flowLayoutPanel1.Controls.Add(dwText);
             }
         }
 
-        private void clearFile()
+        public void ClearData()
         {
             majVerLbl.Text = Properties.Resources.majVer;
             minVerLbl.Text = Properties.Resources.minVer;
@@ -158,39 +95,6 @@ namespace DarkwoodEditor
             rcVerComLbl.Text = Properties.Resources.rcVerCom;
 
             flowLayoutPanel1.Controls.Clear();
-        }
-
-        private bool isFileChanged()
-        {
-            foreach (Control control in flowLayoutPanel1.Controls)
-            {
-                if (control is DwTextUserControl dwText)
-                {
-                    if (dwText.ValueChanged)
-                    {
-                        return true;
-                    }
-                }
-                else if (control is DwCheckUserControl dwCheck)
-                {
-                    if (dwCheck.ValueChanged)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-        private void updateFileChangedStatus()
-        {
-            foreach (Control control in flowLayoutPanel1.Controls)
-            {
-                if (control is DwTextUserControl dwControl)
-                {
-                    dwControl.UpdateOriginalValue();
-                }
-            }
         }
 
         // CREDIT: https://stackoverflow.com/questions/36767478/color-change-for-menuitem
@@ -260,11 +164,6 @@ namespace DarkwoodEditor
             {
                 get { return Color.FromArgb(50, 255, 255, 255); }
             }
-        }
-
-        private void testBtn_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

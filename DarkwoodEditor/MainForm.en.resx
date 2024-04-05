@@ -235,18 +235,6 @@
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="testBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 539</value>
-  </data>
-  <data name="testBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 34</value>
-  </data>
-  <data name="testBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="testBtn.Text" xml:space="preserve">
-    <value>Test</value>
-  </data>
   <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
   </data>
