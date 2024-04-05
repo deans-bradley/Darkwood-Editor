@@ -27,8 +27,7 @@ namespace DarkwoodEditor
             if (openFile.CheckFileExists && openFile.FileName != String.Empty)
             {
                 filePath = openFile.FileName;
-                string json = File.ReadAllText(filePath);
-                Root root = JsonConvert.DeserializeObject<Root>(json);
+                Root root = DeserializeJson();
 
                 mainController.LoadRootData(root);
             }
@@ -51,6 +50,12 @@ namespace DarkwoodEditor
         private void exitMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public Root DeserializeJson()
+        {
+            string json = File.ReadAllText(filePath);
+            return JsonConvert.DeserializeObject<Root>(json);
         }
 
         public void AddToLabels(Root rootData)
@@ -83,6 +88,24 @@ namespace DarkwoodEditor
 
                 flowLayoutPanel1.Controls.Add(dwText);
             }
+        }
+
+        public void GetFromFlowLayout()
+        {
+            List<string> rootValues = new List<string>();
+
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                if (control is DwTextUserControl dwText)
+                {
+                    rootValues.Add(dwText.Value);
+                }
+                else if (control is DwCheckUserControl dwCheck)
+                {
+                    rootValues.Add(dwCheck.Value.ToString());
+                }
+            }
+            mainController.UpdateRoot(rootValues);
         }
 
         public void ClearData()

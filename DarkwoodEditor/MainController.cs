@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace DarkwoodEditor
+﻿namespace DarkwoodEditor
 {
     public class MainController
     {
@@ -12,9 +10,24 @@ namespace DarkwoodEditor
             this.mainForm = mainForm;
         }
 
-        public void UpdateRoot(Root root)
+        public void UpdateRoot(List<string> rootValues)
         {
-            rootData = root;
+            rootData = mainForm.DeserializeJson();
+
+            rootData.pS.health = Double.Parse(rootValues[0]);
+            rootData.pS.stamina = Double.Parse(rootValues[1]);
+            rootData.pS.experience = Int32.Parse(rootValues[2]);
+            rootData.pS.currentLevel = Int32.Parse(rootValues[3]);
+            rootData.pS.healthUpgrades = Int32.Parse(rootValues[4]);
+            rootData.pS.staminaUpgrades = Int32.Parse(rootValues[5]);
+            rootData.pS.hotbarUpgrades = Int32.Parse(rootValues[6]);
+            rootData.pS.inventoryUpgrades = Int32.Parse(rootValues[7]);
+            rootData.pS.lastTimeAte = Int32.Parse(rootValues[8]);
+            rootData.pS.saturation = Double.Parse(rootValues[9]);
+            rootData.pS.fedToday = bool.Parse(rootValues[10]);
+            rootData.pS.lifes = Int32.Parse(rootValues[11]);
+            rootData.pS.gotHitAtLeastOnce = bool.Parse(rootValues[12]);
+            rootData.pS.diedAtLeastOnce = bool.Parse(rootValues[13]);
         }
 
         public void LoadRootData(Root root)
@@ -43,11 +56,6 @@ namespace DarkwoodEditor
             mainForm.AddToFlowLayout("Lifes", rootData.pS.lifes.ToString());
             mainForm.AddToFlowLayout("Got hit atleast once", rootData.pS.gotHitAtLeastOnce.ToString());
             mainForm.AddToFlowLayout("Died atleast once", rootData.pS.diedAtLeastOnce.ToString());
-        }
-
-        public void GetViewData()
-        {
-
         }
     }
 }
