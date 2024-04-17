@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WUwlfA32lxfbJse9WyrWBcCgAlRGVc7iKpyCqKnQqpBuzPq3UYZrsZZ9x2yTmu3wcIClsO0K6OJcdiKTCLnOeQ==",
+  "dgSpecHash": "6mgXYYC5+/fTMa8tHeZxHegmZdbutW0x4pzce544OS3zIVS60ZYu28DRdF7lmAJTvMULIIRFmS5m6S0sHST3Kw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\BradleyDeans\\source\\repos\\Darkwood-Editor\\DarkwoodEditorWPF\\DarkwoodEditorWPF.csproj",
+  "projectFilePath": "C:\\Users\\bradd\\source\\repos\\DarkwoodEditor\\DarkwoodEditorWPF\\DarkwoodEditorWPF.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\BradleyDeans\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\bradd\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

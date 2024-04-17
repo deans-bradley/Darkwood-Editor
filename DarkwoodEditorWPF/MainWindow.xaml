@@ -6,6 +6,16 @@
         xmlns:local="clr-namespace:DarkwoodEditorWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -15,27 +25,33 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <Menu Background="#FF363636">
+
             <MenuItem Header="File" 
-                      Width="40" 
-                      Height="20"
-                      Foreground="#FFD7D7D7">
+                      Width="42" 
+                      Height="20">
                 <MenuItem Header="Open File"/>
                 <MenuItem Header="Save"/>
                 <MenuItem Header="Close"/>
             </MenuItem>
-            
+
             <MenuItem Header="Tools" 
-                      Width="40" 
-                      Height="20" 
-                      Foreground="#FFD7D7D7"/>
-            
+                      Width="42" 
+                      Height="20">
+            <MenuItem Header="Player"/>
+                <MenuItem Header="World"/>
+                <MenuItem Header="Story"/>
+                <MenuItem Header="Time and Weather"/>
+            </MenuItem>
+
             <MenuItem Header="Help" 
-                      Width="40" 
-                      Height="20"
-                      Foreground="#FFD7D7D7"/>
+                      Width="42" 
+                      Height="20">
+                <MenuItem Header="About"/>
+                <MenuItem Header="How to"/>
+                <MenuItem Header="License"/>
+            </MenuItem>
         </Menu>
-        
     </Grid>
 </Window>

@@ -39,7 +39,7 @@ namespace DarkwoodEditorWPF
 
         public Root DeserializeJson()
         {
-            string json = File.ReadAllText(filePath);
+            string? json = File.ReadAllText(filePath);
             return JsonConvert.DeserializeObject<Root>(json);
         }
     }
