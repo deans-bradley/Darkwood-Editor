@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DarkwoodEditorWPF"
         mc:Ignorable="d"
-        Title="Darkwood Editor" Height="450" Width="800" Background="#FF3C3C3C" Foreground="#FFCCCCCC">
+        Title="Darkwood Editor" Height="450" Width="800" Background="#FF3C3C3C" Foreground="#FFCCCCCC" Icon="/icon.png">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -21,7 +21,8 @@
             <ImageBrush ImageSource="/mainFormBg.png"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="309*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -29,11 +30,11 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Menu>
+        <Menu Grid.ColumnSpan="2">
             <MenuItem Header="File" 
                       Width="42" 
                       Height="20">
-                <MenuItem Header="Open File"/>
+                <MenuItem Header="Open File" Click="MenuItem_Click"/>
                 <MenuItem Header="Save"/>
                 <MenuItem Header="Close"/>
             </MenuItem>
@@ -41,7 +42,7 @@
             <MenuItem Header="Tools" 
                       Width="42" 
                       Height="20">
-            <MenuItem Header="Player"/>
+                <MenuItem Header="Player"/>
                 <MenuItem Header="World"/>
                 <MenuItem Header="Story"/>
                 <MenuItem Header="Time and Weather"/>
@@ -56,50 +57,51 @@
             </MenuItem>
         </Menu>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="279.808"/>
+                <ColumnDefinition Width="20.192"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel>
+            <StackPanel Grid.ColumnSpan="2">
                 <Label x:Name="majVerLbl"
-                   Content="Major version: " 
+                   Content="{Binding MajorVersion}" 
                    FontSize="11" 
                    FontWeight="Bold" 
                    Foreground="White"  
                    Margin="10,5,0,0"/>
-                
+
                 <Label x:Name="minVerLbl"
-                   Content="Minor version: " 
+                   Content="{Binding MinorVersion}" 
                    FontSize="11" 
                    FontWeight="Bold" 
                    Foreground="White"  
                    Margin="10,0,0,0"/>
 
                 <Label x:Name="majVerComLbl"
-                   Content="Major version compatibility: " 
+                   Content="{Binding MajorVersionCompatibility}" 
                    FontSize="11" 
                    FontWeight="Bold" 
                    Foreground="White"  
                    Margin="10,0,0,0"/>
 
                 <Label x:Name="minVerComLbl"
-                   Content="Minor version compatibility: " 
+                   Content="{Binding MinorVersionCompatibility}" 
                    FontSize="11" 
                    FontWeight="Bold" 
                    Foreground="White"  
                    Margin="10,0,0,0"/>
 
                 <Label x:Name="rvVerLbl"
-                   Content="RC version: " 
+                   Content="{Binding RCVersion}" 
                    FontSize="11" 
                    FontWeight="Bold" 
                    Foreground="White"  
                    Margin="10,0,0,0"/>
 
                 <Label x:Name="rcVerComLbl"
-                   Content="RC version compatibility: " 
+                   Content="{Binding RCVersionCompatibility}" 
                    FontSize="11" 
                    FontWeight="Bold" 
                    Foreground="White"  

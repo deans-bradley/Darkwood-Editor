@@ -3,6 +3,7 @@ using System.Windows;
 using DarkwoodEditorWPF.Models;
 using Newtonsoft.Json;
 using System.IO;
+using DarkwoodEditorWPF.ViewModels;
 
 namespace DarkwoodEditorWPF
 {
@@ -30,6 +31,8 @@ namespace DarkwoodEditorWPF
             {
                 filePath = openFile.FileName;
                 Root root = DeserializeJson();
+
+                AddData(root);
             }
             else if (openFile.CheckFileExists == false)
             {
@@ -39,8 +42,30 @@ namespace DarkwoodEditorWPF
 
         public Root DeserializeJson()
         {
-            string? json = File.ReadAllText(filePath);
+            string json = File.ReadAllText(filePath);
             return JsonConvert.DeserializeObject<Root>(json);
+        }
+
+        public void AddData(Root root)
+        {
+            RootViewModel rootViewModel = new RootViewModel
+            {
+                MajorVersion = root.majorVersion,
+                MinorVersion = root.minorVersion,
+                MajorVersionCompatibility = root.majorVersionCompatibility,
+                MinorVersionCompatibility = root.minorVersionCompatibility,
+                RCVersion = root.RCVersion,
+                RCVersionCompatibility = root.RCVersionCompatibility
+            };
+
+            // Add more properties here
+
+            DataContext = rootViewModel;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            openFileDialog();
         }
     }
 }

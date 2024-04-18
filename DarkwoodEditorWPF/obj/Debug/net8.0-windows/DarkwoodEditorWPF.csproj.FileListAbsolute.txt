@@ -49,3 +49,5 @@ C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditorWPF\obj\Debug\net8.0-wi
 C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Styles.baml
 C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Dictionary.baml
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Dictionary.baml
+C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\RootItem.g.cs
+C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\RootItem.baml

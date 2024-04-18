@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DarkwoodEditorWPF.Views
+namespace DarkwoodEditorWPF.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for RootItem_.xaml
+    /// Interaction logic for RootItem.xaml
     /// </summary>
-    public partial class RootItem_ : UserControl
+    public partial class RootItem : UserControl
     {
-        public RootItem_()
+        public RootItem()
         {
             InitializeComponent();
         }

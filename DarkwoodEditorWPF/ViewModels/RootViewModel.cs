@@ -18,31 +18,61 @@ namespace DarkwoodEditorWPF.ViewModels
         public int MajorVersion
         {
             get => majorVersion;
+            set
+            {
+                majorVersion = value;
+                OnPropertyChanged("MajorVersion");
+            }
         }
 
         public int MinorVersion
         {
             get => minorVersion;
+            set
+            {
+                minorVersion = value;
+                OnPropertyChanged("MinorVersion");
+            }
         }
 
         public int MajorVersionCompatibility
         {
-            get => majorVersionCompatibility;
+            get => majorVersionCompatibility;  
+            set
+            {
+                majorVersionCompatibility = value;
+                OnPropertyChanged("MajorVersionCompatibility");
+            }
         }
 
         public int MinorVersionCompatibility
         {
             get => minorVersionCompatibility;
+            set
+            {
+                minorVersionCompatibility = value;
+                OnPropertyChanged("MinorVersionCompatibility");
+            }
         }
 
         public int RCVersion
         {
             get => rCVersion;
+            set
+            {
+                rCVersion = value;
+                OnPropertyChanged("RCVersion");
+            }
         }
 
         public int RCVersionCompatibility
         {
             get => rCVersionCompatibility;
+            set
+            {
+                rCVersionCompatibility = value;
+                OnPropertyChanged("RCVersionCompatibility");
+            }
         }
 
         // Add more properties here
