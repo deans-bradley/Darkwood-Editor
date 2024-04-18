@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DarkwoodEditorWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Darkwood Editor" Height="450" Width="800" Background="#FF3C3C3C" Foreground="#FFCCCCCC">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -17,6 +17,9 @@
 
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/mainFormBg.png"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -26,8 +29,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Menu Background="#FF363636">
-
+        <Menu>
             <MenuItem Header="File" 
                       Width="42" 
                       Height="20">
@@ -53,5 +55,56 @@
                 <MenuItem Header="License"/>
             </MenuItem>
         </Menu>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <Label x:Name="majVerLbl"
+                   Content="Major version: " 
+                   FontSize="11" 
+                   FontWeight="Bold" 
+                   Foreground="White"  
+                   Margin="10,5,0,0"/>
+                
+                <Label x:Name="minVerLbl"
+                   Content="Minor version: " 
+                   FontSize="11" 
+                   FontWeight="Bold" 
+                   Foreground="White"  
+                   Margin="10,0,0,0"/>
+
+                <Label x:Name="majVerComLbl"
+                   Content="Major version compatibility: " 
+                   FontSize="11" 
+                   FontWeight="Bold" 
+                   Foreground="White"  
+                   Margin="10,0,0,0"/>
+
+                <Label x:Name="minVerComLbl"
+                   Content="Minor version compatibility: " 
+                   FontSize="11" 
+                   FontWeight="Bold" 
+                   Foreground="White"  
+                   Margin="10,0,0,0"/>
+
+                <Label x:Name="rvVerLbl"
+                   Content="RC version: " 
+                   FontSize="11" 
+                   FontWeight="Bold" 
+                   Foreground="White"  
+                   Margin="10,0,0,0"/>
+
+                <Label x:Name="rcVerComLbl"
+                   Content="RC version compatibility: " 
+                   FontSize="11" 
+                   FontWeight="Bold" 
+                   Foreground="White"  
+                   Margin="10,0,0,0"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
