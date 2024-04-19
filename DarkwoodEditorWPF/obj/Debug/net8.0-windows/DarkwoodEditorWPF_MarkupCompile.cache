@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\App.xaml
-31835718686
+51475014046
 
-71873605131
+9-2062005168
 199-670703713
-BaseDictionary.xaml;MainWindow.xaml;ScrollBarDictionary.xaml;
+BaseDictionary.xaml;MainWindow.xaml;ScrollBarDictionary.xaml;Views\PlayerPage.xaml;Views\StartPage.xaml;
 
 False
 
