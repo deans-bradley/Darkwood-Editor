@@ -32,7 +32,7 @@ namespace DarkwoodEditorWPF
                 filePath = openFile.FileName;
                 Root root = DeserializeJson();
 
-                AddData(root);
+                AddData(root, root.pS);
             }
             else if (openFile.CheckFileExists == false)
             {
@@ -46,21 +46,34 @@ namespace DarkwoodEditorWPF
             return JsonConvert.DeserializeObject<Root>(json);
         }
 
-        public void AddData(Root root)
+        public void AddData(Root root, PS ps)
         {
-            RootViewModel rootViewModel = new RootViewModel
+            PsViewModel psViewModel = new PsViewModel
             {
                 MajorVersion = root.majorVersion,
                 MinorVersion = root.minorVersion,
                 MajorVersionCompatibility = root.majorVersionCompatibility,
                 MinorVersionCompatibility = root.minorVersionCompatibility,
                 RCVersion = root.RCVersion,
-                RCVersionCompatibility = root.RCVersionCompatibility
+                RCVersionCompatibility = root.RCVersionCompatibility,
+                Health = ps.health,
+                Stamina = ps.stamina,
+                Experience = ps.experience,
+                CurrentLevel = ps.currentLevel,
+                HealthUpgrades = ps.healthUpgrades,
+                StaminaUpgrades = ps.staminaUpgrades,
+                HotbarUpgrades = ps.hotbarUpgrades,
+                InventoryUpgrades = ps.inventoryUpgrades,
+                LastTimeAte = ps.lastTimeAte,
+                Saturation = ps.saturation,
+                FedToday = ps.fedToday,
+                ExpMachineId = ps.expMachineId,
+                ExaminedExpMachine = ps.examinedExpMachine,
+                GotHitAtLeastOnce = ps.gotHitAtLeastOnce,
+                DiedAtLeastOnce = ps.diedAtLeastOnce
             };
 
-            // Add more properties here
-
-            DataContext = rootViewModel;
+            DataContext = psViewModel;
         }
 
         private void MenuItem_Click(object sender, RoutedEventArgs e)

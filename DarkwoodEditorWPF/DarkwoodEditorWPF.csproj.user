@@ -7,18 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\UserControls\RootItem.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Dictionary.xaml">
+    <Page Update="BaseDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\UserControls\RootItem.xaml">
+    <Page Update="ScrollBarDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

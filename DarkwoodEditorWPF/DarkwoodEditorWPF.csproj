@@ -22,4 +22,7 @@
     <Resource Include="mainFormBg.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
 </Project>
