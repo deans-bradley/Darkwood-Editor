@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DarkwoodEditorWPF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+871d66456b65489db38e556d7ef7294edaf7ebcd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3f0db67d7d9689623e8981981ffe214ab423ae3a")]
 [assembly: System.Reflection.AssemblyProductAttribute("DarkwoodEditorWPF")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DarkwoodEditorWPF")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DarkwoodEditorWPF.Models;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DarkwoodEditorWPF.ViewModels
 {
@@ -11,6 +7,7 @@ namespace DarkwoodEditorWPF.ViewModels
     {
         private string filePath;
 
+        private SaveMS _saveMS;
         private RootViewModel _rootViewModel;
         private PsViewModel _psViewModel;
 
@@ -27,6 +24,16 @@ namespace DarkwoodEditorWPF.ViewModels
             {
                 filePath = value;
                 OnPropertyChanged("FilePath");
+            }
+        }
+
+        public SaveMS SaveMS
+        {
+            get => _saveMS;
+            set
+            {
+                _saveMS = value;
+                OnPropertyChanged("SaveMS");
             }
         }
 

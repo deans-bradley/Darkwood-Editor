@@ -12,13 +12,13 @@
         public PS pS { get; set; }
         public IS iS { get; set; }
         public HS hS { get; set; }
-        public CnS cnS { get; set; }
-        public DrS drS { get; set; }
+        public CnS cnS { get; set; } 
+        public DrS drS { get; set; } 
         public OutS outS { get; set; }
         public RaS raS { get; set; }
         public FlaS flaS { get; set; }
-        public JoS joS { get; set; }
-        public NumS numS { get; set; }
+        public JoS joS { get; set; } 
+        public NumS numS { get; set; } 
         public EvS evS { get; set; }
         public ChspS chspS { get; set; }
         public WorldGenS worldGenS { get; set; }

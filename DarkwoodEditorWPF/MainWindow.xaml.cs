@@ -49,7 +49,7 @@ namespace DarkwoodEditorWPF
 
         public void AddData(string filePath, Root root)
         {
-            RootViewModel rootView = new RootViewModel
+            RootViewModel rootVM = new RootViewModel
             {
                 MajorVersion = root.majorVersion,
                 MinorVersion = root.minorVersion,
@@ -60,7 +60,7 @@ namespace DarkwoodEditorWPF
             };
 
             PS ps = root.pS;
-            PsViewModel psView = new PsViewModel
+            PsViewModel psVM = new PsViewModel
             {
                 Health = ps.health,
                 Stamina = ps.stamina,
@@ -82,10 +82,12 @@ namespace DarkwoodEditorWPF
             MainViewModel mainViewModel = new MainViewModel
             {
                 FilePath = filePath,
-                PsViewModel = psView
+                SaveMS = root.saveMS,
+                RootViewModel = rootVM,
+                PsViewModel = psVM
             };
 
-            rootUserControl.DataContext = rootView;
+            rootUserControl.DataContext = rootVM;
             DataContext = mainViewModel;
         }
 
