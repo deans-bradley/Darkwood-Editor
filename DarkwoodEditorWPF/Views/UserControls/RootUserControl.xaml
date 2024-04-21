@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="DarkwoodEditorWPF.Views.UserControls.RootUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,5,0,0">
+                <Label Content="Major version: " 
+                           FontSize="11" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+                <Label x:Name="majVerLbl"
+                           Content="{Binding MajorVersion}" 
+                           FontSize="11" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                <Label Content="Minor version: " 
+                           FontSize="11" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+                <Label x:Name="minVerLbl"
+                           Content="{Binding MinorVersion}" 
+                           FontSize="11" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                <Label Content="Major version compatibility: " 
+                           FontSize="11" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+                <Label x:Name="majVerComLbl"
+                           Content="{Binding MajorVersionCompatibility}" 
+                           FontSize="11" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,5,0,0">
+                <Label Content="Minor version compatibility: " 
+                       FontSize="11" 
+                       FontWeight="Bold" 
+                       Foreground="White"/>
+                <Label x:Name="minVerComLbl"
+                       Content="{Binding MinorVersionCompatibility}" 
+                       FontSize="11" 
+                       FontWeight="Bold" 
+                       Foreground="White"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                <Label Content="RC version: " 
+                       FontSize="11" 
+                       FontWeight="Bold" 
+                       Foreground="White"/>
+                <Label x:Name="rvVerLbl"
+                       Content="{Binding RCVersion}" 
+                       FontSize="11" 
+                       FontWeight="Bold" 
+                       Foreground="White"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                <Label Content="RC version compatibility: " 
+                       FontSize="11" 
+                       FontWeight="Bold" 
+                       Foreground="White"/>
+                <Label x:Name="rcVerComLbl"
+                       Content="{Binding RCVersionCompatibility}" 
+                       FontSize="11" 
+                       FontWeight="Bold" 
+                       Foreground="White"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

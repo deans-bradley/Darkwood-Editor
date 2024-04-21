@@ -13,6 +13,9 @@
     <Compile Update="Views\StartPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControls\RootUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="BaseDictionary.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\StartPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\RootUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

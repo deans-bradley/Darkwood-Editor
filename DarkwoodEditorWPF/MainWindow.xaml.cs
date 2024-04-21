@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using System.IO;
 using DarkwoodEditorWPF.ViewModels;
 using System.Windows.Input;
+using DarkwoodEditorWPF.Views;
 
 namespace DarkwoodEditorWPF
 {
@@ -13,8 +14,6 @@ namespace DarkwoodEditorWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        string? filePath;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -30,11 +29,11 @@ namespace DarkwoodEditorWPF
 
             if (openFile.CheckFileExists && openFile.FileName != String.Empty)
             {
-                filePath = openFile.FileName;
-                Root root = DeserializeJson();
+                string filePath = openFile.FileName;
+                Root root = DeserializeJson(filePath);
 
                 MainContent.Navigate(new Uri("Views/StartPage.xaml", UriKind.Relative));
-                AddData(root, root.pS);
+                AddData(filePath, root);
             }
             else if (openFile.CheckFileExists == false)
             {
@@ -42,22 +41,27 @@ namespace DarkwoodEditorWPF
             }
         }
 
-        public Root DeserializeJson()
+        public Root DeserializeJson(string filePath)
         {
             string json = File.ReadAllText(filePath);
             return JsonConvert.DeserializeObject<Root>(json);
         }
 
-        public void AddData(Root root, PS ps)
+        public void AddData(string filePath, Root root)
         {
-            PsViewModel psViewModel = new PsViewModel
+            RootViewModel rootView = new RootViewModel
             {
                 MajorVersion = root.majorVersion,
                 MinorVersion = root.minorVersion,
                 MajorVersionCompatibility = root.majorVersionCompatibility,
                 MinorVersionCompatibility = root.minorVersionCompatibility,
                 RCVersion = root.RCVersion,
-                RCVersionCompatibility = root.RCVersionCompatibility,
+                RCVersionCompatibility = root.RCVersionCompatibility
+            };
+
+            PS ps = root.pS;
+            PsViewModel psView = new PsViewModel
+            {
                 Health = ps.health,
                 Stamina = ps.stamina,
                 Experience = ps.experience,
@@ -75,7 +79,14 @@ namespace DarkwoodEditorWPF
                 DiedAtLeastOnce = ps.diedAtLeastOnce
             };
 
-            DataContext = psViewModel;
+            MainViewModel mainViewModel = new MainViewModel
+            {
+                FilePath = filePath,
+                PsViewModel = psView
+            };
+
+            rootUserControl.DataContext = rootView;
+            DataContext = mainViewModel;
         }
 
         //
@@ -88,7 +99,21 @@ namespace DarkwoodEditorWPF
 
         private void SaveCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            MessageBox.Show("Save");
+            MainViewModel mainViewModel = (MainViewModel)DataContext;
+
+            SaveFileDialog saveFile = new SaveFileDialog();
+
+            if (mainViewModel is null)
+            {
+                MessageBox.Show("No file open.");
+            }
+            else
+            {
+                saveFile.InitialDirectory = mainViewModel.FilePath;
+                saveFile.Filter = "DAT Files (*.dat)|*.dat|All Files (*.*)|*.*";
+
+                saveFile.ShowDialog();
+            }
         }
 
         private void CloseCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -111,6 +136,9 @@ namespace DarkwoodEditorWPF
 
         private void playerStatsMenuItem_Click(object sender, RoutedEventArgs e)
         {
+            var startPage = new StartPage();
+            startPage.DataContext = DataContext;
+
             MainContent.Navigate(new Uri("Views/StartPage.xaml", UriKind.Relative));
         }
 

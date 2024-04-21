@@ -1,23 +1,11 @@
 ﻿using DarkwoodEditorWPF.Models;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DarkwoodEditorWPF.ViewModels
 {
     public class PsViewModel : INotifyPropertyChanged
     {
         public PsViewModel() { }
-
-        private int majorVersion;
-        private int minorVersion;
-        private int majorVersionCompatibility;
-        private int minorVersionCompatibility;
-        private int rCVersion;
-        private int rCVersionCompatibility;
 
         private List<double> position = new List<double>();
         private List<double> rotation = new List<double>();
@@ -41,66 +29,6 @@ namespace DarkwoodEditorWPF.ViewModels
         private bool examinedExpMachine;
         private bool gotHitAtLeastOnce;
         private bool diedAtLeastOnce;
-
-        public int MajorVersion
-        {
-            get => majorVersion;
-            set
-            {
-                majorVersion = value;
-                OnPropertyChanged("MajorVersion");
-            }
-        }
-
-        public int MinorVersion
-        {
-            get => minorVersion;
-            set
-            {
-                minorVersion = value;
-                OnPropertyChanged("MinorVersion");
-            }
-        }
-
-        public int MajorVersionCompatibility
-        {
-            get => majorVersionCompatibility;
-            set
-            {
-                majorVersionCompatibility = value;
-                OnPropertyChanged("MajorVersionCompatibility");
-            }
-        }
-
-        public int MinorVersionCompatibility
-        {
-            get => minorVersionCompatibility;
-            set
-            {
-                minorVersionCompatibility = value;
-                OnPropertyChanged("MinorVersionCompatibility");
-            }
-        }
-
-        public int RCVersion
-        {
-            get => rCVersion;
-            set
-            {
-                rCVersion = value;
-                OnPropertyChanged("RCVersion");
-            }
-        }
-
-        public int RCVersionCompatibility
-        {
-            get => rCVersionCompatibility;
-            set
-            {
-                rCVersionCompatibility = value;
-                OnPropertyChanged("RCVersionCompatibility");
-            }
-        }
 
         public List<double> Position
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DarkwoodEditorWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace DarkwoodEditorWPF.Views
         public StartPage()
         {
             InitializeComponent();
+
+            DataContext = (Application.Current.MainWindow.DataContext as MainViewModel)?.PsViewModel;
         }
     }
 }
