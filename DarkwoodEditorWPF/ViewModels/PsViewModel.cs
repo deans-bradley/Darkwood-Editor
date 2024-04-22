@@ -19,7 +19,7 @@ namespace DarkwoodEditorWPF.ViewModels
         private double saturation;
         private bool fedToday;
         private int lifes;
-        private List<object> recipes = new List<object>();
+        private List<string> recipes = new List<string>();
         private List<object> craftedItems = new List<object>();
         private ChEffS? chEffS;
         private SkillS? skillS;
@@ -168,7 +168,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object> Recipes
+        public List<string> Recipes
         {
             get => recipes;
             set

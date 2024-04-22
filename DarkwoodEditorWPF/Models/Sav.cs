@@ -42,7 +42,7 @@
         public double saturation { get; set; }
         public bool fedToday { get; set; }
         public int lifes { get; set; }
-        public List<object>? recipes { get; set; }
+        public List<string>? recipes { get; set; }
         public List<object>? craftedItems { get; set; }
         public ChEffS? chEffS { get; set; }
         public SkillS? skillS { get; set; }

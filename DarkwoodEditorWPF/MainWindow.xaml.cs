@@ -87,6 +87,7 @@ namespace DarkwoodEditorWPF
                 Saturation = ps.saturation,
                 FedToday = ps.fedToday,
                 Lifes = ps.lifes,
+                Recipes = ps.recipes ?? throw new NullReferenceException(),
                 GotHitAtLeastOnce = ps.gotHitAtLeastOnce,
                 DiedAtLeastOnce = ps.diedAtLeastOnce
             };
@@ -94,6 +95,7 @@ namespace DarkwoodEditorWPF
             MainViewModel mainViewModel = new MainViewModel
             {
                 FilePath = filePath,
+                Root = root,
                 SaveMS = root.saveMS,
                 RootViewModel = rootVM,
                 PsViewModel = psVM
@@ -171,6 +173,22 @@ namespace DarkwoodEditorWPF
         private void timeAndWeatherMenuItem_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void testBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string recipes = "";
+
+            MainViewModel mainViewModel = (MainViewModel)DataContext;
+
+            PsViewModel? psViewModel = mainViewModel.PsViewModel ?? throw new NullReferenceException();
+
+            foreach (string item in psViewModel.Recipes)
+            {
+                recipes += item + "\n";
+            }
+
+            MessageBox.Show(recipes);
         }
         //
         // Help Menu Items

@@ -57,3 +57,5 @@ C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\n
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\RootUserControl.g.cs
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\RootUserControl.baml
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\EditRecipesPage.g.cs
+C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\EditRecipesPage.baml

@@ -180,7 +180,7 @@
                            Foreground="White" 
                            HorizontalAlignment="Center" 
                            VerticalAlignment="Center"
-                           Margin="20,0,0,0"/>
+                           Margin="21,0,0,0"/>
 
                         <TextBox x:Name="inventoryUpgradesTxtBox" 
                                  Text="{Binding InventoryUpgrades}"
@@ -283,15 +283,13 @@
                                VerticalAlignment="Center"
                                Margin="20,0,0,0"/>
 
-                        <TextBox x:Name="recipesTxtBox" 
-                                 Text="{Binding Recipes}"
-                                 Width="200"
-                                 FontSize="11" 
-                                 FontWeight="Bold" 
-                                 Foreground="White" 
-                                 HorizontalAlignment="Right" 
-                                 VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
+                        <Button x:Name="recipesBtn"
+                                Width="50" 
+                                Content="Edit" 
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center" 
+                                Margin="0,0,20,0" 
+                                Click="recipesBtn_Click"/>
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Margin="0,5,0,5">

@@ -254,6 +254,12 @@
                 <Setter Property="BorderBrush" Value="#FFDFDFDF"/>
             </Trigger>
         </Style.Triggers>
-
+    </Style>
+    
+    <!-- Button Style -->
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="#FF585858"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="#FF585858"/>
     </Style>
 </ResourceDictionary>
