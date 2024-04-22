@@ -30,10 +30,14 @@ namespace DarkwoodEditorWPF
             if (openFile.CheckFileExists && openFile.FileName != String.Empty)
             {
                 string filePath = openFile.FileName;
-                Root root = DeserializeJson(filePath);
 
-                MainContent.Navigate(new Uri("Views/StartPage.xaml", UriKind.Relative));
-                AddData(filePath, root);
+                if (DeserializeJson(filePath) != null)
+                {
+                    Root root = DeserializeJson(filePath) ?? throw new Exception("Error deserializing JSON.");
+
+                    MainContent.Navigate(new Uri("Views/StartPage.xaml", UriKind.Relative));
+                    AddData(filePath, root);
+                }
             }
             else if (openFile.CheckFileExists == false)
             {
@@ -41,10 +45,19 @@ namespace DarkwoodEditorWPF
             }
         }
 
-        public Root DeserializeJson(string filePath)
+        public Root? DeserializeJson(string filePath)
         {
             string json = File.ReadAllText(filePath);
-            return JsonConvert.DeserializeObject<Root>(json);
+
+            if (JsonConvert.DeserializeObject<Root>(json) is not null)
+            {
+                return JsonConvert.DeserializeObject<Root>(json);
+            }
+            else
+            {
+                MessageBox.Show("Error deserializing JSON.");
+                return null;
+            }
         }
 
         public void AddData(string filePath, Root root)
@@ -59,7 +72,7 @@ namespace DarkwoodEditorWPF
                 RCVersionCompatibility = root.RCVersionCompatibility
             };
 
-            PS ps = root.pS;
+            PS ps = root.pS ?? throw new NullReferenceException();
             PsViewModel psVM = new PsViewModel
             {
                 Health = ps.health,
@@ -73,8 +86,7 @@ namespace DarkwoodEditorWPF
                 LastTimeAte = ps.lastTimeAte,
                 Saturation = ps.saturation,
                 FedToday = ps.fedToday,
-                ExpMachineId = ps.expMachineId,
-                ExaminedExpMachine = ps.examinedExpMachine,
+                Lifes = ps.lifes,
                 GotHitAtLeastOnce = ps.gotHitAtLeastOnce,
                 DiedAtLeastOnce = ps.diedAtLeastOnce
             };
@@ -90,7 +102,6 @@ namespace DarkwoodEditorWPF
             rootUserControl.DataContext = rootVM;
             DataContext = mainViewModel;
         }
-
         //
         // File Menu Items
         //
@@ -131,11 +142,9 @@ namespace DarkwoodEditorWPF
         {
 
         }
-
         //
         // Edit Menu Items
         //
-
         private void playerStatsMenuItem_Click(object sender, RoutedEventArgs e)
         {
             var startPage = new StartPage();
@@ -163,7 +172,6 @@ namespace DarkwoodEditorWPF
         {
 
         }
-
         //
         // Help Menu Items
         //

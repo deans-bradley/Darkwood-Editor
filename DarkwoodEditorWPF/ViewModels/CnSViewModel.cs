@@ -8,7 +8,7 @@ namespace DarkwoodEditorWPF.ViewModels
         private int day;
         private double gameTime;
         private int workbenchLevel;
-        private bool isAfrerDeath;
+        private bool isAfterDeath;
         private bool gaveAfterNightRewards;
 
         public int CurrentTime
@@ -53,10 +53,10 @@ namespace DarkwoodEditorWPF.ViewModels
 
         public bool IsAfterDeath
         {
-            get => isAfrerDeath;
+            get => isAfterDeath;
             set
             {
-                isAfrerDeath = value;
+                isAfterDeath = value;
                 OnPropertyChanged("IsAfterDeath");
             }
         }

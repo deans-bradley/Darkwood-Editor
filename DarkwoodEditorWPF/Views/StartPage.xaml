@@ -274,6 +274,27 @@
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Margin="0,5,0,5">
+                        <Label x:Name="recipesLbl" 
+                               Content="Recipes" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+
+                        <TextBox x:Name="recipesTxtBox" 
+                                 Text="{Binding Recipes}"
+                                 Width="200"
+                                 FontSize="11" 
+                                 FontWeight="Bold" 
+                                 Foreground="White" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,20,0"/>
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
                         <Label x:Name="gotHitAtLeastOnceLbl" 
                                Content="Got hit at least once" 
                                FontSize="11" 

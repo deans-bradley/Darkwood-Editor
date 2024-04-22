@@ -5,11 +5,12 @@ namespace DarkwoodEditorWPF.ViewModels
 {
     public class MainViewModel : INotifyPropertyChanged
     {
-        private string filePath;
+        private string? filePath;
 
-        private SaveMS _saveMS;
-        private RootViewModel _rootViewModel;
-        private PsViewModel _psViewModel;
+        private Root? _root;
+        private SaveMS? _saveMS;
+        private RootViewModel? _rootViewModel;
+        private PsViewModel? _psViewModel;
 
         public MainViewModel()
         {
@@ -17,7 +18,7 @@ namespace DarkwoodEditorWPF.ViewModels
             _psViewModel = new PsViewModel();
         }
 
-        public string FilePath
+        public string? FilePath
         {
             get => filePath;
             set
@@ -27,7 +28,17 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public SaveMS SaveMS
+        public Root? Root
+        {
+            get => _root;
+            set
+            {
+                _root = value;
+                OnPropertyChanged("Root");
+            }
+        }
+
+        public SaveMS? SaveMS
         {
             get => _saveMS;
             set
@@ -37,7 +48,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public RootViewModel RootViewModel
+        public RootViewModel? RootViewModel
         {
             get => _rootViewModel;
             set
@@ -47,7 +58,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public PsViewModel PsViewModel
+        public PsViewModel? PsViewModel
         {
             get => _psViewModel;
             set

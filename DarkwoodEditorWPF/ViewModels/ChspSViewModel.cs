@@ -9,7 +9,7 @@ namespace DarkwoodEditorWPF.ViewModels
         private int holderID;
         private int charactersEscapedFromLocationHolderID;
 
-        public List<object> SpawnedCharacterIDs
+        public List<object>? SpawnedCharacterIDs
         {
             get => spawnedCharacterIDs;
             set
@@ -19,7 +19,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object> NocturnalCharsIDs
+        public List<object>? NocturnalCharsIDs
         {
             get => nocturnalCharsIDs;
             set

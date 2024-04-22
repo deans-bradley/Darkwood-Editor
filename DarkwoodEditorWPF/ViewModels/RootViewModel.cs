@@ -71,9 +71,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public RootViewModel() { }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public void OnPropertyChanged(string propertyName)
         {

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using DarkwoodEditorWPF.Models;
+using System.ComponentModel;
 
 namespace DarkwoodEditorWPF.ViewModels
 {
@@ -9,7 +10,7 @@ namespace DarkwoodEditorWPF.ViewModels
         private List<int>? worldEventsIds;
         private List<object>? gameEventsToFireAfterLoad;
 
-        public List<Event> Events
+        public List<Event>? Events
         {
             get => events;
             set
@@ -19,7 +20,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object> ActiveEventCategories
+        public List<object>? ActiveEventCategories
         {
             get => activeEventCategories;
             set
@@ -29,7 +30,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<int> WorldEventsIds
+        public List<int>? WorldEventsIds
         {
             get => worldEventsIds;
             set
@@ -39,7 +40,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object> GameEventsToFireAfterLoad
+        public List<object>? GameEventsToFireAfterLoad
         {
             get => gameEventsToFireAfterLoad;
             set

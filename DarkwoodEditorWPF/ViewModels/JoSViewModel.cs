@@ -12,7 +12,7 @@ namespace DarkwoodEditorWPF.ViewModels
         private List<object>? entriesList;
         private List<object>? locationDirections;
 
-        public List<object> KeysList
+        public List<object>? KeysList
         {
             get => keysList;
             set
@@ -22,7 +22,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object> NotesList
+        public List<object>? NotesList
         {
             get => notesList;
             set
@@ -32,7 +32,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object> ItemsList
+        public List<object>? ItemsList
         {
             get => itemsList;
             set
@@ -42,7 +42,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<LocationsList> LocationsList
+        public List<LocationsList>? LocationsList
         {
             get => locationsList;
             set
@@ -52,7 +52,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object> EntriesList
+        public List<object>? EntriesList
         {
             get => entriesList;
             set
@@ -62,7 +62,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object> LocationDirections
+        public List<object>? LocationDirections
         {
             get => locationDirections;
             set

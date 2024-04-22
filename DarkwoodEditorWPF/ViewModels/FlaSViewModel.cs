@@ -6,10 +6,10 @@ namespace DarkwoodEditorWPF.ViewModels
     public class FlaSViewModel : INotifyPropertyChanged
     {
         private int karmaPoints;
-        private List<Flag> flags;
-        private List<NpcState> npcStates;
-        private List<DialogueState> dialogueStates;
-        private List<object> achievements;
+        private List<Flag>? flags;
+        private List<NpcState>? npcStates;
+        private List<DialogueState>? dialogueStates;
+        private List<object>? achievements;
 
         public int KarmaPoints
         {
@@ -21,7 +21,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<Flag> Flags
+        public List<Flag>? Flags
         {
             get => flags;
             set
@@ -31,7 +31,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<NpcState> NpcStates
+        public List<NpcState>? NpcStates
         {
             get => npcStates;
             set
@@ -41,7 +41,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<DialogueState> DialogueStates
+        public List<DialogueState>? DialogueStates
         {
             get => dialogueStates;
             set
@@ -51,7 +51,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object> Achievements
+        public List<object>? Achievements
         {
             get => achievements;
             set

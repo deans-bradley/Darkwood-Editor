@@ -5,8 +5,6 @@ namespace DarkwoodEditorWPF.ViewModels
 {
     public class PsViewModel : INotifyPropertyChanged
     {
-        public PsViewModel() { }
-
         private List<double> position = new List<double>();
         private List<double> rotation = new List<double>();
         private double health;
@@ -23,8 +21,8 @@ namespace DarkwoodEditorWPF.ViewModels
         private int lifes;
         private List<object> recipes = new List<object>();
         private List<object> craftedItems = new List<object>();
-        private ChEffS chEffS;
-        private SkillS skillS;
+        private ChEffS? chEffS;
+        private SkillS? skillS;
         private int expMachineId;
         private bool examinedExpMachine;
         private bool gotHitAtLeastOnce;
@@ -190,7 +188,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public ChEffS ChEffS
+        public ChEffS? ChEffS
         {
             get => chEffS;
             set
@@ -200,7 +198,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public SkillS SkillS
+        public SkillS? SkillS
         {
             get => skillS;
             set
@@ -250,7 +248,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         private void OnPropertyChanged(string propertyName)
         {

@@ -5,7 +5,7 @@ namespace DarkwoodEditorWPF.ViewModels
     public class HsViewModel : INotifyPropertyChanged
     {
         private int slotCount;
-        private List<object> invItems;
+        private List<object>? invItems;
 
         public int SlotCount
         {
@@ -17,7 +17,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object> InvItems
+        public List<object>? InvItems
         {
             get { return invItems; }
             set
