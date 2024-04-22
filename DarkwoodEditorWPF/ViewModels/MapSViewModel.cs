@@ -1,11 +1,12 @@
-﻿using System.ComponentModel;
+﻿using DarkwoodEditorWPF.Models;
+using System.ComponentModel;
 
 namespace DarkwoodEditorWPF.ViewModels
 {
     public class MapSViewModel : INotifyPropertyChanged
     {
         private object? elementIDs;
-        private List<Type>? types;
+        private List<Models.Type>? types;
 
         public object? ElementIDs
         {
@@ -17,7 +18,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<Type>? Types
+        public List<Models.Type>? Types
         {
             get => types;
             set
