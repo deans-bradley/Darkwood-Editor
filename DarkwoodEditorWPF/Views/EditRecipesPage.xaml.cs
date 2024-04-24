@@ -15,5 +15,12 @@ namespace DarkwoodEditorWPF.Views
 
             DataContext = (Application.Current.MainWindow.DataContext as MainViewModel)?.PsViewModel;
         }
+
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            mainWindow.MainContent.Navigate(new Uri("Views/StartPage.xaml", UriKind.Relative));
+        }
     }
 }

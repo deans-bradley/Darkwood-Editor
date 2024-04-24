@@ -8,6 +8,7 @@ using System.Windows.Input;
 using DarkwoodEditorWPF.Views;
 using DarkwoodEditorWPF.Views.UserControls;
 using System.Diagnostics;
+using System.Collections.ObjectModel;
 
 namespace DarkwoodEditorWPF
 {
@@ -163,6 +164,7 @@ namespace DarkwoodEditorWPF
         //
         // Add Data to ViewModels
         //
+        // TODO: Refactor AddData and SaveData methods to use IConvertCollection methods
         public MainViewModel AddData(string filePath, Root root)
         {
             RootViewModel rootVM = new RootViewModel
@@ -176,6 +178,14 @@ namespace DarkwoodEditorWPF
             };
 
             PS ps = root.pS ?? throw new NullReferenceException();
+
+            ObservableCollection<StringValue> recipes = new ObservableCollection<StringValue>();
+
+            for (int i = 0; i < ps.recipes?.Count; i++)
+            {
+                recipes.Add(new StringValue { Value = ps.recipes[i] }); 
+            }
+
             PsViewModel psVM = new PsViewModel
             {
                 Health = ps.health,
@@ -190,7 +200,7 @@ namespace DarkwoodEditorWPF
                 Saturation = ps.saturation,
                 FedToday = ps.fedToday,
                 Lifes = ps.lifes,
-                Recipes = ps.recipes ?? throw new NullReferenceException(),
+                Recipes = recipes,
                 CraftedItems = ps.craftedItems ?? throw new NullReferenceException(),
                 GotHitAtLeastOnce = ps.gotHitAtLeastOnce,
                 DiedAtLeastOnce = ps.diedAtLeastOnce

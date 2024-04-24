@@ -1,8 +1,10 @@
 ﻿using DarkwoodEditorWPF.Models;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace DarkwoodEditorWPF.ViewModels
 {
+    // TODO: Inherit from IConvertCollection
     public class PsViewModel : INotifyPropertyChanged
     {
         private List<double> position = new List<double>();
@@ -19,7 +21,7 @@ namespace DarkwoodEditorWPF.ViewModels
         private double saturation;
         private bool fedToday;
         private int lifes;
-        private List<string> recipes = new List<string>();
+        private ObservableCollection<StringValue> recipes = new ObservableCollection<StringValue>();
         private List<object> craftedItems = new List<object>();
         private ChEffS? chEffS;
         private SkillS? skillS;
@@ -168,7 +170,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<string> Recipes
+        public ObservableCollection<StringValue> Recipes
         {
             get => recipes;
             set

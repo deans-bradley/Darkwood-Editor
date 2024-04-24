@@ -5,7 +5,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      DataContext="{Binding PsViewModel}"
       Title="EditRecipesPage">
 
     <Page.Resources>
@@ -18,43 +17,64 @@
     </Page.Resources>
 
     <Grid>
-        <Border Grid.Column="1"
-                    Margin="10"
-                    Padding="10" 
-                    Background="#2d2d30" CornerRadius="5,5,5,5">
-            <ScrollViewer>
-                <StackPanel Orientation="Vertical">
-                    <ItemsControl ItemsSource="{Binding Recipes}">
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Vertical" Margin="0,5,0,5">
-                                    <TextBox Text="{Binding Path=.}" 
-                                         Width="200"
-                                         FontSize="11" 
-                                         FontWeight="Bold" 
-                                         Foreground="White" 
-                                         HorizontalAlignment="Left" 
-                                         VerticalAlignment="Center"
-                                         Margin="20,0,0,0"/>
-                                    <Rectangle Fill="Black" Height="0.5" Margin="0,5,0,0" Opacity="0.3" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                    <StackPanel Orientation="Horizontal">
-                        <Button x:Name="addBtn" 
+        <Border Grid.Row="1"
+                Margin="10" 
+                Background="#2d2d30" 
+                CornerRadius="5,5,5,5">
+            
+            <StackPanel Orientation="Vertical">
+                
+                <Button x:Name="backBtn" 
+                        Width="24" 
+                        HorizontalAlignment="Left"
+                        Margin="4,4,0,24" 
+                        Click="backBtn_Click" 
+                        Background="{x:Null}" 
+                        BorderBrush="{x:Null}" 
+                        Padding="0,0,0,0">
+                    <Button.Content>
+                        <Image Source="/Views/arrow_back_WHT_wght400.png" 
+                               Stretch="Fill" 
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               Width="24"
+                               Height="24"/>
+                    </Button.Content>
+                </Button>
+
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical">
+                        <ItemsControl ItemsSource="{Binding Recipes}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Vertical" Margin="0,5,0,5">
+                                        <TextBox Text="{Binding Path=., Mode=TwoWay}" 
+                                                 Width="310"
+                                                 FontSize="11" 
+                                                 FontWeight="Bold" 
+                                                 Foreground="White" 
+                                                 HorizontalAlignment="Left" 
+                                                 VerticalAlignment="Center"
+                                                 Margin="20,0,0,0"/>
+                                        <Rectangle Fill="Black" Height="0.5" Margin="0,5,0,0" Opacity="0.3" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="addBtn" 
                             Content="Add Recipe" 
                             FontSize="11"
                             Width="100" 
                             HorizontalAlignment="Left"
                             Margin="20,0,0,0"/>
-                        <ComboBox x:Name="recipeComBox"
-                                  ItemsSource="{Binding Recipes}"
+                            <ComboBox x:Name="recipeComBox"
                                   Width="200"
                                   Margin="10,0,0,0"/>
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-            </ScrollViewer>
+                </ScrollViewer>
+            </StackPanel>
         </Border>
     </Grid>
 </Page>

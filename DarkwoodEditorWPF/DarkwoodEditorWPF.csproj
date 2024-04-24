@@ -11,6 +11,9 @@
   <ItemGroup>
     <None Remove="icon.png" />
     <None Remove="mainFormBg.png" />
+    <None Remove="Views\arrow_back_FILL0_wght400.png" />
+    <None Remove="Views\arrow_back_WHT_wght200.png" />
+    <None Remove="Views\arrow_back_WHT_wght400.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,5 +23,8 @@
   <ItemGroup>
     <Resource Include="icon.png" />
     <Resource Include="mainFormBg.png" />
+    <Resource Include="Views\arrow_back_FILL0_wght400.png" />
+    <Resource Include="Views\arrow_back_WHT_wght200.png" />
+    <Resource Include="Views\arrow_back_WHT_wght400.png" />
   </ItemGroup>
 </Project>
