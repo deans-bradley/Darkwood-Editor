@@ -1,11 +1,11 @@
-﻿using DarkwoodEditorWPF.Models;
+﻿using DarkwoodEditorWPF.Helpers;
+using DarkwoodEditorWPF.Models;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace DarkwoodEditorWPF.ViewModels
 {
-    // TODO: Inherit from IConvertCollection
-    public class PsViewModel : INotifyPropertyChanged
+    public class PsViewModel : ConvertCollections, INotifyPropertyChanged
     {
         private List<double> position = new List<double>();
         private List<double> rotation = new List<double>();

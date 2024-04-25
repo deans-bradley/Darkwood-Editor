@@ -6,7 +6,16 @@
         xmlns:local="clr-namespace:DarkwoodEditorWPF"
         xmlns:controls="clr-namespace:DarkwoodEditorWPF.Views.UserControls"
         mc:Ignorable="d"
-        Title="Darkwood Editor" Height="450" Width="800" Background="#FF3C3C3C" Foreground="#FFCCCCCC" Icon="/icon.png">
+        Title="Darkwood Editor" 
+        Height="500" 
+        Width="850" 
+        Background="#FF3C3C3C" 
+        Foreground="#FFCCCCCC" 
+        Icon="/icon.png" 
+        BorderBrush="#000000" 
+        WindowStyle="None" 
+        ResizeMode="NoResize" 
+        BorderThickness="1,1,1,1">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -44,49 +53,85 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Menu Grid.ColumnSpan="2">
-            <MenuItem Header="File" 
-                      Width="42" 
-                      Height="20">
-                <MenuItem x:Name="openFileMenuItem" Header="Open File" Command="Open" InputGestureText="Ctrl+O"/>
-                <MenuItem x:Name="saveMenuItem" Header="Save" Command="Save" InputGestureText="Ctrl+S"/>
-                <MenuItem x:Name="closeFileMenuItem" Header="Close File" Command="Close" InputGestureText="Ctrl+W"/>
-                <Separator Opacity="0.3"/>
-                <MenuItem x:Name="exitMenuItem" Header="Exit" InputGestureText="Alt+F4" Click="exitMenuItem_Click"/>
-            </MenuItem>
-
-            <MenuItem Header="Tools" 
-                      Width="42" 
-                      Height="20">
-                <MenuItem x:Name="playerStatsMenuItem" Header="Player Stats" Click="playerStatsMenuItem_Click"/>
-                <MenuItem x:Name="playerMenuItem" Header="Player" Click="playerMenuItem_Click"/>
-                <MenuItem x:Name="worldMenuItem" Header="World" Click="worldMenuItem_Click"/>
-                <MenuItem x:Name="stroyMenuItem" Header="Story" Click="stroyMenuItem_Click"/>
-                <MenuItem x:Name="timeAndWeatherMenuItem" Header="Time and Weather" Click="timeAndWeatherMenuItem_Click"/>
-            </MenuItem>
-
-            <MenuItem Header="Help" 
-                      Width="42" 
-                      Height="20">
-                <MenuItem Header="About"/>
-                <MenuItem Header="How to"/>
-                <MenuItem Header="License"/>
-            </MenuItem>
-        </Menu>
-
-        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+        <Grid Grid.ColumnSpan="2" Background="#2d2d30">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="279.808"/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <controls:RootUserControl x:Name="rootUserControl" DataContext="{Binding DataContext, ElementName=MainWindow}"/>
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/icon.png" 
+                       Width="22" 
+                       Height="22"/>
+                <Menu>
+                    <MenuItem Header="File" 
+                              Width="42" 
+                              Height="20">
+                        <MenuItem x:Name="openFileMenuItem" Header="Open File" Command="Open" InputGestureText="Ctrl+O"/>
+                        <MenuItem x:Name="saveMenuItem" Header="Save" Command="Save" InputGestureText="Ctrl+S"/>
+                        <MenuItem x:Name="closeFileMenuItem" Header="Close File" Command="Close" InputGestureText="Ctrl+W"/>
+                        <Separator Opacity="0.3"/>
+                        <MenuItem x:Name="exitMenuItem" Header="Exit" InputGestureText="Alt+F4" Click="exitMenuItem_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Tools" 
+                              Width="42" 
+                              Height="20">
+                        <MenuItem x:Name="playerStatsMenuItem" Header="Player Stats" Click="playerStatsMenuItem_Click"/>
+                        <MenuItem x:Name="playerMenuItem" Header="Player" Click="playerMenuItem_Click"/>
+                        <MenuItem x:Name="worldMenuItem" Header="World" Click="worldMenuItem_Click"/>
+                        <MenuItem x:Name="stroyMenuItem" Header="Story" Click="stroyMenuItem_Click"/>
+                        <MenuItem x:Name="timeAndWeatherMenuItem" Header="Time and Weather" Click="timeAndWeatherMenuItem_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Help" 
+                              Width="42" 
+                              Height="20">
+                        <MenuItem Header="About"/>
+                        <MenuItem Header="How to"/>
+                        <MenuItem Header="License"/>
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+
+            <DockPanel Grid.Column="1">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button x:Name="minimizeBtn"
+                            Width="22" 
+                            Background="{x:Null}" 
+                            BorderThickness="0,0,0,0" Click="minimizeBtn_Click">
+                        <Image Source="/minimize_WHT_wght200.png" 
+                               Width="20" 
+                               Height="20"/>
+                    </Button>
+                    <Button x:Name="closeBtn"
+                            Width="22" 
+                            Background="{x:Null}" 
+                            BorderThickness="0,0,0,0" Click="closeBtn_Click">
+                        <Image Source="/close_WHT_wght200.png" 
+                               Width="20" 
+                               Height="20"/>
+                    </Button>
+                </StackPanel>
+            </DockPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="450"/>
+                <ColumnDefinition MinWidth="350"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- <controls:RootUserControl x:Name="rootUserControl" DataContext="{Binding DataContext, ElementName=MainWindow}"/> -->
+
+            <Frame Grid.Column="0" x:Name="MainContentList" NavigationUIVisibility="Hidden" DataContext="{Binding DataContext}"/>
 
             <Frame Grid.Column="1" x:Name="MainContent" NavigationUIVisibility="Hidden" DataContext="{Binding DataContext}"/>
         </Grid>
         <DockPanel Grid.Row="2" 
                    Grid.ColumnSpan="2" 
                    Background="#FF3C3C3C">
+
             <Label x:Name="currentFileLbl"
                    Content="{Binding FilePath}"
                    Foreground="White" 
@@ -96,6 +141,7 @@
                    FontSize="10"/>
             <Button x:Name="testBtn" 
                     Width="50" 
+                    Visibility="Hidden"
                     Content="Test" 
                     HorizontalAlignment="Right" 
                     Margin="0,0,20,0" 

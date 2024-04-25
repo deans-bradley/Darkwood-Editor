@@ -1,4 +1,6 @@
-﻿namespace DarkwoodEditorWPF.Models
+﻿using DarkwoodEditorWPF.Helpers;
+
+namespace DarkwoodEditorWPF.Models
 {
     public class Root
     {

@@ -9,6 +9,7 @@ using DarkwoodEditorWPF.Views;
 using DarkwoodEditorWPF.Views.UserControls;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
+using DarkwoodEditorWPF.Helpers;
 
 namespace DarkwoodEditorWPF
 {
@@ -38,10 +39,10 @@ namespace DarkwoodEditorWPF
                 {
                     Root root = DeserializeJson(filePath) ?? throw new Exception("Error deserializing JSON.");
 
-                    MainContent.Navigate(new Uri("Views/StartPage.xaml", UriKind.Relative));
+                    MainContentList.Navigate(new Uri("Views/StartPage.xaml", UriKind.Relative));
                     
                     MainViewModel mainViewModel = AddData(filePath, root);
-                    rootUserControl.DataContext = mainViewModel.RootViewModel;
+                    //rootUserControl.DataContext = mainViewModel.RootViewModel;
                     DataContext = mainViewModel;
                 }
             }
@@ -144,7 +145,7 @@ namespace DarkwoodEditorWPF
 
         private void playerMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MainContent.Navigate(new Uri("Views/PlayerPage.xaml", UriKind.Relative));
+            MainContentList.Navigate(new Uri("Views/PlayerPage.xaml", UriKind.Relative));
         }
 
         private void worldMenuItem_Click(object sender, RoutedEventArgs e)
@@ -159,14 +160,17 @@ namespace DarkwoodEditorWPF
 
         private void timeAndWeatherMenuItem_Click(object sender, RoutedEventArgs e)
         {
-
+            int num = 30;
+            string str = num.ToString();
         }
         //
         // Add Data to ViewModels
         //
-        // TODO: Refactor AddData and SaveData methods to use IConvertCollection methods
+        // TODO: Refactor AddData and SaveData methods to use ConvertCollection methods
         public MainViewModel AddData(string filePath, Root root)
         {
+            ConvertCollections convert = new ConvertCollections();
+
             RootViewModel rootVM = new RootViewModel
             {
                 MajorVersion = root.majorVersion,
@@ -178,14 +182,6 @@ namespace DarkwoodEditorWPF
             };
 
             PS ps = root.pS ?? throw new NullReferenceException();
-
-            ObservableCollection<StringValue> recipes = new ObservableCollection<StringValue>();
-
-            for (int i = 0; i < ps.recipes?.Count; i++)
-            {
-                recipes.Add(new StringValue { Value = ps.recipes[i] }); 
-            }
-
             PsViewModel psVM = new PsViewModel
             {
                 Health = ps.health,
@@ -200,7 +196,7 @@ namespace DarkwoodEditorWPF
                 Saturation = ps.saturation,
                 FedToday = ps.fedToday,
                 Lifes = ps.lifes,
-                Recipes = recipes,
+                Recipes = convert.ConvertStringListToObservableCollection(ps.recipes),
                 CraftedItems = ps.craftedItems ?? throw new NullReferenceException(),
                 GotHitAtLeastOnce = ps.gotHitAtLeastOnce,
                 DiedAtLeastOnce = ps.diedAtLeastOnce
@@ -407,6 +403,7 @@ namespace DarkwoodEditorWPF
         private Root SaveData()
         {
             MainViewModel mainViewModel = (MainViewModel)DataContext;
+            ConvertCollections convert = new ConvertCollections();  
 
             SaveMS saveMS = mainViewModel.SaveMS ?? throw new NullReferenceException();
 
@@ -427,7 +424,7 @@ namespace DarkwoodEditorWPF
                 saturation = psViewModel.Saturation,
                 fedToday = psViewModel.FedToday,
                 lifes = psViewModel.Lifes,
-                recipes = psViewModel.Recipes,
+                recipes = convert.ConvertObservableCollectionToStringList(psViewModel.Recipes),
                 craftedItems = psViewModel.CraftedItems,
                 chEffS = psViewModel.ChEffS,
                 skillS = psViewModel.SkillS,
@@ -648,12 +645,22 @@ namespace DarkwoodEditorWPF
 
             PsViewModel? psViewModel = mainViewModel.PsViewModel ?? throw new NullReferenceException();
 
-            foreach (string item in psViewModel.Recipes)
+            foreach (StringValue item in psViewModel.Recipes)
             {
                 recipes += item + "\n";
             }
 
             MessageBox.Show(recipes);
+        }
+
+        private void closeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void minimizeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
         }
         //
         // Help Menu Items

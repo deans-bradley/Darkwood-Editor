@@ -23,24 +23,32 @@
                 CornerRadius="5,5,5,5">
             
             <StackPanel Orientation="Vertical">
-                
-                <Button x:Name="backBtn" 
+                <DockPanel Margin="0,0,0,24">
+                    <TextBlock Text="Edit Recipes" 
+                               FontSize="16" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+                    <Button x:Name="closeBtn" 
                         Width="24" 
-                        HorizontalAlignment="Left"
-                        Margin="4,4,0,24" 
-                        Click="backBtn_Click" 
+                        HorizontalAlignment="Right"
+                        Margin="0,4,4,0" 
                         Background="{x:Null}" 
                         BorderBrush="{x:Null}" 
-                        Padding="0,0,0,0">
-                    <Button.Content>
-                        <Image Source="/Views/arrow_back_WHT_wght400.png" 
+                        Padding="0,0,0,0" Click="closeBtn_Click">
+                        <Button.Content>
+                            <Image Source="/Views/close_WHT_wght400.png" 
                                Stretch="Fill" 
                                HorizontalAlignment="Left"
                                VerticalAlignment="Center"
                                Width="24"
                                Height="24"/>
-                    </Button.Content>
-                </Button>
+                        </Button.Content>
+                    </Button>
+                </DockPanel>
+
 
                 <ScrollViewer>
                     <StackPanel Orientation="Vertical">
@@ -48,7 +56,7 @@
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Vertical" Margin="0,5,0,5">
-                                        <TextBox Text="{Binding Path=., Mode=TwoWay}" 
+                                        <TextBox Text="{Binding Value, Mode=TwoWay}" 
                                                  Width="310"
                                                  FontSize="11" 
                                                  FontWeight="Bold" 
