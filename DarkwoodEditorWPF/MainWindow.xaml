@@ -4,18 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DarkwoodEditorWPF"
-        xmlns:controls="clr-namespace:DarkwoodEditorWPF.Views.UserControls"
+        xmlns:controls="clr-namespace:DarkwoodEditorWPF.Views.UserControls" 
         mc:Ignorable="d"
+        x:Name="mainWindow"
         Title="Darkwood Editor" 
         Height="500" 
         Width="850" 
         Background="#FF3C3C3C" 
         Foreground="#FFCCCCCC" 
-        Icon="/icon.png" 
-        BorderBrush="#000000" 
-        WindowStyle="None" 
-        ResizeMode="NoResize" 
-        BorderThickness="1,1,1,1">
+        Icon="/icon.png"  
+        ResizeMode="NoResize">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="2" CornerRadius="20" CaptionHeight="0" UseAeroCaptionButtons="False" ResizeBorderThickness="7"/>
+    </WindowChrome.WindowChrome>
 
     <Window.Resources>
         <ResourceDictionary>
@@ -53,7 +55,10 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.ColumnSpan="2" Background="#2d2d30">
+        <Grid x:Name="windowGrd"
+              Grid.ColumnSpan="2" 
+              Background="#2d2d30" MouseDown="windowGrd_MouseDown"
+              >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
@@ -94,20 +99,21 @@
                 </Menu>
             </StackPanel>
 
-            <DockPanel Grid.Column="1">
+            <DockPanel x:Name="windowDckPnl" Grid.Column="1">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="minimizeBtn"
                             Width="22" 
                             Background="{x:Null}" 
-                            BorderThickness="0,0,0,0" Click="minimizeBtn_Click">
-                        <Image Source="/minimize_WHT_wght200.png" 
-                               Width="20" 
-                               Height="20"/>
+                            BorderThickness="0,0,0,0" 
+                            Click="minimizeBtn_Click">
+                        <Image Source="/minimize_WHT_wght200.png" />
                     </Button>
+
                     <Button x:Name="closeBtn"
                             Width="22" 
                             Background="{x:Null}" 
-                            BorderThickness="0,0,0,0" Click="closeBtn_Click">
+                            BorderThickness="0,0,0,0" 
+                            Click="closeBtn_Click">
                         <Image Source="/close_WHT_wght200.png" 
                                Width="20" 
                                Height="20"/>
@@ -130,7 +136,7 @@
         </Grid>
         <DockPanel Grid.Row="2" 
                    Grid.ColumnSpan="2" 
-                   Background="#FF3C3C3C">
+                   Background="#2d2d30">
 
             <Label x:Name="currentFileLbl"
                    Content="{Binding FilePath}"

@@ -18,6 +18,9 @@ namespace DarkwoodEditorWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool isDragging = false;
+        private Point startPoint;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -662,6 +665,13 @@ namespace DarkwoodEditorWPF
         {
             WindowState = WindowState.Minimized;
         }
+
+        private void windowGrd_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+                base.OnMouseLeftButtonDown(e);
+                this.DragMove();
+        }
+
         //
         // Help Menu Items
         //

@@ -76,7 +76,7 @@ namespace DarkwoodEditorWPF.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/DarkwoodEditorWPF;V1.0.0.0;component/views/editrecipespage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/DarkwoodEditorWPF;component/views/editrecipespage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\EditRecipesPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
