@@ -74,6 +74,7 @@ namespace DarkwoodEditorWPF
         {
             return JsonConvert.SerializeObject(root, Formatting.Indented);
         }
+
         //
         // File Menu Items
         //
@@ -129,12 +130,14 @@ namespace DarkwoodEditorWPF
 
         private void exitMenuItem_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Add a confirmation dialog
             Environment.Exit(0);
         }
         private void ExitCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
 
         }
+
         //
         // Edit Menu Items
         //
@@ -163,9 +166,9 @@ namespace DarkwoodEditorWPF
 
         private void timeAndWeatherMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            int num = 30;
-            string str = num.ToString();
+
         }
+
         //
         // Add data to ViewModels
         //
@@ -644,7 +647,7 @@ namespace DarkwoodEditorWPF
         }
 
         //
-        // Help menu items
+        // TODO: Add help menu items
         //
 
 
@@ -653,6 +656,7 @@ namespace DarkwoodEditorWPF
         //
         private void closeBtn_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Add a confirmation dialog
             Environment.Exit(0);
         }
 

@@ -22,5 +22,17 @@ namespace DarkwoodEditorWPF.Views.UserControls
 
 			mainWindow.MainContent.Content = null;
 		}
+
+		private void IntValueTxtBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+		{
+			foreach (char c in e.Text)
+			{
+				if (!Char.IsDigit(c))
+				{
+					e.Handled = true; 
+					return;
+				}
+			}
+		}
     }
 }

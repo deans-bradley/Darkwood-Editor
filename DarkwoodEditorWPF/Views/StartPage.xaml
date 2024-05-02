@@ -5,7 +5,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DarkwoodEditorWPF.Views"
       mc:Ignorable="d" 
-      
       d:DesignHeight="450" d:DesignWidth="800"
       Title="StartPage">
 
@@ -20,241 +19,14 @@
 
     <Grid>
         <Border Grid.Column="1"
-                    Margin="10"
-                    Padding="10" 
-                    Background="#2d2d30" CornerRadius="5,5,5,5">
+                Margin="10"
+                Padding="10" 
+                Background="#2d2d30" CornerRadius="5,5,5,5">
             <ScrollViewer>
                 <StackPanel>
                     <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="healthLbl" 
-                           Content="Health" 
-                           FontSize="11" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           Margin="20,0,0,0"/>
 
-                        <TextBox x:Name="healthTxtBox" 
-                                 Text="{Binding Health}" 
-                                 Width="200"
-                                 FontSize="11" 
-                                 FontWeight="Bold" 
-                                 Foreground="White" 
-                                 HorizontalAlignment="Right" 
-                                 VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
-                    </DockPanel>
-                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="staminaLbl" 
-                           Content="Stamina" 
-                           FontSize="11" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           Margin="20,0,0,0"/>
-
-                        <TextBox x:Name="staminaTxtBox" 
-                                 Text="{Binding Stamina}"
-                                 Width="200"
-                                 FontSize="11" 
-                                 FontWeight="Bold" 
-                                 Foreground="White" 
-                                 HorizontalAlignment="Right" 
-                                 VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
-                    </DockPanel>
-                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="experienceLbl" 
-                           Content="Experience" 
-                           FontSize="11" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           Margin="20,0,0,0"/>
-
-                        <TextBox x:Name="experienceTxtBox" 
-                                 Text="{Binding Experience}"
-                                 Width="200"
-                                 FontSize="11" 
-                                 FontWeight="Bold" 
-                                 Foreground="White" 
-                                 HorizontalAlignment="Right" 
-                                 VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
-                    </DockPanel>
-                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="currentLevelLbl" 
-                           Content="Current level" 
-                           FontSize="11" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           Margin="20,0,0,0"/>
-
-                        <TextBox x:Name="currentLevelTxtBox" 
-                                 Text="{Binding CurrentLevel}"
-                                 Width="200"
-                                 FontSize="11" 
-                                 FontWeight="Bold" 
-                                 Foreground="White" 
-                                 HorizontalAlignment="Right" 
-                                 VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
-                    </DockPanel>
-                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="healthUpgradesLbl" 
-                           Content="Health upgrades" 
-                           FontSize="11" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           Margin="20,0,0,0"/>
-
-                        <TextBox x:Name="healthUpgradesTxtBox" 
-                                 Text="{Binding HealthUpgrades}"
-                                 Width="200"
-                                 FontSize="11" 
-                                 FontWeight="Bold" 
-                                 Foreground="White" 
-                                 HorizontalAlignment="Right" 
-                                 VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
-                    </DockPanel>
-                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="staminaUpgradesLbl" 
-                           Content="Stamina upgrades" 
-                           FontSize="11" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           Margin="20,0,0,0"/>
-
-                        <TextBox x:Name="staminaUpgradesTxBtox" 
-                                 Text="{Binding StaminaUpgrades}"
-                                 Width="200"
-                                 FontSize="11" 
-                                 FontWeight="Bold" 
-                                 Foreground="White" 
-                                 HorizontalAlignment="Right" 
-                                 VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
-                    </DockPanel>
-                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="hotbarUpgradesLbl" 
-                           Content="Hotbar upgrades" 
-                           FontSize="11" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           Margin="20,0,0,0"/>
-
-                        <TextBox x:Name="hotbarUpgradesTxtBox" 
-                                 Text="{Binding HotbarUpgrades}"
-                                 Width="200"
-                                 FontSize="11" 
-                                 FontWeight="Bold" 
-                                 Foreground="White" 
-                                 HorizontalAlignment="Right" 
-                                 VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
-                    </DockPanel>
-                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="inventoryUpgrades" 
-                           Content="Inventory upgrades" 
-                           FontSize="11" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           Margin="21,0,0,0"/>
-
-                        <TextBox x:Name="inventoryUpgradesTxtBox" 
-                                 Text="{Binding InventoryUpgrades}"
-                                 Width="200"
-                                 FontSize="11" 
-                                 FontWeight="Bold" 
-                                 Foreground="White" 
-                                 HorizontalAlignment="Right" 
-                                 VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
-                    </DockPanel>
-                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="lastTimeAteLbl" 
-                           Content="Last time ate" 
-                           FontSize="11" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           Margin="20,0,0,0"/>
-
-                        <TextBox x:Name="lastTimeAteTxtBox" 
-                                 Text="{Binding LastTimeAte}"
-                                 Width="200"
-                                 FontSize="11" 
-                                 FontWeight="Bold" 
-                                 Foreground="White" 
-                                 HorizontalAlignment="Right" 
-                                 VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
-                    </DockPanel>
-                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="saturationLbl" 
-                           Content="Saturation" 
-                           FontSize="11" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           Margin="20,0,0,0"/>
-
-                        <TextBox x:Name="saturationTxtBox" 
-                                 Text="{Binding Saturation}"
-                                 Width="200"
-                                 FontSize="11" 
-                                 FontWeight="Bold" 
-                                 Foreground="White" 
-                                 HorizontalAlignment="Right" 
-                                 VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
-                    </DockPanel>
-                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="fedTodayLbl" 
-                           Content="Fed today" 
-                           FontSize="11" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           Margin="20,0,0,0"/>
-
-                        <CheckBox x:Name="fedTodayChkBox"
-                                  IsChecked="{Binding FedToday}"
-                                  HorizontalAlignment="Right" 
-                                  VerticalAlignment="Center"
-                                  Margin="0,0,20,0"/>
-                    </DockPanel>
-                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="lifesLbl" 
-                               Content="Lifes" 
+                        <Label Content="Health" 
                                FontSize="11" 
                                FontWeight="Bold" 
                                Foreground="White" 
@@ -262,20 +34,258 @@
                                VerticalAlignment="Center"
                                Margin="20,0,0,0"/>
 
-                        <TextBox x:Name="lifesTxtBox" 
-                                 Text="{Binding Lifes}"
+                        <TextBox Text="{Binding Health}" 
                                  Width="200"
                                  FontSize="11" 
                                  FontWeight="Bold" 
                                  Foreground="White" 
                                  HorizontalAlignment="Right" 
                                  VerticalAlignment="Center"
-                                 Margin="0,0,20,0"/>
+                                 Margin="0,0,20,0" 
+                                 PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
+                        
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="recipesLbl" 
-                               Content="Recipes" 
+                        
+                        <Label Content="Stamina" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+
+                        <TextBox Text="{Binding Stamina}"
+                                 Width="200"
+                                 FontSize="11" 
+                                 FontWeight="Bold" 
+                                 Foreground="White" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,20,0"
+                                 PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
+                        
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
+                        
+                        <Label Content="Experience" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+
+                        <TextBox Text="{Binding Experience}"
+                                 Width="200"
+                                 FontSize="11" 
+                                 FontWeight="Bold" 
+                                 Foreground="White" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,20,0"
+                                 PreviewTextInput="IntTextBox_PreviewTextInput"/>
+                        
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
+                        
+                        <Label Content="Current level" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+
+                        <TextBox Text="{Binding CurrentLevel}"
+                                 Width="200"
+                                 FontSize="11" 
+                                 FontWeight="Bold" 
+                                 Foreground="White" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,20,0"
+                                 PreviewTextInput="IntTextBox_PreviewTextInput"/>
+                        
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
+                        
+                        <Label Content="Health upgrades" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+
+                        <TextBox Text="{Binding HealthUpgrades}"
+                                 Width="200"
+                                 FontSize="11" 
+                                 FontWeight="Bold" 
+                                 Foreground="White" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,20,0"
+                                 PreviewTextInput="IntTextBox_PreviewTextInput"/>
+                        
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
+                        
+                        <Label Content="Stamina upgrades" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+
+                        <TextBox Text="{Binding StaminaUpgrades}"
+                                 Width="200"
+                                 FontSize="11" 
+                                 FontWeight="Bold" 
+                                 Foreground="White" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,20,0"
+                                 PreviewTextInput="IntTextBox_PreviewTextInput"/>
+                        
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
+                        
+                        <Label Content="Hotbar upgrades" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+
+                        <TextBox Text="{Binding HotbarUpgrades}"
+                                 Width="200"
+                                 FontSize="11" 
+                                 FontWeight="Bold" 
+                                 Foreground="White" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,20,0"
+                                 PreviewTextInput="IntTextBox_PreviewTextInput"/>
+                        
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
+                        
+                        <Label Content="Inventory upgrades" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="21,0,0,0"/>
+
+                        <TextBox Text="{Binding InventoryUpgrades}"
+                                 Width="200"
+                                 FontSize="11" 
+                                 FontWeight="Bold" 
+                                 Foreground="White" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,20,0"
+                                 PreviewTextInput="IntTextBox_PreviewTextInput"/>
+                        
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
+                        
+                        <Label Content="Last time ate" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+
+                        <TextBox Text="{Binding LastTimeAte}"
+                                 Width="200"
+                                 FontSize="11" 
+                                 FontWeight="Bold" 
+                                 Foreground="White" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,20,0"
+                                 PreviewTextInput="IntTextBox_PreviewTextInput"/>
+                        
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
+                        
+                        <Label Content="Saturation" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+
+                        <TextBox Text="{Binding Saturation}"
+                                 Width="200"
+                                 FontSize="11" 
+                                 FontWeight="Bold" 
+                                 Foreground="White" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,20,0"
+                                 PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
+                        
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
+                        
+                        <Label Content="Fed today" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+
+                        <CheckBox IsChecked="{Binding FedToday}"
+                                  HorizontalAlignment="Right" 
+                                  VerticalAlignment="Center"
+                                  Margin="0,0,20,0"/>
+                        
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
+                        
+                        <Label Content="Lifes" 
+                               FontSize="11" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+
+                        <TextBox Text="{Binding Lifes}"
+                                 Width="200"
+                                 FontSize="11" 
+                                 FontWeight="Bold" 
+                                 Foreground="White" 
+                                 HorizontalAlignment="Right" 
+                                 VerticalAlignment="Center"
+                                 Margin="0,0,20,0"
+                                 PreviewTextInput="IntTextBox_PreviewTextInput"/>
+                        
+                    </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Margin="0,5,0,5">
+                        
+                        <Label Content="Recipes" 
                                FontSize="11" 
                                FontWeight="Bold" 
                                Foreground="White" 
@@ -290,11 +300,12 @@
                                 VerticalAlignment="Center" 
                                 Margin="0,0,20,0" 
                                 Click="recipesBtn_Click"/>
+                        
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="craftedItemsLbl" 
-                               Content="Crafted Items" 
+                        
+                        <Label Content="Crafted Items" 
                                FontSize="11" 
                                FontWeight="Bold" 
                                Foreground="White" 
@@ -309,11 +320,12 @@
                                 VerticalAlignment="Center" 
                                 Margin="0,0,20,0" 
                                 Click="craftedItemsBtn_Click"/>
+                        
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="gotHitAtLeastOnceLbl" 
-                               Content="Got hit at least once" 
+                        
+                        <Label Content="Got hit at least once" 
                                FontSize="11" 
                                FontWeight="Bold" 
                                Foreground="White" 
@@ -321,16 +333,16 @@
                                VerticalAlignment="Center"
                                Margin="20,0,0,0"/>
 
-                        <CheckBox x:Name="gotHitAtLeastOnceChkBox"
-                                  IsChecked="{Binding GotHitAtLeastOnce}"
+                        <CheckBox IsChecked="{Binding GotHitAtLeastOnce}"
                                   HorizontalAlignment="Right" 
                                   VerticalAlignment="Center"
                                   Margin="0,0,20,0"/>
+                        
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Margin="0,5,0,5">
-                        <Label x:Name="diedAtLeastOnceLbl" 
-                               Content="Died at least once" 
+                        
+                        <Label Content="Died at least once" 
                                FontSize="11" 
                                FontWeight="Bold" 
                                Foreground="White" 
@@ -338,11 +350,11 @@
                                VerticalAlignment="Center"
                                Margin="20,0,0,0"/>
 
-                        <CheckBox x:Name="diedAtLeastOnceChkBox"
-                                  IsChecked="{Binding diedAtLeastOnce}"
+                        <CheckBox IsChecked="{Binding diedAtLeastOnce}"
                                   HorizontalAlignment="Right" 
                                   VerticalAlignment="Center"
                                   Margin="0,0,20,0"/>
+                        
                     </DockPanel>
                 </StackPanel>
             </ScrollViewer>

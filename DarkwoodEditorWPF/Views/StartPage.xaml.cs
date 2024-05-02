@@ -29,5 +29,29 @@ namespace DarkwoodEditorWPF.Views
 
 			mainWindow.MainContent.Navigate(new Uri("Views/UserControls/EditCraftedItemsUserControl.xaml", UriKind.Relative));
 		}
-    }
+
+		private void IntTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+		{
+			foreach (char c in e.Text)
+			{
+				if (!Char.IsDigit(c))
+				{
+					e.Handled = true;
+					return;
+				}
+			}
+		}
+
+		private void DoubleTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+		{
+			foreach (char c in e.Text)
+			{
+				if (!char.IsDigit(c) && c != '.' || (c == '.' && ((TextBox)sender).Text.Contains('.')))
+				{
+					e.Handled = true;
+					return;
+				}
+			}
+		}
+	}
 }
