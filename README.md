@@ -1,7 +1,7 @@
 # Welcome to Darkwood Editor
 A save file editor for the video game [Darkwood](https://www.darkwoodgame.com/) by [Acid Wizard Studio](https://www.acidwizardstudio.com/).
 
-![Start Page](https://i.imgur.com/wsHQ20z.png)
+![enter image description here](https://i.imgur.com/aj6d4ag.png)
 
 # Status
 **04/23** - Loading and saving .dat files now works but is not complete.
