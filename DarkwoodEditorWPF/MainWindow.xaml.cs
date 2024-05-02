@@ -10,6 +10,7 @@ using DarkwoodEditorWPF.Views.UserControls;
 using System.Diagnostics;
 using System.Collections.ObjectModel;
 using DarkwoodEditorWPF.Helpers;
+using System.Windows.Controls;
 
 namespace DarkwoodEditorWPF
 {
@@ -42,7 +43,7 @@ namespace DarkwoodEditorWPF
                 {
                     Root root = DeserializeJson(filePath) ?? throw new Exception("Error deserializing JSON.");
 
-                    MainContentList.Navigate(new Uri("Views/StartPage.xaml", UriKind.Relative));
+                    MainContentList.Navigate(new Uri("Views/PlayerStatsPage.xaml", UriKind.Relative));
                     
                     MainViewModel mainViewModel = AddData(filePath, root);
                     //rootUserControl.DataContext = mainViewModel.RootViewModel;
@@ -143,8 +144,8 @@ namespace DarkwoodEditorWPF
         //
         private void playerStatsMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            var startPage = new StartPage();
-            startPage.DataContext = DataContext;
+            Page playerStatsPage = new PlayerStatsPage();
+			playerStatsPage.DataContext = DataContext;
 
             MainContent.Navigate(new Uri("Views/StartPage.xaml", UriKind.Relative));
         }

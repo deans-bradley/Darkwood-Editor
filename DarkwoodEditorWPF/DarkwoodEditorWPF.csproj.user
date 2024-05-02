@@ -10,7 +10,10 @@
     <Compile Update="Views\PlayerPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\StartPage.xaml.cs">
+    <Compile Update="Views\PlayerStatsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControls\ChEffsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\EditCraftedItemsUserControl.xaml.cs">
@@ -36,7 +39,10 @@
     <Page Update="Views\PlayerPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\StartPage.xaml">
+    <Page Update="Views\PlayerStatsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\ChEffsUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\EditCraftedItemsUserControl.xaml">

@@ -51,9 +51,7 @@ C:\Users\bradd\source\repos\DarkwoodEditor\DarkwoodEditorWPF\obj\Debug\net8.0-wi
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\BaseDictionary.baml
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\ScrollBarDictionary.baml
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\PlayerPage.g.cs
-C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\StartPage.g.cs
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\PlayerPage.baml
-C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\StartPage.baml
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\RootUserControl.g.cs
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\RootUserControl.baml
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\bin\Debug\net8.0-windows\SharpVectors.Converters.Wpf.dll
@@ -67,3 +65,5 @@ C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\n
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\EditRecipesUserControl.baml
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\EditCraftedItemsUserControl.g.cs
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\EditCraftedItemsUserControl.baml
+C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\PlayerStatsPage.g.cs
+C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\PlayerStatsPage.baml

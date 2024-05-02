@@ -4,12 +4,12 @@ using System.Windows.Controls;
 
 namespace DarkwoodEditorWPF.Views
 {
-    /// <summary>
-    /// Interaction logic for StartPage.xaml
-    /// </summary>
-    public partial class StartPage : Page
+	/// <summary>
+	/// Interaction logic for PlayerStatsPage.xaml
+	/// </summary>
+	public partial class PlayerStatsPage : Page
     {
-        public StartPage()
+        public PlayerStatsPage()
         {
             InitializeComponent();
 
@@ -30,6 +30,17 @@ namespace DarkwoodEditorWPF.Views
 			mainWindow.MainContent.Navigate(new Uri("Views/UserControls/EditCraftedItemsUserControl.xaml", UriKind.Relative));
 		}
 
+		private void playerEffectsBtn_Click(object sender, RoutedEventArgs e)
+		{
+			MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+			mainWindow.MainContent.Navigate(new Uri("Views/UserControls/ChEffsUserControl.xaml", UriKind.Relative));
+		}
+
+
+		//
+		// Input validation
+		//
 		private void IntTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
 		{
 			foreach (char c in e.Text)
@@ -53,5 +64,5 @@ namespace DarkwoodEditorWPF.Views
 				}
 			}
 		}
-	}
+    }
 }
