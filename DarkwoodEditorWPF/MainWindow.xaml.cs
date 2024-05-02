@@ -167,7 +167,7 @@ namespace DarkwoodEditorWPF
             string str = num.ToString();
         }
         //
-        // Add Data to ViewModels
+        // Add data to ViewModels
         //
         // TODO: Refactor AddData and SaveData methods to use ConvertCollection methods
         public MainViewModel AddData(string filePath, Root root)
@@ -200,7 +200,7 @@ namespace DarkwoodEditorWPF
                 FedToday = ps.fedToday,
                 Lifes = ps.lifes,
                 Recipes = convert.ConvertStringListToObservableCollection(ps.recipes),
-                CraftedItems = ps.craftedItems ?? throw new NullReferenceException(),
+                CraftedItems = convert.ConvertCraftedItemViewModelListToObservableCollection(ps.craftedItems ?? throw new NullReferenceException()),
                 GotHitAtLeastOnce = ps.gotHitAtLeastOnce,
                 DiedAtLeastOnce = ps.diedAtLeastOnce
             };
@@ -403,6 +403,9 @@ namespace DarkwoodEditorWPF
             return mainViewModel;
         }
 
+        // 
+        // Save data from ViewModels to Root object
+        //
         private Root SaveData()
         {
             MainViewModel mainViewModel = (MainViewModel)DataContext;
@@ -428,7 +431,7 @@ namespace DarkwoodEditorWPF
                 fedToday = psViewModel.FedToday,
                 lifes = psViewModel.Lifes,
                 recipes = convert.ConvertObservableCollectionToStringList(psViewModel.Recipes),
-                craftedItems = psViewModel.CraftedItems,
+                craftedItems = convert.ConvertObservableCollectionToCraftedItemViewModelList(psViewModel.CraftedItems),
                 chEffS = psViewModel.ChEffS,
                 skillS = psViewModel.SkillS,
                 expMachineId = psViewModel.ExpMachineId,
@@ -640,22 +643,14 @@ namespace DarkwoodEditorWPF
             return root;
         }
 
-        private void testBtn_Click(object sender, RoutedEventArgs e)
-        {
-            string recipes = "";
+        //
+        // Help menu items
+        //
 
-            MainViewModel mainViewModel = (MainViewModel)DataContext;
 
-            PsViewModel? psViewModel = mainViewModel.PsViewModel ?? throw new NullReferenceException();
-
-            foreach (StringValue item in psViewModel.Recipes)
-            {
-                recipes += item + "\n";
-            }
-
-            MessageBox.Show(recipes);
-        }
-
+        //
+        // Window buttons
+        //
         private void closeBtn_Click(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
@@ -666,6 +661,9 @@ namespace DarkwoodEditorWPF
             WindowState = WindowState.Minimized;
         }
 
+        /// 
+        /// Interaction logic for dragging the window.
+        ///
         private void windowGrd_MouseDown(object sender, MouseButtonEventArgs e)
         {
                 base.OnMouseLeftButtonDown(e);
@@ -673,7 +671,16 @@ namespace DarkwoodEditorWPF
         }
 
         //
-        // Help Menu Items
+        // For testing
         //
-    }
+		private void testBtn_Click(object sender, RoutedEventArgs e)
+		{
+			//ConvertCollections convert = new ConvertCollections();
+
+			//MainViewModel mainViewModel = (MainViewModel)DataContext;
+			//PsViewModel psViewModel = mainViewModel.PsViewModel ?? throw new NullReferenceException();
+
+			//convert.ConvertObservableCollectionToCraftedItemViewModelList(psViewModel.CraftedItems);
+		}
+	}
 }

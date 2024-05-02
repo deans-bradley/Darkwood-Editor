@@ -56,8 +56,6 @@ C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\n
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\StartPage.baml
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\RootUserControl.g.cs
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\RootUserControl.baml
-C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\EditRecipesPage.g.cs
-C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\EditRecipesPage.baml
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\bin\Debug\net8.0-windows\SharpVectors.Converters.Wpf.dll
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\bin\Debug\net8.0-windows\SharpVectors.Core.dll
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\bin\Debug\net8.0-windows\SharpVectors.Css.dll
@@ -65,3 +63,7 @@ C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\bin\Debug\n
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\bin\Debug\net8.0-windows\SharpVectors.Model.dll
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\bin\Debug\net8.0-windows\SharpVectors.Rendering.Wpf.dll
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\bin\Debug\net8.0-windows\SharpVectors.Runtime.Wpf.dll
+C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\EditRecipesUserControl.g.cs
+C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\EditRecipesUserControl.baml
+C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\EditCraftedItemsUserControl.g.cs
+C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\obj\Debug\net8.0-windows\Views\UserControls\EditCraftedItemsUserControl.baml

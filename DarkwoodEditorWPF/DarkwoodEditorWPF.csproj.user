@@ -7,13 +7,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\EditRecipesPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\PlayerPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\StartPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControls\EditCraftedItemsUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControls\EditRecipesUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\RootUserControl.xaml.cs">
@@ -30,13 +33,16 @@
     <Page Update="ScrollBarDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\EditRecipesPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\PlayerPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\StartPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\EditCraftedItemsUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\EditRecipesUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\RootUserControl.xaml">

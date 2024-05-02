@@ -20,7 +20,14 @@ namespace DarkwoodEditorWPF.Views
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
-            mainWindow.MainContent.Navigate(new Uri("Views/EditRecipesPage.xaml", UriKind.Relative));
+            mainWindow.MainContent.Navigate(new Uri("Views/UserControls/EditRecipesUserControl.xaml", UriKind.Relative));
         }
+
+		private void craftedItemsBtn_Click(object sender, RoutedEventArgs e)
+		{
+			MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+			mainWindow.MainContent.Navigate(new Uri("Views/UserControls/EditCraftedItemsUserControl.xaml", UriKind.Relative));
+		}
     }
 }

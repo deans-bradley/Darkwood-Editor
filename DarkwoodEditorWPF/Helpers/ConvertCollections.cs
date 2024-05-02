@@ -1,4 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using DarkwoodEditorWPF.Models;
+using DarkwoodEditorWPF.ViewModels;
+using Newtonsoft.Json.Linq;
+using System.Collections.ObjectModel;
 
 namespace DarkwoodEditorWPF.Helpers
 {
@@ -55,5 +58,41 @@ namespace DarkwoodEditorWPF.Helpers
 
             return list;
         }
+
+        // List<object> to ObservableCollection<CraftedItemViewModel>
+        public ObservableCollection<CraftedItemViewModel> ConvertCraftedItemViewModelListToObservableCollection(List<object> list)
+        {
+            ObservableCollection<CraftedItemViewModel> observableCollection = new ObservableCollection<CraftedItemViewModel>();
+
+			foreach (object item in list)
+			{
+				JObject? jObject = item as JObject;
+
+				CraftedItem? craftedItem = jObject?.ToObject<CraftedItem>();
+
+                observableCollection.Add(new CraftedItemViewModel { StringValue = craftedItem?._string ?? throw new NullReferenceException(), IntValue = craftedItem._int });
+			}
+
+			return observableCollection;
+        }
+
+        // ObservableCollection<CraftedItemViewModel> to List<object>
+        public List<object> ConvertObservableCollectionToCraftedItemViewModelList(ObservableCollection<CraftedItemViewModel> observableCollection)
+        {
+			List<object> list = new List<object>();
+
+			foreach (CraftedItemViewModel item in observableCollection)
+            {
+			    JObject jObject = new JObject
+                {
+                    { "_string", item.StringValue },
+                    { "_int", item.IntValue }
+			    };
+
+                list.Add(jObject);
+			}
+
+			return list;
+		}
     }
 }

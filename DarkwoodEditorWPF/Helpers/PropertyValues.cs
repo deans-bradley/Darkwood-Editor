@@ -42,7 +42,7 @@ namespace DarkwoodEditorWPF.Helpers
         }
     }
 
-    public class FDoubleValue : INotifyPropertyChanged
+    public class DoubleValue : INotifyPropertyChanged
     {
         private double _value;
         public double Value

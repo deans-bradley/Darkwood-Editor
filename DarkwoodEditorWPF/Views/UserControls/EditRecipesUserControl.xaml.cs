@@ -2,14 +2,14 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace DarkwoodEditorWPF.Views
+namespace DarkwoodEditorWPF.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for EditRecipesPage.xaml
+    /// Interaction logic for EditRecipeUserControl.xaml
     /// </summary>
-    public partial class EditRecipesPage : Page
+    public partial class EditRecipesUserControl : UserControl
     {
-        public EditRecipesPage()
+        public EditRecipesUserControl()
         {
             InitializeComponent();
 

@@ -22,7 +22,7 @@ namespace DarkwoodEditorWPF.ViewModels
         private bool fedToday;
         private int lifes;
         private ObservableCollection<StringValue> recipes = new ObservableCollection<StringValue>();
-        private List<object> craftedItems = new List<object>();
+        private ObservableCollection<CraftedItemViewModel> craftedItems = new ObservableCollection<CraftedItemViewModel>();
         private ChEffS? chEffS;
         private SkillS? skillS;
         private int expMachineId;
@@ -180,7 +180,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object> CraftedItems
+        public ObservableCollection<CraftedItemViewModel> CraftedItems
         {
             get => craftedItems;
             set

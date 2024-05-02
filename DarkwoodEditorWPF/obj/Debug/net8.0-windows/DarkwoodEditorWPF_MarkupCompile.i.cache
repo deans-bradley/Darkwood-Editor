@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\BradleyDeans\source\repos\Darkwood-Editor\DarkwoodEditorWPF\App.xaml
-7-946321007
+8566167450
 
-35-385120416
+381909387426
 206-1250021191
-BaseDictionary.xaml;MainWindow.xaml;ScrollBarDictionary.xaml;Views\EditRecipesPage.xaml;Views\PlayerPage.xaml;Views\StartPage.xaml;Views\UserControls\RootUserControl.xaml;
+BaseDictionary.xaml;MainWindow.xaml;ScrollBarDictionary.xaml;Views\PlayerPage.xaml;Views\StartPage.xaml;Views\UserControls\EditCraftedItemsUserControl.xaml;Views\UserControls\EditRecipesUserControl.xaml;Views\UserControls\RootUserControl.xaml;
 
-True
+False
 
