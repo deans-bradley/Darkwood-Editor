@@ -13,6 +13,9 @@
     <Compile Update="Views\PlayerStatsPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControlItems\EffectItem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControls\ChEffsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PlayerStatsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControlItems\EffectItem.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\ChEffsUserControl.xaml">

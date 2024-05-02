@@ -70,7 +70,14 @@ namespace DarkwoodEditorWPF.Helpers
 
 				CraftedItem? craftedItem = jObject?.ToObject<CraftedItem>();
 
-                observableCollection.Add(new CraftedItemViewModel { StringValue = craftedItem?._string ?? throw new NullReferenceException(), IntValue = craftedItem._int });
+                if (craftedItem != null)
+                {
+                    observableCollection.Add(new CraftedItemViewModel 
+                    { 
+                        StringValue = craftedItem._string, 
+                        IntValue = craftedItem._int 
+                    });
+                }
 			}
 
 			return observableCollection;
@@ -94,5 +101,54 @@ namespace DarkwoodEditorWPF.Helpers
 
 			return list;
 		}
+
+        // List<object> to ObservableCollection<EffectViewModel>
+        public ObservableCollection<EffectViewModel> ConvertEffectListToObservableCollection(List<object> list)
+        {
+            ObservableCollection<EffectViewModel> observableCollection = new ObservableCollection<EffectViewModel>();
+
+            foreach (object item in list)
+            {
+                JObject? jObject = item as JObject;
+
+                Effect? effect = jObject?.ToObject<Effect>();
+
+                if (effect != null)
+                {
+                    observableCollection.Add(new EffectViewModel
+                    {
+                        Type = effect.Type,
+                        Duration = effect.Duration,
+                        Modifier = effect.Modifier,
+                        Interval = effect.Interval,
+                        TimeElapsed = effect.TimeElapsed
+                    });
+                }
+            }
+
+            return observableCollection;
+        }
+
+        // ObservableCollection<EffectViewModel> to List<object>
+        public List<object> ConvertObservableCollectionToEffectViewModelList(ObservableCollection<EffectViewModel> observableCollection)
+        {
+            List<object> list = new List<object>();
+
+            foreach (EffectViewModel item in observableCollection)
+            {
+                JObject jObject = new JObject
+                {
+                    { "type", item.Type },
+                    { "duration", item.Duration },
+                    { "modifier", item.Modifier },
+                    { "interval", item.Interval },
+                    { "timeElapsed", item.TimeElapsed }
+                };
+
+                list.Add(jObject);
+            }
+
+            return list;
+        }
     }
 }
