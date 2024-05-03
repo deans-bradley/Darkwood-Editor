@@ -5,44 +5,52 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DarkwoodEditorWPF.Views.UserControlItems"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" 
+             d:DesignWidth="800">
     
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../../BaseDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
 
     <StackPanel Orientation="Vertical">
-        <StackPanel Orientation="Horizontal" Height="50">
-            <TextBox Text="Type"
-                     Width="100"
-                     TextAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     Padding="0"/>
-            <TextBox Text="Duration"
-                     Width="100"
-                     TextAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     Padding="0"/>
-            <TextBox Text="Modifier"
-                     Width="100"
-                     TextAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     Padding="0"/>
-            <TextBox Text="Interval"
-                     Width="100"
-                     TextAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     Padding="0"/>
-            <TextBox Text="TimeElapsed"
-                     Width="100"
-                     TextAlignment="Center"
-                     VerticalContentAlignment="Center"
-                     Padding="0"/>
-        </StackPanel>
+        <Grid Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox Text="{Binding Type}"
+                     Style="{StaticResource gridTxtBox}"
+                     Grid.Column="0"
+                     TextAlignment="Center"/>
+            
+            <TextBox Text="{Binding Duration, Mode=TwoWay}"
+                     Style="{StaticResource gridTxtBox}"
+                     Grid.Column="1"
+                     TextAlignment="Center"/>
+            
+            <TextBox Text="{Binding Modifier, Mode=TwoWay}"
+                     Style="{StaticResource gridTxtBox}"
+                     Grid.Column="2"
+                     TextAlignment="Center"/>
+            
+            <TextBox Text="{Binding Interval, Mode=TwoWay}"
+                     Style="{StaticResource gridTxtBox}"
+                     Grid.Column="3"
+                     TextAlignment="Center"/>
+            
+            <TextBox Text="{Binding TimeElapsed, Mode=TwoWay}"
+                     Style="{StaticResource gridTxtBox}"
+                     Grid.Column="4"
+                     TextAlignment="Center"/>
+        </Grid>
         <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
     </StackPanel>
 </UserControl>

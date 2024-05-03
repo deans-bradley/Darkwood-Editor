@@ -8,22 +8,27 @@
         mc:Ignorable="d"
         x:Name="mainWindow"
         Title="Darkwood Editor" 
-        Height="500" 
-        Width="850" 
+        Height="600" 
+        Width="940" 
         Background="#FF3C3C3C" 
         Foreground="#FFCCCCCC" 
-        Icon="/icon.png"  
+        Icon="Res/Images/icon.png"  
         ResizeMode="NoResize">
 
     <WindowChrome.WindowChrome>
-        <WindowChrome GlassFrameThickness="2" CornerRadius="20" CaptionHeight="0" UseAeroCaptionButtons="False" ResizeBorderThickness="7"/>
+        <WindowChrome GlassFrameThickness="2" 
+                      CornerRadius="20" 
+                      CaptionHeight="0" 
+                      UseAeroCaptionButtons="False" 
+                      ResizeBorderThickness="7"/>
     </WindowChrome.WindowChrome>
 
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="BaseDictionary.xaml"/>
-                <ResourceDictionary Source="ScrollBarDictionary.xaml"/>
+                <ResourceDictionary Source="Styles/BaseDictionary.xaml"/>
+                <ResourceDictionary Source="Styles/ScrollBarDictionary.xaml"/>
+                <ResourceDictionary Source="Styles/IconDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -42,7 +47,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/mainFormBg.png"/>
+            <ImageBrush ImageSource="Res/Images/mainFormBg.png"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="91*"/>
@@ -57,31 +62,37 @@
 
         <Grid x:Name="windowGrd"
               Grid.ColumnSpan="2" 
-              Background="#2d2d30" MouseDown="windowGrd_MouseDown"
-              >
+              Background="#2d2d30" 
+              MouseDown="windowGrd_MouseDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/icon.png" 
-                       Width="22" 
-                       Height="22"/>
+            <StackPanel Orientation="Horizontal" Height="30">
+                <Image Source="Res/Images/icon.png" Width="30"/>
                 <Menu>
-                    <MenuItem Header="File" 
-                              Width="42" 
-                              Height="20">
-                        <MenuItem x:Name="openFileMenuItem" Header="Open File" Command="Open" InputGestureText="Ctrl+O"/>
-                        <MenuItem x:Name="saveMenuItem" Header="Save" Command="Save" InputGestureText="Ctrl+S"/>
-                        <MenuItem x:Name="closeFileMenuItem" Header="Close File" Command="Close" InputGestureText="Ctrl+W"/>
+                    <MenuItem Header="File" Width="42">
+                        <MenuItem x:Name="openFileMenuItem" 
+                                  Header="Open File" 
+                                  Command="Open" 
+                                  InputGestureText="Ctrl+O"/>
+                        <MenuItem x:Name="saveMenuItem" 
+                                  Header="Save" 
+                                  Command="Save" 
+                                  InputGestureText="Ctrl+S"/>
+                        <MenuItem x:Name="closeFileMenuItem" 
+                                  Header="Close File" 
+                                  Command="Close" 
+                                  InputGestureText="Ctrl+W"/>
                         <Separator Opacity="0.3"/>
-                        <MenuItem x:Name="exitMenuItem" Header="Exit" InputGestureText="Alt+F4" Click="exitMenuItem_Click"/>
+                        <MenuItem x:Name="exitMenuItem" 
+                                  Header="Exit" 
+                                  InputGestureText="Alt+F4" 
+                                  Click="exitMenuItem_Click"/>
                     </MenuItem>
 
-                    <MenuItem Header="Tools" 
-                              Width="42" 
-                              Height="20">
+                    <MenuItem Header="Tools" Width="42">
                         <MenuItem x:Name="playerStatsMenuItem" Header="Player Stats" Click="playerStatsMenuItem_Click"/>
                         <MenuItem x:Name="playerMenuItem" Header="Player" Click="playerMenuItem_Click"/>
                         <MenuItem x:Name="worldMenuItem" Header="World" Click="worldMenuItem_Click"/>
@@ -89,9 +100,7 @@
                         <MenuItem x:Name="timeAndWeatherMenuItem" Header="Time and Weather" Click="timeAndWeatherMenuItem_Click"/>
                     </MenuItem>
 
-                    <MenuItem Header="Help" 
-                              Width="42" 
-                              Height="20">
+                    <MenuItem Header="Help" Width="42" >
                         <MenuItem Header="About"/>
                         <MenuItem Header="How to"/>
                         <MenuItem Header="License"/>
@@ -102,21 +111,19 @@
             <DockPanel x:Name="windowDckPnl" Grid.Column="1">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="minimizeBtn"
-                            Width="22" 
+                            Width="32" 
                             Background="{x:Null}" 
                             BorderThickness="0,0,0,0" 
                             Click="minimizeBtn_Click">
-                        <Image Source="/minimize_WHT_wght200.png" />
+                        <Image Source="{StaticResource ic_minimize}"/>
                     </Button>
 
                     <Button x:Name="closeBtn"
-                            Width="22" 
+                            Width="32" 
                             Background="{x:Null}" 
                             BorderThickness="0,0,0,0" 
                             Click="closeBtn_Click">
-                        <Image Source="/close_WHT_wght200.png" 
-                               Width="20" 
-                               Height="20"/>
+                        <Image Source="{StaticResource ic_close}" />
                     </Button>
                 </StackPanel>
             </DockPanel>

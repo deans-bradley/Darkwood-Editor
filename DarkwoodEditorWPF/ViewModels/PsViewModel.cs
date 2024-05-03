@@ -23,7 +23,7 @@ namespace DarkwoodEditorWPF.ViewModels
         private int lifes;
         private ObservableCollection<StringValue> recipes = new ObservableCollection<StringValue>();
         private ObservableCollection<CraftedItemViewModel> craftedItems = new ObservableCollection<CraftedItemViewModel>();
-        private ChEffS? chEffS;
+        private ChEffsViewModel? chEffS;
         private SkillS? skillS;
         private int expMachineId;
         private bool examinedExpMachine;
@@ -190,7 +190,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public ChEffS? ChEffS
+        public ChEffsViewModel? ChEffS
         {
             get => chEffS;
             set

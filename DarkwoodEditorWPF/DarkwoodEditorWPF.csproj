@@ -9,11 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="close_WHT_wght200.png" />
     <None Remove="icon.png" />
     <None Remove="mainFormBg.png" />
-    <None Remove="minimize_WHT_wght200.png" />
-    <None Remove="Views\close_WHT_wght400.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,10 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="close_WHT_wght200.png" />
-    <Resource Include="icon.png" />
-    <Resource Include="mainFormBg.png" />
-    <Resource Include="minimize_WHT_wght200.png" />
-    <Resource Include="Views\close_WHT_wght400.png" />
+    <Resource Include="Res\Images\icon.png" />
+    <Resource Include="Res\Images\mainFormBg.png" />
   </ItemGroup>
 </Project>

@@ -60,7 +60,7 @@ namespace DarkwoodEditorWPF.Helpers
         }
 
         // List<object> to ObservableCollection<CraftedItemViewModel>
-        public ObservableCollection<CraftedItemViewModel> ConvertCraftedItemViewModelListToObservableCollection(List<object> list)
+        public ObservableCollection<CraftedItemViewModel> ConvertCraftedItemListToObservableCollection(List<object> list)
         {
             ObservableCollection<CraftedItemViewModel> observableCollection = new ObservableCollection<CraftedItemViewModel>();
 
@@ -84,7 +84,7 @@ namespace DarkwoodEditorWPF.Helpers
         }
 
         // ObservableCollection<CraftedItemViewModel> to List<object>
-        public List<object> ConvertObservableCollectionToCraftedItemViewModelList(ObservableCollection<CraftedItemViewModel> observableCollection)
+        public List<object> ConvertObservableCollectionToCraftedItemList(ObservableCollection<CraftedItemViewModel> observableCollection)
         {
 			List<object> list = new List<object>();
 
@@ -130,7 +130,7 @@ namespace DarkwoodEditorWPF.Helpers
         }
 
         // ObservableCollection<EffectViewModel> to List<object>
-        public List<object> ConvertObservableCollectionToEffectViewModelList(ObservableCollection<EffectViewModel> observableCollection)
+        public List<object> ConvertObservableCollectionToEffectList(ObservableCollection<EffectViewModel> observableCollection)
         {
             List<object> list = new List<object>();
 

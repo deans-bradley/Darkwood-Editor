@@ -4,9 +4,127 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DarkwoodEditorWPF.Views.UserControls"
+             xmlns:view="clr-namespace:DarkwoodEditorWPF.Views.UserControlItems"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/ScrollBarDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Grid.Row="1"
+            Margin="10" 
+            Background="#2d2d30" 
+            CornerRadius="5,5,5,5">
+
+        <StackPanel Orientation="Vertical">
+            <DockPanel Margin="0,0,0,24">
+                <TextBlock Text="Edit Player Effects" 
+                           FontSize="16" 
+                           FontWeight="Bold" 
+                           Foreground="White" 
+                           HorizontalAlignment="Left" 
+                           VerticalAlignment="Center" 
+                           Margin="20,0,0,0"/>
+                <Button x:Name="closeBtn" 
+                        Width="24" 
+                        HorizontalAlignment="Right"
+                        Margin="0,4,4,0" 
+                        Background="{x:Null}" 
+                        BorderBrush="{x:Null}" 
+                        Padding="0,0,0,0" 
+                        Click="closeBtn_Click">
+                    <Button.Content>
+                        <Image />
+                    </Button.Content>
+                </Button>
+            </DockPanel>
+
+            <Grid Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Column="0" 
+                           Text="Type" 
+                           FontSize="10" 
+                           FontWeight="Bold" 
+                           Foreground="White" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"/>
+                <Rectangle Grid.Column="1" Fill="Black" Width="0.5" Opacity="0.3"/>
+
+                <TextBlock Grid.Column="2" 
+                           Text="Duration" 
+                           FontSize="10" 
+                           FontWeight="Bold" 
+                           Foreground="White" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"/>
+                <Rectangle Grid.Column="3" Fill="Black" Width="0.5" Opacity="0.3"/>
+
+                <TextBlock Grid.Column="4" 
+                           Text="Modifier" 
+                           FontSize="10" 
+                           FontWeight="Bold" 
+                           Foreground="White" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"/>
+                <Rectangle Grid.Column="5" Fill="Black" Width="0.5" Opacity="0.3"/>
+
+                <TextBlock Grid.Column="6" 
+                           Text="Interval" 
+                           FontSize="10" 
+                           FontWeight="Bold" 
+                           Foreground="White" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"/>
+                <Rectangle Grid.Column="7" Fill="Black" Width="0.5" Opacity="0.3"/>
+
+                <TextBlock Grid.Column="8" 
+                           Text="Time Elapsed" 
+                           FontSize="10" 
+                           FontWeight="Bold" 
+                           Foreground="White" 
+                           HorizontalAlignment="Center" 
+                           VerticalAlignment="Center"/>
+
+                <Rectangle Grid.ColumnSpan="8" 
+                           Grid.Row="1" 
+                           Fill="Black" 
+                           Height="0.5" 
+                           Opacity="0.3"/>
+            </Grid>
             
-    </Grid>
+            <ScrollViewer Grid.Column="1" 
+                          Style="{StaticResource scrollViewer}"
+                          VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding Effects}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <view:EffectItem />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </StackPanel>
+    </Border>
 </UserControl>

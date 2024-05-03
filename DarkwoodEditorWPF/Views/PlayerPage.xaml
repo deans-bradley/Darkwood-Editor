@@ -11,8 +11,8 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../BaseDictionary.xaml"/>
-                <ResourceDictionary Source="../ScrollBarDictionary.xaml"/>
+                <ResourceDictionary Source="../Styles/BaseDictionary.xaml"/>
+                <ResourceDictionary Source="../Styles/ScrollBarDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>

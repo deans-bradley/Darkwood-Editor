@@ -9,8 +9,8 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../../BaseDictionary.xaml"/>
-                <ResourceDictionary Source="../../ScrollBarDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/ScrollBarDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -39,12 +39,7 @@
                             Padding="0,0,0,0" 
                             Click="closeBtn_Click">
                         <Button.Content>
-                            <Image Source="/Views/close_WHT_wght400.png" 
-                                   Stretch="Fill" 
-                                   HorizontalAlignment="Left"
-                                   VerticalAlignment="Center"
-                                   Width="24"
-                                   Height="24"/>
+                            <Image />
                         </Button.Content>
                     </Button>
                 </DockPanel>
