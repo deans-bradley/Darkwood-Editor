@@ -4,25 +4,23 @@
     <!-- Close Icon -->
     <DrawingImage x:Key="ic_close">
         <DrawingImage.Drawing>
-            <DrawingGroup ClipGeometry="M0,-960 V0 H960 V0 H-960 Z">
-                <DrawingGroup.Transform>
-                    <TranslateTransform X="0" Y="960" />
-                </DrawingGroup.Transform>
-                <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M960,960z M0,0z M256,-200L200,-256 424,-480 200,-704 256,-760 480,-536 704,-760 760,-704 536,-480 760,-256 704,-200 480,-424 256,-200z" />
-            </DrawingGroup>
+            <GeometryDrawing Geometry="M0,0 L10,10 M0,10 L10,0">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="Black" Thickness="2"/>
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
         </DrawingImage.Drawing>
     </DrawingImage>
 
     <!-- Minimize Icon -->
     <DrawingImage x:Key="ic_minimize">
-        <DrawingImage.Drawing>
-            <DrawingGroup ClipGeometry="M0,-960 V0 H960 V0 H-960 Z">
-                <DrawingGroup.Transform>
-                    <TranslateTransform X="0" Y="960" />
-                </DrawingGroup.Transform>
-                <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M960,960z M0,0z M240,-120L240,-200 720,-200 720,-120 240,-120z" />
-            </DrawingGroup>
-        </DrawingImage.Drawing>
+            <DrawingImage.Drawing>
+                <GeometryDrawing  Geometry="F1 M960,960z M0,0z M240,-120L240,-200 720,-200 720,-120 240,-120z">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="Black" Thickness="2"/>
+                    </GeometryDrawing.Pen>
+                </GeomtryDrawing>
+            </DrawingImage.Drawing>
     </DrawingImage>
 
     <!-- Back Icon -->
