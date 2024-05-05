@@ -115,7 +115,7 @@
                             Background="{x:Null}" 
                             BorderThickness="0,0,0,0" 
                             Click="minimizeBtn_Click">
-                        <Image Source="{StaticResource ic_minimize}"/>
+                        <Image Source="{StaticResource ic_minimize}" Margin="8"/>
                     </Button>
 
                     <Button x:Name="closeBtn"
@@ -123,7 +123,7 @@
                             Background="{x:Null}" 
                             BorderThickness="0,0,0,0" 
                             Click="closeBtn_Click">
-                        <Image Source="{StaticResource ic_close}" />
+                        <Image Source="{StaticResource ic_close}" Margin="8" />
                     </Button>
                 </StackPanel>
             </DockPanel>

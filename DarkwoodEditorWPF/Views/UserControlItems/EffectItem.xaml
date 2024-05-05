@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" 
              d:DesignWidth="800">
-    
+
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -30,22 +30,22 @@
                      Style="{StaticResource gridTxtBox}"
                      Grid.Column="0"
                      TextAlignment="Center"/>
-            
+
             <TextBox Text="{Binding Duration, Mode=TwoWay}"
                      Style="{StaticResource gridTxtBox}"
                      Grid.Column="1"
                      TextAlignment="Center"/>
-            
+
             <TextBox Text="{Binding Modifier, Mode=TwoWay}"
                      Style="{StaticResource gridTxtBox}"
                      Grid.Column="2"
                      TextAlignment="Center"/>
-            
+
             <TextBox Text="{Binding Interval, Mode=TwoWay}"
                      Style="{StaticResource gridTxtBox}"
                      Grid.Column="3"
                      TextAlignment="Center"/>
-            
+
             <TextBox Text="{Binding TimeElapsed, Mode=TwoWay}"
                      Style="{StaticResource gridTxtBox}"
                      Grid.Column="4"

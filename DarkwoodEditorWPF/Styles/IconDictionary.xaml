@@ -2,25 +2,28 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!-- Close Icon -->
+    <!-- <GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M960,960z M0,0z M256,-200L200,-256 424,-480 200,-704 256,-760 480,-536 704,-760 760,-704 536,-480 760,-256 704,-200 480,-424 256,-200z" /> -->
     <DrawingImage x:Key="ic_close">
         <DrawingImage.Drawing>
-            <GeometryDrawing Geometry="M0,0 L10,10 M0,10 L10,0">
+            <GeometryDrawing Geometry="M 0,0 L 10,10 M 0,10 L 10,0">
                 <GeometryDrawing.Pen>
-                    <Pen Brush="Black" Thickness="2"/>
+                    <Pen Brush="Gainsboro" Thickness="1"/>
                 </GeometryDrawing.Pen>
             </GeometryDrawing>
         </DrawingImage.Drawing>
     </DrawingImage>
 
     <!-- Minimize Icon -->
+    <!-- <DrawingGroup ClipGeometry="M0,-960 V0 H960 V0 H-960 Z"> -->
+    <!-- <GeometryDrawing  Geometry="F1 M960,960z M0,0z M240,-120L240,-200 720,-200 720,-120 240,-120z"> -->
     <DrawingImage x:Key="ic_minimize">
-            <DrawingImage.Drawing>
-                <GeometryDrawing  Geometry="F1 M960,960z M0,0z M240,-120L240,-200 720,-200 720,-120 240,-120z">
-                    <GeometryDrawing.Pen>
-                        <Pen Brush="Black" Thickness="2"/>
-                    </GeometryDrawing.Pen>
-                </GeomtryDrawing>
-            </DrawingImage.Drawing>
+        <DrawingImage.Drawing>
+            <GeometryDrawing Geometry="M 0,10 L 10,10">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="Gainsboro" Thickness="1"/>
+                </GeometryDrawing.Pen>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
     </DrawingImage>
 
     <!-- Back Icon -->
