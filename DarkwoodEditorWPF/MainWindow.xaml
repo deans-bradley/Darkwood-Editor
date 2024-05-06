@@ -111,19 +111,17 @@
             <DockPanel x:Name="windowDckPnl" Grid.Column="1">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button x:Name="minimizeBtn"
+                            Style="{DynamicResource WindowBtn}"
                             Width="32" 
-                            Background="{x:Null}" 
-                            BorderThickness="0,0,0,0" 
                             Click="minimizeBtn_Click">
                         <Image Source="{StaticResource ic_minimize}" Margin="8"/>
                     </Button>
 
                     <Button x:Name="closeBtn"
+                            Style="{DynamicResource WindowBtn}"
                             Width="32" 
-                            Background="{x:Null}" 
-                            BorderThickness="0,0,0,0" 
                             Click="closeBtn_Click">
-                        <Image Source="{StaticResource ic_close}" Margin="8" />
+                        <Image Source="{StaticResource ic_close}" Margin="8"/>
                     </Button>
                 </StackPanel>
             </DockPanel>

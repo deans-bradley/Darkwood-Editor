@@ -11,6 +11,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
                 <ResourceDictionary Source="../../Styles/ScrollBarDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/IconDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -31,15 +32,13 @@
                                VerticalAlignment="Center" 
                                Margin="20,0,0,0"/>
                     <Button x:Name="closeBtn" 
+                            Style="{DynamicResource ClosePageBtn}"
                             Width="24" 
                             HorizontalAlignment="Right"
                             Margin="0,4,4,0" 
-                            Background="{x:Null}" 
-                            BorderBrush="{x:Null}" 
-                            Padding="0,0,0,0" 
                             Click="closeBtn_Click">
                         <Button.Content>
-                            <Image />
+                            <Image Source="{StaticResource ic_close}" Margin="6"/>
                         </Button.Content>
                     </Button>
                 </DockPanel>
@@ -49,39 +48,44 @@
                         <ItemsControl ItemsSource="{Binding CraftedItems}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Vertical" Margin="0,5,0,5">
-                                        <DockPanel Width="310" HorizontalAlignment="Left">
-                                            <TextBox Text="{Binding StringValue, Mode=TwoWay}" 
-                                                     Width="120"
-                                                     FontSize="11" 
-                                                     FontWeight="Bold" 
-                                                     Foreground="White" 
-                                                     VerticalAlignment="Center" 
-                                                     HorizontalAlignment="Left"/>
-                                            <TextBox x:Name="IntValueTxtBox"
-                                                     Text="{Binding IntValue, Mode=TwoWay}" 
-                                                     Width="50"
-                                                     FontSize="11" 
-                                                     FontWeight="Bold" 
-                                                     Foreground="White"  
-                                                     VerticalAlignment="Center" 
-                                                     HorizontalAlignment="Right" PreviewTextInput="IntValueTxtBox_PreviewTextInput"/>
-                                        </DockPanel>
-                                        <Rectangle Fill="Black" Height="0.5" Margin="0,5,0,0" Opacity="0.3" />
-                                    </StackPanel>
+                                    <Grid Margin="0,5,0,5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBox Text="{Binding StringValue, Mode=TwoWay}" 
+                                                 FontSize="11" 
+                                                 FontWeight="Bold" 
+                                                 Foreground="White" 
+                                                 HorizontalAlignment="Stretch"/>
+
+                                        <TextBox x:Name="IntValueTxtBox"
+                                                 Grid.Column="1"
+                                                 Text="{Binding IntValue, Mode=TwoWay}" 
+                                                 FontSize="11" 
+                                                 Margin="20,0,0,0"
+                                                 FontWeight="Bold" 
+                                                 Foreground="White"  
+                                                 PreviewTextInput="IntValueTxtBox_PreviewTextInput"/>
+                                    </Grid>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <StackPanel Orientation="Horizontal">
+                        <Grid Margin="0,15,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            
                             <Button x:Name="addBtn" 
+                                    Style="{DynamicResource DefaultBtn}"
                                     Content="Add Item" 
-                                    FontSize="11"
-                                    Width="100" 
-                                    HorizontalAlignment="Left"/>
-                            <ComboBox x:Name="recipeComBox"
-                                      Width="200"
-                                      Margin="10,0,0,0"/>
-                        </StackPanel>
+                                    FontSize="11"/>
+                            <ComboBox x:Name="itemComBox"
+                                      Grid.Column="1"
+                                      Margin="20,0,0,0"/>
+                        </Grid>
                     </StackPanel>
                 </ScrollViewer>
             </StackPanel>

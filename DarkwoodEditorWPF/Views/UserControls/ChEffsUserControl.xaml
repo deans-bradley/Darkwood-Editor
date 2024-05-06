@@ -13,6 +13,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
                 <ResourceDictionary Source="../../Styles/ScrollBarDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/IconDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -32,15 +33,13 @@
                            VerticalAlignment="Center" 
                            Margin="20,0,0,0"/>
                 <Button x:Name="closeBtn" 
+                        Style="{StaticResource ClosePageBtn}"
                         Width="24" 
                         HorizontalAlignment="Right"
                         Margin="0,4,4,0" 
-                        Background="{x:Null}" 
-                        BorderBrush="{x:Null}" 
-                        Padding="0,0,0,0" 
                         Click="closeBtn_Click">
                     <Button.Content>
-                        <Image />
+                        <Image Source="{StaticResource ic_close}" Margin="6"/>
                     </Button.Content>
                 </Button>
             </DockPanel>
