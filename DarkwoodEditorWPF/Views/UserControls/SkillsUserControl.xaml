@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="DarkwoodEditorWPF.Views.UserControls.SkillsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DarkwoodEditorWPF.Views.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/ScrollBarDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/IconDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Border Grid.Row="1"
+                Margin="10" 
+                Background="#2d2d30" 
+                CornerRadius="5,5,5,5">
+
+            <StackPanel Orientation="Vertical">
+                <DockPanel Margin="0,0,0,24">
+                    <TextBlock Text="Edit Skills" 
+                               FontSize="16" 
+                               FontWeight="Bold" 
+                               Foreground="White" 
+                               HorizontalAlignment="Left" 
+                               VerticalAlignment="Center"
+                               Margin="20,0,0,0"/>
+                    <Button x:Name="closeBtn"
+                            Style="{DynamicResource ClosePageBtn}"
+                            Width="24" 
+                            HorizontalAlignment="Right"
+                            Margin="0,4,4,0">
+                        <Button.Content>
+                            <Image Source="{StaticResource ic_close}" Margin="6"/>
+                        </Button.Content>
+                    </Button>
+                </DockPanel>
+
+                <ScrollViewer>
+
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

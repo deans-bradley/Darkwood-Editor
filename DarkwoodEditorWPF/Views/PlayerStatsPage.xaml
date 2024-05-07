@@ -195,6 +195,15 @@
                                   VerticalAlignment="Center"/>
                         
                     </DockPanel>
+                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                    <DockPanel Style="{StaticResource psItem}">
+
+                        <Label Content="Skills" Style="{StaticResource psLbl}"/>
+
+                        <Button x:Name="skillsBtn"
+                                Style="{StaticResource psBtn}" 
+                                Click="skillsBtn_Click"/>
+                    </DockPanel>
                 </StackPanel>
             </ScrollViewer>
         </Border>

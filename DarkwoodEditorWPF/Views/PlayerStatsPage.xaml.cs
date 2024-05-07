@@ -37,11 +37,17 @@ namespace DarkwoodEditorWPF.Views
 			mainWindow.MainContent.Navigate(new Uri("Views/UserControls/ChEffsUserControl.xaml", UriKind.Relative));
 		}
 
+        private void skillsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
-		//
-		// Input validation
-		//
-		private void IntTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+            mainWindow.MainContent.Navigate(new Uri("Views/UserControls/SkillsUserControl.xaml", UriKind.Relative));
+        }
+
+        //
+        // Input validation
+        //
+        private void IntTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
 		{
 			foreach (char c in e.Text)
 			{

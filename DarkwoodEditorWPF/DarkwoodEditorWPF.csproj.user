@@ -19,6 +19,9 @@
     <Compile Update="Views\UserControls\ChEffsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControls\Dropdown.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControls\EditCraftedItemsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -26,6 +29,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\RootUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControls\SkillsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -54,6 +60,9 @@
     <Page Update="Views\UserControls\ChEffsUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\UserControls\Dropdown.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\UserControls\EditCraftedItemsUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -61,6 +70,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\RootUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\SkillsUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
