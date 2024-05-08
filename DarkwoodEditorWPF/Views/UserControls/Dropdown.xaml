@@ -6,9 +6,19 @@
              xmlns:local="clr-namespace:DarkwoodEditorWPF.Views.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/IconDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
     <Border>
         <Grid>
-
+            <Image Source="{DynamicResource ic_chevron_down}" Width="24" Height="24"/>
         </Grid>
     </Border>
 </UserControl>
