@@ -28,107 +28,117 @@
                 <StackPanel Margin="8,0,8,0">
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Health" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Health" Style="{StaticResource ItemTxtBlk}"/>
 
                         <TextBox Text="{Binding Health}" 
-                                 Style="{StaticResource ItemTxtBox}"
+                                 Width="120"
+                                 HorizontalAlignment="Right"
                                  PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3"/>
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Stamina" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Stamina" Style="{StaticResource ItemTxtBlk}"/>
 
                         <TextBox Text="{Binding Stamina}"
-                                 Style="{StaticResource ItemTxtBox}"
+                                 Width="120"
+                                 HorizontalAlignment="Right"
                                  PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Experience" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Experience" Style="{StaticResource ItemTxtBlk}"/>
 
                         <TextBox Text="{Binding Experience}"
-                                 Style="{StaticResource ItemTxtBox}"
+                                 Width="120"
+                                 HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Current level" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Current level" Style="{StaticResource ItemTxtBlk}"/>
 
                         <TextBox Text="{Binding CurrentLevel}"
-                                 Style="{StaticResource ItemTxtBox}"
+                                 Width="120"
+                                 HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Health upgrades" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Health upgrades" Style="{StaticResource ItemTxtBlk}"/>
 
                         <TextBox Text="{Binding HealthUpgrades}"
-                                 Style="{StaticResource ItemTxtBox}"
+                                 Width="120"
+                                 HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Stamina upgrades" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Stamina upgrades" Style="{StaticResource ItemTxtBlk}"/>
 
                         <TextBox Text="{Binding StaminaUpgrades}"
-                                 Style="{StaticResource ItemTxtBox}"
+                                 Width="120"
+                                 HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Hotbar upgrades" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Hotbar upgrades" Style="{StaticResource ItemTxtBlk}"/>
 
                         <TextBox Text="{Binding HotbarUpgrades}"
-                                 Style="{StaticResource ItemTxtBox}"
+                                 Width="120"
+                                 HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Inventory upgrades" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Inventory upgrades" Style="{StaticResource ItemTxtBlk}"/>
 
                         <TextBox Text="{Binding InventoryUpgrades}"
-                                 Style="{StaticResource ItemTxtBox}"
+                                 Width="120"
+                                 HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Last time ate" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Last time ate" Style="{StaticResource ItemTxtBlk}"/>
 
                         <TextBox Text="{Binding LastTimeAte}"
-                                 Style="{StaticResource ItemTxtBox}"
+                                 Width="120"
+                                 HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Saturation" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Saturation" Style="{StaticResource ItemTxtBlk}"/>
 
                         <TextBox Text="{Binding Saturation}"
-                                 Style="{StaticResource ItemTxtBox}"
+                                 Width="120"
+                                 HorizontalAlignment="Right"
                                  PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Fed today" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Fed today" Style="{StaticResource ItemTxtBlk}"/>
 
                         <CheckBox IsChecked="{Binding FedToday}"
                                   HorizontalAlignment="Right" 
@@ -138,17 +148,18 @@
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Lifes" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Lifes" Style="{StaticResource ItemTxtBlk}"/>
 
                         <TextBox Text="{Binding Lifes}"
-                                 Style="{StaticResource ItemTxtBox}"
+                                 Width="120"
+                                 HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Recipes" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Recipes" Style="{StaticResource ItemTxtBlk}"/>
 
                         <Button x:Name="recipesBtn"
                                 Style="{StaticResource IcEditBtn}"
@@ -158,7 +169,7 @@
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Crafted Items" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Crafted Items" Style="{StaticResource ItemTxtBlk}"/>
 
                         <Button x:Name="craftedItemsBtn"
                                 Style="{StaticResource IcEditBtn}"
@@ -168,7 +179,7 @@
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Player Effects" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Player Effects" Style="{StaticResource ItemTxtBlk}"/>
 
                         <Button x:Name="playerEffectsBtn"
                                 Style="{StaticResource IcEditBtn}"
@@ -178,7 +189,7 @@
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Got hit at least once" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Got hit at least once" Style="{StaticResource ItemTxtBlk}"/>
 
                         <CheckBox IsChecked="{Binding GotHitAtLeastOnce}"
                                   HorizontalAlignment="Right" 
@@ -188,7 +199,7 @@
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Died at least once" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Died at least once" Style="{StaticResource ItemTxtBlk}"/>
 
                         <CheckBox IsChecked="{Binding diedAtLeastOnce}"
                                   HorizontalAlignment="Right" 
@@ -198,7 +209,7 @@
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Skills" Style="{StaticResource ItemLbl}"/>
+                        <TextBlock Text="Skills" Style="{StaticResource ItemTxtBlk}"/>
 
                         <Button x:Name="skillsBtn"
                                 Style="{StaticResource IcEditBtn}" 

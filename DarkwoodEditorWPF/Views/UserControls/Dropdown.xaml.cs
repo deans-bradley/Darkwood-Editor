@@ -45,6 +45,6 @@ namespace DarkwoodEditorWPF.Views.UserControls
 
                 drpDwnContent.Visibility = Visibility.Collapsed;
             }
-        }
+        }  
     }
 }

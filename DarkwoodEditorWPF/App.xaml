@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:DarkwoodEditorWPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <FontFamily x:Key="DotGothic16">pack://application:,,,/Res/Fonts/DotGothic16-Regular.ttf#DotGothic16 Regular</FontFamily>
     </Application.Resources>
 </Application>

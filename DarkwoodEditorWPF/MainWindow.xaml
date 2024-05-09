@@ -146,10 +146,11 @@
             <Label x:Name="currentFileLbl"
                    Content="{Binding FilePath}"
                    Foreground="White" 
+                   
                    VerticalAlignment="Center" 
                    Padding="0,0,0,0"
                    Margin="5,0,0,0" 
-                   FontSize="10"/>
+                   FontSize="10" FontStyle="Italic"/>
             <Button x:Name="testBtn" 
                     Width="50" 
                     Visibility="Hidden"
