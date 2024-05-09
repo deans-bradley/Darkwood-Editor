@@ -11,7 +11,6 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
                 <ResourceDictionary Source="../../Styles/ScrollBarDictionary.xaml"/>
-                <ResourceDictionary Source="../../Styles/IconDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -26,13 +25,11 @@
                 <DockPanel Margin="0,0,0,24">
                     <TextBlock Text="Edit Skills" 
                                FontSize="16" 
-                               FontWeight="Bold" 
-                               Foreground="White" 
                                HorizontalAlignment="Left" 
                                VerticalAlignment="Center"
                                Margin="20,0,0,0"/>
                     <Button x:Name="closeBtn"
-                            Style="{DynamicResource ClosePageBtn}"
+                            Style="{DynamicResource IconBtn}"
                             Width="24" 
                             HorizontalAlignment="Right"
                             Margin="0,4,4,0">
@@ -42,8 +39,8 @@
                     </Button>
                 </DockPanel>
 
-                <ScrollViewer>
-
+                <ScrollViewer Style="{StaticResource scrollViewer}">
+                    <local:Dropdown/>
                 </ScrollViewer>
             </StackPanel>
         </Border>

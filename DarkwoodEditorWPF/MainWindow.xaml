@@ -27,8 +27,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles/BaseDictionary.xaml"/>
+                <ResourceDictionary Source="Styles/MenuDictionary.xaml"/>
                 <ResourceDictionary Source="Styles/ScrollBarDictionary.xaml"/>
-                <ResourceDictionary Source="Styles/IconDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>

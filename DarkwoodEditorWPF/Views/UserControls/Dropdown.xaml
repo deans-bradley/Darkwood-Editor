@@ -4,21 +4,50 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DarkwoodEditorWPF.Views.UserControls"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             xmlns:item="clr-namespace:DarkwoodEditorWPF.Views.UserControlItems"
+             mc:Ignorable="d">
 
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
-                <ResourceDictionary Source="../../Styles/IconDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/ScrollBarDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Border>
+    <Border Background="#FF505050" 
+            Margin="20,4,8,4"
+            CornerRadius="10">
         <Grid>
-            <Image Source="{DynamicResource ic_chevron_down}" Width="24" Height="24"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel>
+                <TextBlock x:Name="drpDown"
+                           Text="Dropdown" 
+                           VerticalAlignment="Center" 
+                           Margin="22,0,0,0"/>
+
+                <Button x:Name="openDropdownBtn"
+                        Style="{DynamicResource DropdownBtn}"
+                        Height="12"
+                        Width="12" 
+                        HorizontalAlignment="Right"
+                        Margin="0,0,22,0" 
+                        Click="openDropdownBtn_Click"/>
+            </DockPanel>
+            
+            <StackPanel x:Name="drpDwnContent" 
+                        Visibility="Collapsed"
+                        Grid.Row="1" 
+                        Margin="10,0,10,0">
+                <item:SkillItem/>
+                <item:SkillItem/>
+                <item:SkillItem/>
+            </StackPanel>
         </Grid>
     </Border>
 </UserControl>

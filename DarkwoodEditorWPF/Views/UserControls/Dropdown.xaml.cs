@@ -24,5 +24,27 @@ namespace DarkwoodEditorWPF.Views.UserControls
         {
             InitializeComponent();
         }
+
+        private bool isRotated = false;
+
+        private void openDropdownBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (!isRotated)
+            {
+                openDropdownBtn.RenderTransformOrigin = new Point(0.5, 0.5);
+                openDropdownBtn.RenderTransform = new RotateTransform(180);
+                isRotated = true;
+
+                drpDwnContent.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                openDropdownBtn.RenderTransformOrigin = new Point(0.5, 0.5);
+                openDropdownBtn.RenderTransform = new RotateTransform(0);
+                isRotated = false;
+
+                drpDwnContent.Visibility = Visibility.Collapsed;
+            }
+        }
     }
 }

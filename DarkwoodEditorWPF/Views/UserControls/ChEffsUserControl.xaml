@@ -13,7 +13,6 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
                 <ResourceDictionary Source="../../Styles/ScrollBarDictionary.xaml"/>
-                <ResourceDictionary Source="../../Styles/IconDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
@@ -27,13 +26,11 @@
             <DockPanel Margin="0,0,0,24">
                 <TextBlock Text="Edit Player Effects" 
                            FontSize="16" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
                            HorizontalAlignment="Left" 
                            VerticalAlignment="Center" 
                            Margin="20,0,0,0"/>
                 <Button x:Name="closeBtn" 
-                        Style="{StaticResource ClosePageBtn}"
+                        Style="{StaticResource IconBtn}"
                         Width="24" 
                         HorizontalAlignment="Right"
                         Margin="0,4,4,0" 
@@ -64,45 +61,30 @@
 
                 <TextBlock Grid.Column="0" 
                            Text="Type" 
-                           FontSize="10" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
                            HorizontalAlignment="Center" 
                            VerticalAlignment="Center"/>
                 <Rectangle Grid.Column="1" Fill="Black" Width="0.5" Opacity="0.3"/>
 
                 <TextBlock Grid.Column="2" 
                            Text="Duration" 
-                           FontSize="10" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
                            HorizontalAlignment="Center" 
                            VerticalAlignment="Center"/>
                 <Rectangle Grid.Column="3" Fill="Black" Width="0.5" Opacity="0.3"/>
 
                 <TextBlock Grid.Column="4" 
                            Text="Modifier" 
-                           FontSize="10" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
                            HorizontalAlignment="Center" 
                            VerticalAlignment="Center"/>
                 <Rectangle Grid.Column="5" Fill="Black" Width="0.5" Opacity="0.3"/>
 
                 <TextBlock Grid.Column="6" 
-                           Text="Interval" 
-                           FontSize="10" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
+                           Text="Interval"  
                            HorizontalAlignment="Center" 
                            VerticalAlignment="Center"/>
                 <Rectangle Grid.Column="7" Fill="Black" Width="0.5" Opacity="0.3"/>
 
                 <TextBlock Grid.Column="8" 
                            Text="Time Elapsed" 
-                           FontSize="10" 
-                           FontWeight="Bold" 
-                           Foreground="White" 
                            HorizontalAlignment="Center" 
                            VerticalAlignment="Center"/>
 

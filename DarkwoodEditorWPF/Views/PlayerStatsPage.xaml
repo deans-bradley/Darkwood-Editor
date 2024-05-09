@@ -26,109 +26,109 @@
                 CornerRadius="5,5,5,5">
             <ScrollViewer Style="{StaticResource scrollViewer}">
                 <StackPanel Margin="8,0,8,0">
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Health" Style="{StaticResource psLbl}"/>
+                        <Label Content="Health" Style="{StaticResource ItemLbl}"/>
 
                         <TextBox Text="{Binding Health}" 
-                                 Style="{StaticResource psTxtBox}"
+                                 Style="{StaticResource ItemTxtBox}"
                                  PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3"/>
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Stamina" Style="{StaticResource psLbl}"/>
+                        <Label Content="Stamina" Style="{StaticResource ItemLbl}"/>
 
                         <TextBox Text="{Binding Stamina}"
-                                 Style="{StaticResource psTxtBox}"
+                                 Style="{StaticResource ItemTxtBox}"
                                  PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Experience" Style="{StaticResource psLbl}"/>
+                        <Label Content="Experience" Style="{StaticResource ItemLbl}"/>
 
                         <TextBox Text="{Binding Experience}"
-                                 Style="{StaticResource psTxtBox}"
+                                 Style="{StaticResource ItemTxtBox}"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Current level" Style="{StaticResource psLbl}"/>
+                        <Label Content="Current level" Style="{StaticResource ItemLbl}"/>
 
                         <TextBox Text="{Binding CurrentLevel}"
-                                 Style="{StaticResource psTxtBox}"
+                                 Style="{StaticResource ItemTxtBox}"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Health upgrades" Style="{StaticResource psLbl}"/>
+                        <Label Content="Health upgrades" Style="{StaticResource ItemLbl}"/>
 
                         <TextBox Text="{Binding HealthUpgrades}"
-                                 Style="{StaticResource psTxtBox}"
+                                 Style="{StaticResource ItemTxtBox}"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Stamina upgrades" Style="{StaticResource psLbl}"/>
+                        <Label Content="Stamina upgrades" Style="{StaticResource ItemLbl}"/>
 
                         <TextBox Text="{Binding StaminaUpgrades}"
-                                 Style="{StaticResource psTxtBox}"
+                                 Style="{StaticResource ItemTxtBox}"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Hotbar upgrades" Style="{StaticResource psLbl}"/>
+                        <Label Content="Hotbar upgrades" Style="{StaticResource ItemLbl}"/>
 
                         <TextBox Text="{Binding HotbarUpgrades}"
-                                 Style="{StaticResource psTxtBox}"
+                                 Style="{StaticResource ItemTxtBox}"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Inventory upgrades" Style="{StaticResource psLbl}"/>
+                        <Label Content="Inventory upgrades" Style="{StaticResource ItemLbl}"/>
 
                         <TextBox Text="{Binding InventoryUpgrades}"
-                                 Style="{StaticResource psTxtBox}"
+                                 Style="{StaticResource ItemTxtBox}"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Last time ate" Style="{StaticResource psLbl}"/>
+                        <Label Content="Last time ate" Style="{StaticResource ItemLbl}"/>
 
                         <TextBox Text="{Binding LastTimeAte}"
-                                 Style="{StaticResource psTxtBox}"
+                                 Style="{StaticResource ItemTxtBox}"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Saturation" Style="{StaticResource psLbl}"/>
+                        <Label Content="Saturation" Style="{StaticResource ItemLbl}"/>
 
                         <TextBox Text="{Binding Saturation}"
-                                 Style="{StaticResource psTxtBox}"
+                                 Style="{StaticResource ItemTxtBox}"
                                  PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Fed today" Style="{StaticResource psLbl}"/>
+                        <Label Content="Fed today" Style="{StaticResource ItemLbl}"/>
 
                         <CheckBox IsChecked="{Binding FedToday}"
                                   HorizontalAlignment="Right" 
@@ -136,49 +136,49 @@
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Lifes" Style="{StaticResource psLbl}"/>
+                        <Label Content="Lifes" Style="{StaticResource ItemLbl}"/>
 
                         <TextBox Text="{Binding Lifes}"
-                                 Style="{StaticResource psTxtBox}"
+                                 Style="{StaticResource ItemTxtBox}"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Recipes" Style="{StaticResource psLbl}"/>
+                        <Label Content="Recipes" Style="{StaticResource ItemLbl}"/>
 
                         <Button x:Name="recipesBtn"
-                                Style="{StaticResource psBtn}"
+                                Style="{StaticResource IcEditBtn}"
                                 Click="recipesBtn_Click"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Crafted Items" Style="{StaticResource psLbl}"/>
+                        <Label Content="Crafted Items" Style="{StaticResource ItemLbl}"/>
 
                         <Button x:Name="craftedItemsBtn"
-                                Style="{StaticResource psBtn}"
+                                Style="{StaticResource IcEditBtn}"
                                 Click="craftedItemsBtn_Click"/>
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Player Effects" Style="{StaticResource psLbl}"/>
+                        <Label Content="Player Effects" Style="{StaticResource ItemLbl}"/>
 
                         <Button x:Name="playerEffectsBtn"
-                                Style="{StaticResource psBtn}"
+                                Style="{StaticResource IcEditBtn}"
                                 Click="playerEffectsBtn_Click"/>
 
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Got hit at least once" Style="{StaticResource psLbl}"/>
+                        <Label Content="Got hit at least once" Style="{StaticResource ItemLbl}"/>
 
                         <CheckBox IsChecked="{Binding GotHitAtLeastOnce}"
                                   HorizontalAlignment="Right" 
@@ -186,9 +186,9 @@
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Died at least once" Style="{StaticResource psLbl}"/>
+                        <Label Content="Died at least once" Style="{StaticResource ItemLbl}"/>
 
                         <CheckBox IsChecked="{Binding diedAtLeastOnce}"
                                   HorizontalAlignment="Right" 
@@ -196,12 +196,12 @@
                         
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
-                    <DockPanel Style="{StaticResource psItem}">
+                    <DockPanel Style="{StaticResource ItemContainer}">
 
-                        <Label Content="Skills" Style="{StaticResource psLbl}"/>
+                        <Label Content="Skills" Style="{StaticResource ItemLbl}"/>
 
                         <Button x:Name="skillsBtn"
-                                Style="{StaticResource psBtn}" 
+                                Style="{StaticResource IcEditBtn}" 
                                 Click="skillsBtn_Click"/>
                     </DockPanel>
                 </StackPanel>

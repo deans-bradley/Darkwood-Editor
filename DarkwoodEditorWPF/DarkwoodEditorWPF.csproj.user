@@ -16,6 +16,9 @@
     <Compile Update="Views\UserControlItems\EffectItem.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\UserControlItems\SkillItem.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControls\ChEffsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -42,7 +45,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Styles\IconDictionary.xaml">
+    <Page Update="Styles\MenuDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\ScrollBarDictionary.xaml">
@@ -55,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlItems\EffectItem.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControlItems\SkillItem.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\ChEffsUserControl.xaml">
