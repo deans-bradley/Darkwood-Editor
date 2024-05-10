@@ -2,7 +2,7 @@
 
 Darkwood Editor is a save file editor designed for the video game [Darkwood](https://www.darkwoodgame.com/), developed by [Acid Wizard Studio](https://www.acidwizardstudio.com/). With Darkwood Editor, you can modify your `dat.sav` files, giving you the power to customize your Darkwood experience.
 
-![Player Stats Page](https://i.imgur.com/egELOZF.png)
+![Player Stats Page](https://i.imgur.com/5Sapj6m.png)
 
 ## Features
 
