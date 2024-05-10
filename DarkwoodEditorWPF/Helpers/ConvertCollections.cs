@@ -150,5 +150,91 @@ namespace DarkwoodEditorWPF.Helpers
 
             return list;
         }
+
+        // TODO: Implement AvailableSkillsStates ObservableCollection conversion
+        // List<object> to ObservableCollection<AvailableSkillsStatesViewModel>
+        public ObservableCollection<AvailableSkillsStatesViewModel> ConvertAvailableSkillStatesListToObservableCollection(List<object> list)
+        {
+            ObservableCollection<AvailableSkillsStatesViewModel> observableCollection = new ObservableCollection<AvailableSkillsStatesViewModel>();
+
+            foreach (object item in list)
+            {
+                JObject? jObject = item as JObject;
+
+                AvailableSkillsStates? skillsStates = jObject?.ToObject<AvailableSkillsStates>();
+
+                if (skillsStates != null)
+                {
+                    //observableCollection.Add(new SkillsStatesViewModel
+                    //{
+
+                    //});
+                }
+            }
+
+            return observableCollection;
+        }
+
+        // TODO: Implement AvailableSkillsStates List conversion
+        // ObservableCollection<AvailableSkillsStatesViewModel> to List<object>
+        public List<object> ConvertObservableCollectionToAvailableSkillsStatesList(ObservableCollection<AvailableSkillsStatesViewModel> observableCollection)
+        {
+            List<object> list = new List<object>();
+
+            foreach (AvailableSkillsStatesViewModel item in observableCollection)
+            {
+                JObject jObject = new JObject
+                {
+
+                };
+
+                list.Add(jObject);
+            }
+
+            return list;
+        }
+
+        // List<object> to ObservableCollection<SkillsStatesViewModel>
+        public ObservableCollection<SkillsStatesViewModel> ConvertSkillsStatesListToObservableCollection(List<object> list)
+        {
+            ObservableCollection<SkillsStatesViewModel> observableCollection = new ObservableCollection<SkillsStatesViewModel>();
+
+            foreach (object item in list)
+            {
+                JObject? jObject = item as JObject;
+
+                SkillsStates? skillsStates = jObject?.ToObject<SkillsStates>();
+
+                if (skillsStates != null)
+                {
+                    observableCollection.Add(new SkillsStatesViewModel
+                    {
+                        Type = skillsStates.Type,
+                        TimesUsed = skillsStates.TimesUsed
+                    });
+                }
+            }
+
+            return observableCollection;
+        }
+
+        // ObservableCollection<SkillsStatesViewModel> to List<object>
+        public List<object> ConvertObservableCollectionToSkillsStatesList(ObservableCollection<SkillsStatesViewModel> observableCollection)
+        {
+            List<object> list = new List<object>();
+
+            foreach (SkillsStatesViewModel item in observableCollection)
+            {
+                JObject jObject = new JObject
+                {
+                    { "type", item.Type },
+                    { "timesUsed", item.TimesUsed }
+                };
+
+                list.Add(jObject);
+            }
+
+            return list;
+        }
     }
 }

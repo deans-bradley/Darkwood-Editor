@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DarkwoodEditorWPF.Views.UserControls"
+             xmlns:dropdown="clr-namespace:DarkwoodEditorWPF.Views.UserControls.DropDowns"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -15,34 +16,58 @@
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid>
-        <Border Grid.Row="1"
+    <Border Grid.Row="1"
                 Margin="10" 
                 Background="#2d2d30" 
                 CornerRadius="5,5,5,5">
 
-            <StackPanel Orientation="Vertical">
-                <DockPanel Margin="0,0,0,24">
-                    <TextBlock Text="Edit Skills" 
-                               FontSize="16" 
-                               HorizontalAlignment="Left" 
-                               VerticalAlignment="Center"
-                               Margin="20,0,0,0"/>
-                    <Button x:Name="closeBtn"
-                            Style="{DynamicResource IconBtn}"
-                            Width="24" 
-                            HorizontalAlignment="Right"
-                            Margin="0,4,4,0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+        
+            <DockPanel Margin="0,0,0,24">
+                <TextBlock Text="Edit Skills" 
+                            FontSize="16" 
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Center"
+                            Margin="20,0,0,0"/>
+                <Button x:Name="closeBtn"
+                        Style="{DynamicResource IconBtn}"
+                        Width="24" 
+                        HorizontalAlignment="Right"
+                        Margin="0,4,4,0" Click="closeBtn_Click">
                         <Button.Content>
                             <Image Source="{StaticResource ic_close}" Margin="6"/>
                         </Button.Content>
-                    </Button>
-                </DockPanel>
+                </Button>
+            </DockPanel>
 
-                <ScrollViewer Style="{StaticResource scrollViewer}">
-                    <local:Dropdown/>
-                </ScrollViewer>
-            </StackPanel>
-        </Border>
-    </Grid>
+            <ScrollViewer Style="{StaticResource scrollViewer}" 
+                          Grid.Row="1"
+                          Margin="0,0,6,0"
+                          CanContentScroll="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <dropdown:AvailableSkillsDrpDwn x:Name="availableSkillsDrpDwn" Grid.Row="0"/>
+                    <dropdown:SkillsStatesDrpDwn x:Name="skillsStatesDrpDwn" Grid.Row="1"/>
+
+                    <DockPanel Style="{StaticResource ItemContainer}" Margin="24,10,10,0" Grid.Row="2">
+
+                        <TextBlock Text="Can activate skill?" Style="{StaticResource ItemTxtBlk}"/>
+
+                        <CheckBox IsChecked="{Binding CanActivateSkill, Mode=TwoWay}"
+                                    HorizontalAlignment="Right" 
+                                    VerticalAlignment="Center"/>
+                    </DockPanel>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </Border>
 </UserControl>

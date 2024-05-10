@@ -1,5 +1,5 @@
 ﻿using DarkwoodEditorWPF.Helpers;
-using DarkwoodEditorWPF.Models;
+using DarkwoodEditorWPF.ViewModels.Ps;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -24,7 +24,7 @@ namespace DarkwoodEditorWPF.ViewModels
         private ObservableCollection<StringValue> recipes = new ObservableCollection<StringValue>();
         private ObservableCollection<CraftedItemViewModel> craftedItems = new ObservableCollection<CraftedItemViewModel>();
         private ChEffsViewModel? chEffS;
-        private SkillS? skillS;
+        private SkillsViewModel? skillS;
         private int expMachineId;
         private bool examinedExpMachine;
         private bool gotHitAtLeastOnce;
@@ -200,7 +200,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public SkillS? SkillS
+        public SkillsViewModel? SkillS
         {
             get => skillS;
             set

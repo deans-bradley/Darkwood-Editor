@@ -1,31 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DarkwoodEditorWPF.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace DarkwoodEditorWPF.Views.UserControls
+namespace DarkwoodEditorWPF.Views.UserControls.DropDowns
 {
     /// <summary>
-    /// Interaction logic for Dropdown.xaml
+    /// Interaction logic for SkillsStatesDrpDwn.xaml
     /// </summary>
-    public partial class Dropdown : UserControl
+    public partial class SkillsStatesDrpDwn : UserControl
     {
-        public Dropdown()
+        public bool isRotated = false;
+
+        public SkillsStatesDrpDwn()
         {
             InitializeComponent();
-        }
 
-        private bool isRotated = false;
+            DataContext = (Application.Current.MainWindow.DataContext as MainViewModel)?.PsViewModel?.SkillS;
+            CheckDropDownContent();
+        }
 
         private void openDropdownBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -45,6 +38,16 @@ namespace DarkwoodEditorWPF.Views.UserControls
 
                 drpDwnContent.Visibility = Visibility.Collapsed;
             }
-        }  
+        }
+
+        private void CheckDropDownContent()
+        {
+            PsViewModel? psVM = (Application.Current.MainWindow.DataContext as MainViewModel)?.PsViewModel;
+
+            if (psVM?.SkillS?.SkillsStates != null)
+            {
+                drpDwnContent.Visibility = Visibility.Collapsed;
+            }
+        }
     }
 }

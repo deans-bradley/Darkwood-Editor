@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace DarkwoodEditorWPF.ViewModels.Ps
 {
-    class SkillsViewModel : INotifyPropertyChanged
+    public class SkillsViewModel : INotifyPropertyChanged
     {
         private ObservableCollection<AvailableSkillsStatesViewModel>? _availableSkillsStates;
         private ObservableCollection<SkillsStatesViewModel>? _skillsStates;

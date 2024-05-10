@@ -19,7 +19,10 @@
     <Compile Update="Views\UserControls\ChEffsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\UserControls\Dropdown.xaml.cs">
+    <Compile Update="Views\UserControls\DropDowns\AvailableSkillsDrpDwn.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControls\DropDowns\SkillsStatesDrpDwn.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\EditCraftedItemsUserControl.xaml.cs">
@@ -60,7 +63,10 @@
     <Page Update="Views\UserControls\ChEffsUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\UserControls\Dropdown.xaml">
+    <Page Update="Views\UserControls\DropDowns\AvailableSkillsDrpDwn.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\DropDowns\SkillsStatesDrpDwn.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\EditCraftedItemsUserControl.xaml">

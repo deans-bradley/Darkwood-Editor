@@ -1,17 +1,11 @@
-﻿using System;
+﻿using DarkwoodEditorWPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DarkwoodEditorWPF.Views.UserControls
 {
@@ -23,6 +17,31 @@ namespace DarkwoodEditorWPF.Views.UserControls
         public SkillsUserControl()
         {
             InitializeComponent();
+            ShowDropDowns();
+
+            DataContext = (Application.Current.MainWindow.DataContext as MainViewModel)?.PsViewModel?.SkillS;
+        }
+
+        private void closeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+
+            mainWindow.MainContent.Content = null;
+        }
+
+        private void ShowDropDowns()
+        {
+            PsViewModel? psVM = (Application.Current.MainWindow.DataContext as MainViewModel)?.PsViewModel;
+
+            if (psVM?.SkillS?.AvailableSkillsStates == null)
+            {
+                availableSkillsDrpDwn.Visibility = Visibility.Collapsed;
+            }
+
+            if (psVM?.SkillS?.SkillsStates == null)
+            {
+                skillsStatesDrpDwn.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

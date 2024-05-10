@@ -1,5 +1,6 @@
 ﻿using DarkwoodEditorWPF.Models;
 using DarkwoodEditorWPF.ViewModels;
+using DarkwoodEditorWPF.ViewModels.Ps;
 
 namespace DarkwoodEditorWPF.Helpers
 {
@@ -29,6 +30,15 @@ namespace DarkwoodEditorWPF.Helpers
 				Effects = convert.ConvertEffectListToObservableCollection(chEffS.effects ?? throw new NullReferenceException())
 			};
 
+			SkillS skillS = root.pS?.skillS ?? throw new NullReferenceException();
+			SkillsViewModel skillsVM = new SkillsViewModel
+			{
+				// Null for now due to lack of data in the sav.dat file
+                AvailableSkillsStates = null, // convert.ConvertAvailableSkillStatesListToObservableCollection(skillS.availableSkillsStates ?? throw new NullReferenceException()),
+				SkillsStates = convert.ConvertSkillsStatesListToObservableCollection(skillS.skillsStates ?? throw new NullReferenceException()),
+				CanActivateSkill = skillS.canActivateSkill
+			};
+
 			PS ps = root.pS ?? throw new NullReferenceException();
 			PsViewModel psVM = new PsViewModel
 			{
@@ -47,7 +57,8 @@ namespace DarkwoodEditorWPF.Helpers
 				Recipes = convert.ConvertStringListToObservableCollection(ps.recipes),
 				CraftedItems = convert.ConvertCraftedItemListToObservableCollection(ps.craftedItems ?? throw new NullReferenceException()),
 				ChEffS = chEffsVM,
-				GotHitAtLeastOnce = ps.gotHitAtLeastOnce,
+                SkillS = skillsVM,
+                GotHitAtLeastOnce = ps.gotHitAtLeastOnce,
 				DiedAtLeastOnce = ps.diedAtLeastOnce
 			};
 
@@ -264,6 +275,15 @@ namespace DarkwoodEditorWPF.Helpers
 				effects = convert.ConvertObservableCollectionToEffectList(chEffsViewModel.Effects ?? throw new NullReferenceException())
 			};
 
+			SkillsViewModel skillsViewModel = mainViewModel.PsViewModel?.SkillS ?? throw new NullReferenceException();
+			SkillS skillS = new SkillS
+			{
+				// Null for now due to lack of data in the sav.dat file
+                availableSkillsStates = null, // convert.ConvertObservableCollectionToAvailableSkillStatesList(skillsViewModel.AvailableSkillsStates ?? throw new NullReferenceException()),
+                skillsStates = convert.ConvertObservableCollectionToSkillsStatesList(skillsViewModel.SkillsStates ?? throw new NullReferenceException()),
+                canActivateSkill = skillsViewModel.CanActivateSkill
+            };
+
 			PsViewModel psViewModel = mainViewModel.PsViewModel ?? throw new NullReferenceException();
 			PS ps = new PS
 			{
@@ -284,7 +304,7 @@ namespace DarkwoodEditorWPF.Helpers
 				recipes = convert.ConvertObservableCollectionToStringList(psViewModel.Recipes),
 				craftedItems = convert.ConvertObservableCollectionToCraftedItemList(psViewModel.CraftedItems),
 				chEffS = chEffS,
-				skillS = psViewModel.SkillS,
+				skillS = skillS,
 				expMachineId = psViewModel.ExpMachineId,
 				examinedExpMachine = psViewModel.ExaminedExpMachine,
 				gotHitAtLeastOnce = psViewModel.GotHitAtLeastOnce,
