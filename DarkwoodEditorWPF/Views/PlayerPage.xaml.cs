@@ -11,5 +11,10 @@ namespace DarkwoodEditorWPF.Views
         {
             InitializeComponent();
         }
+
+        private void dreamsBtn_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
     }
 }

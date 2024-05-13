@@ -15,7 +15,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-
+    
     <Border Grid.Row="1"
                 Margin="10" 
                 Background="#2d2d30" 
@@ -26,7 +26,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-        
+
             <DockPanel Margin="0,0,0,24">
                 <TextBlock Text="Edit Skills" 
                             FontSize="16" 
@@ -38,9 +38,9 @@
                         Width="24" 
                         HorizontalAlignment="Right"
                         Margin="0,4,4,0" Click="closeBtn_Click">
-                        <Button.Content>
-                            <Image Source="{StaticResource ic_close}" Margin="6"/>
-                        </Button.Content>
+                    <Button.Content>
+                        <Image Source="{StaticResource ic_close}" Margin="6"/>
+                    </Button.Content>
                 </Button>
             </DockPanel>
 
@@ -55,8 +55,36 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <dropdown:AvailableSkillsDrpDwn x:Name="availableSkillsDrpDwn" Grid.Row="0"/>
-                    <dropdown:SkillsStatesDrpDwn x:Name="skillsStatesDrpDwn" Grid.Row="1"/>
+                    <dropdown:CustomDropDown x:Name="customDrpDwn" 
+                                             DropDownTitle="Skills States"
+                                             DropDownItemSource="{Binding SkillsStates}">
+                        <dropdown:CustomDropDown.DropDownItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                                    <DockPanel Style="{StaticResource ItemContainer}">
+
+                                        <TextBlock Text="{Binding Type, Mode=TwoWay}"
+                                                   Margin="12,0,0,0"
+                                                   Style="{StaticResource ItemTxtBlk}"/>
+
+                                        <StackPanel Orientation="Horizontal" 
+                                            HorizontalAlignment="Right">
+                                            <TextBlock Text="Times Used:"
+                                                       HorizontalAlignment="Right"
+                                                       VerticalAlignment="Center"
+                                                       Style="{StaticResource ItemTxtBlk}"
+                                                       Margin="0,0,6,0"/>
+                                            <TextBox Text="{Binding TimesUsed, Mode=TwoWay}"
+                                                     HorizontalAlignment="Right"
+                                                     Width="120" 
+                                                     Margin="0,0,12,0"/>
+                                        </StackPanel>
+                                    </DockPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </dropdown:CustomDropDown.DropDownItemTemplate>
+                    </dropdown:CustomDropDown>
 
                     <DockPanel Style="{StaticResource ItemContainer}" Margin="24,10,10,0" Grid.Row="2">
 

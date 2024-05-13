@@ -1,9 +1,4 @@
 ﻿using DarkwoodEditorWPF.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -17,7 +12,7 @@ namespace DarkwoodEditorWPF.Views.UserControls
         public SkillsUserControl()
         {
             InitializeComponent();
-            ShowDropDowns();
+            //ShowDropDowns();
 
             DataContext = (Application.Current.MainWindow.DataContext as MainViewModel)?.PsViewModel?.SkillS;
         }
@@ -35,12 +30,12 @@ namespace DarkwoodEditorWPF.Views.UserControls
 
             if (psVM?.SkillS?.AvailableSkillsStates == null)
             {
-                availableSkillsDrpDwn.Visibility = Visibility.Collapsed;
+                //availableSkillsDrpDwn.Visibility = Visibility.Collapsed;
             }
 
             if (psVM?.SkillS?.SkillsStates == null)
             {
-                skillsStatesDrpDwn.Visibility = Visibility.Collapsed;
+                //skillsStatesDrpDwn.Visibility = Visibility.Collapsed;
             }
         }
     }
