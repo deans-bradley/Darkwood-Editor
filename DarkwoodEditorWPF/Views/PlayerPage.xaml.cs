@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace DarkwoodEditorWPF.Views
 {
@@ -14,7 +15,9 @@ namespace DarkwoodEditorWPF.Views
 
         private void dreamsBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
 
+            mainWindow.MainContent.Navigate(new Uri("Views/UserControls/DreamsUserControl.xaml", UriKind.Relative));
         }
     }
 }

@@ -1,26 +1,28 @@
-﻿using DarkwoodEditorWPF.Models;
+﻿using DarkwoodEditorWPF.Helpers;
+using DarkwoodEditorWPF.Models;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace DarkwoodEditorWPF.ViewModels
 {
     public class DrSViewModel : INotifyPropertyChanged
     {
-        private List<string>? presetList;
+        private ObservableCollection<StringValue>? presetList;
         private bool hadDreamAtLvl2;
         private bool hadDreamAtLvl3;
         private bool hadDreamAtLvl5;
         private bool hadDreamAtLvl6;
         private bool hadDreamAtLvl7;
         private bool wantToDream;
-        private object? dreamName;
+        private string? dreamName;
         private double timeCopy;
         private int placeStartedDreamingID;
-        private EffectsCopy? effectsCopy;
+        private EffectsCopyViewModel? effectsCopy;
         private List<object>? inventorySlotsCopy;
         private List<object>? hotbarSlotsCopy;
         private List<double>? positionCopy;
 
-        public List<string>? PresetList
+        public ObservableCollection<StringValue>? PresetList
         {
             get => presetList;
             set
@@ -90,12 +92,19 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public object? DreamName
+        public string? DreamName
         {
             get => dreamName;
             set
             {
-                dreamName = value;
+                if (value != null)
+                {
+                    dreamName = value;
+                }
+                else
+                {
+                    dreamName = "No Dream";
+                }
                 OnPropertyChanged("DreamName");
             }
         }
@@ -120,7 +129,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public EffectsCopy? EffectsCopy
+        public EffectsCopyViewModel? EffectsCopy
         {
             get => effectsCopy;
             set

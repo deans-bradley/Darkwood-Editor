@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\UserControls\EffectsUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\PlayerPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,13 +22,10 @@
     <Compile Update="Views\UserControls\ChEffsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\UserControls\DropDowns\AvailableSkillsDrpDwn.xaml.cs">
+    <Compile Update="Views\UserControls\DreamsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\DropDowns\CustomDropDown.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\UserControls\DropDowns\SkillsStatesDrpDwn.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\EditCraftedItemsUserControl.xaml.cs">
@@ -38,6 +38,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\SkillsUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControls\StringListUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -54,6 +57,9 @@
     <Page Update="Styles\ScrollBarDictionary.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\UserControls\EffectsUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\PlayerPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -66,13 +72,10 @@
     <Page Update="Views\UserControls\ChEffsUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\UserControls\DropDowns\AvailableSkillsDrpDwn.xaml">
+    <Page Update="Views\UserControls\DreamsUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\DropDowns\CustomDropDown.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\UserControls\DropDowns\SkillsStatesDrpDwn.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\EditCraftedItemsUserControl.xaml">
@@ -85,6 +88,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\SkillsUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\StringListUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -41,7 +41,7 @@ namespace DarkwoodEditorWPF
                 {
                     Root root = DeserializeJson(filePath) ?? throw new Exception("Error deserializing JSON.");
 
-                    MainContentList.Navigate(new Uri("Views/PlayerStatsPage.xaml", UriKind.Relative));
+                    MainContentPage.Navigate(new Uri("Views/PlayerStatsPage.xaml", UriKind.Relative));
                     
                     MainViewModel mainViewModel = data.LoadData(filePath, root);
                     //rootUserControl.DataContext = mainViewModel.RootViewModel;
@@ -146,12 +146,12 @@ namespace DarkwoodEditorWPF
             Page playerStatsPage = new PlayerStatsPage();
 			playerStatsPage.DataContext = DataContext;
 
-            MainContent.Navigate(new Uri("Views/StartPage.xaml", UriKind.Relative));
+            MainContentPage.Navigate(new Uri("Views/PlayerStatsPage.xaml", UriKind.Relative));
         }
 
         private void playerMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MainContentList.Navigate(new Uri("Views/PlayerPage.xaml", UriKind.Relative));
+            MainContentPage.Navigate(new Uri("Views/PlayerPage.xaml", UriKind.Relative));
         }
 
         private void worldMenuItem_Click(object sender, RoutedEventArgs e)

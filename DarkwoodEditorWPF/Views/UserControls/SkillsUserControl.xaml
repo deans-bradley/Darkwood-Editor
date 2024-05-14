@@ -55,7 +55,38 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
 
-                    <dropdown:CustomDropDown x:Name="customDrpDwn" 
+                    <dropdown:CustomDropDown x:Name="availableSkillsDrpDwn" 
+                                             DropDownTitle="Available Skills"
+                                             DropDownItemSource="{Binding AvailableSkills}">
+                        <dropdown:CustomDropDown.DropDownItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical">
+                                    <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                                    <DockPanel Style="{StaticResource ItemContainer}">
+
+                                        <TextBlock Text="{Binding}"
+                                                   Margin="12,0,0,0"
+                                                   Style="{StaticResource ItemTxtBlk}"/>
+
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                            <!--<TextBlock Text="Times Used:"
+                                                       HorizontalAlignment="Right"
+                                                       VerticalAlignment="Center"
+                                                       Style="{StaticResource ItemTxtBlk}"
+                                                       Margin="0,0,6,0"/>-->
+                                            <TextBox Text="{Binding}"
+                                                     HorizontalAlignment="Right"
+                                                     Width="120" 
+                                                     Margin="0,0,12,0"/>
+                                        </StackPanel>
+                                    </DockPanel>
+                                </StackPanel>
+                            </DataTemplate>
+                        </dropdown:CustomDropDown.DropDownItemTemplate>
+                    </dropdown:CustomDropDown>
+
+                    <dropdown:CustomDropDown x:Name="skillsStatesDrpDwn" 
+                                             Grid.Row="1"
                                              DropDownTitle="Skills States"
                                              DropDownItemSource="{Binding SkillsStates}">
                         <dropdown:CustomDropDown.DropDownItemTemplate>
@@ -68,8 +99,7 @@
                                                    Margin="12,0,0,0"
                                                    Style="{StaticResource ItemTxtBlk}"/>
 
-                                        <StackPanel Orientation="Horizontal" 
-                                            HorizontalAlignment="Right">
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                             <TextBlock Text="Times Used:"
                                                        HorizontalAlignment="Right"
                                                        VerticalAlignment="Center"
@@ -86,7 +116,9 @@
                         </dropdown:CustomDropDown.DropDownItemTemplate>
                     </dropdown:CustomDropDown>
 
-                    <DockPanel Style="{StaticResource ItemContainer}" Margin="24,10,10,0" Grid.Row="2">
+                    <DockPanel Style="{StaticResource ItemContainer}" 
+                               Margin="24,10,10,0"
+                               Grid.Row="2">
 
                         <TextBlock Text="Can activate skill?" Style="{StaticResource ItemTxtBlk}"/>
 

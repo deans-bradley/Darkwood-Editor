@@ -19,7 +19,7 @@ namespace DarkwoodEditorWPF.Models
         public bool hadDreamAtLvl6 { get; set; }
         public bool hadDreamAtLvl7 { get; set; }
         public bool wantToDream { get; set; }
-        public object? dreamName { get; set; }
+        public string? dreamName { get; set; }
         public double timeCopy { get; set; }
         public int placeStartedDreamingID { get; set; }
         public EffectsCopy? effectsCopy { get; set; }

@@ -12,7 +12,7 @@ namespace DarkwoodEditorWPF.Views.UserControls
         public SkillsUserControl()
         {
             InitializeComponent();
-            //ShowDropDowns();
+            CheckDropDowns();
 
             DataContext = (Application.Current.MainWindow.DataContext as MainViewModel)?.PsViewModel?.SkillS;
         }
@@ -24,18 +24,18 @@ namespace DarkwoodEditorWPF.Views.UserControls
             mainWindow.MainContent.Content = null;
         }
 
-        private void ShowDropDowns()
+        private void CheckDropDowns()
         {
             PsViewModel? psVM = (Application.Current.MainWindow.DataContext as MainViewModel)?.PsViewModel;
 
             if (psVM?.SkillS?.AvailableSkillsStates == null)
             {
-                //availableSkillsDrpDwn.Visibility = Visibility.Collapsed;
+                availableSkillsDrpDwn.Visibility = Visibility.Collapsed;
             }
 
             if (psVM?.SkillS?.SkillsStates == null)
             {
-                //skillsStatesDrpDwn.Visibility = Visibility.Collapsed;
+                skillsStatesDrpDwn.Visibility = Visibility.Collapsed;
             }
         }
     }

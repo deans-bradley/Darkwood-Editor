@@ -51,8 +51,9 @@
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
 
-                                        <TextBox Text="{Binding StringValue, Mode=TwoWay}" 
-                                                 HorizontalAlignment="Stretch"/>
+                                        <TextBlock Text="{Binding StringValue, Mode=TwoWay}" 
+                                                   Style="{StaticResource ItemTxtBlk}"
+                                                   HorizontalAlignment="Stretch"/>
 
                                         <TextBox x:Name="IntValueTxtBox"
                                                  Grid.Column="1"

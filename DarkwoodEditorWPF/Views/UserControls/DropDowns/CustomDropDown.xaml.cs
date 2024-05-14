@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace DarkwoodEditorWPF.Views.UserControls.DropDowns
 {
@@ -8,9 +9,13 @@ namespace DarkwoodEditorWPF.Views.UserControls.DropDowns
     /// </summary>
     public partial class CustomDropDown : UserControl
     {
+        private bool isRotated = false;
+
         public CustomDropDown()
         {
             InitializeComponent();
+
+            dropDownItemSource.Visibility = Visibility.Collapsed;
         }
 
         public static readonly DependencyProperty DropDownTitleProperty =
@@ -19,13 +24,6 @@ namespace DarkwoodEditorWPF.Views.UserControls.DropDowns
         public static readonly DependencyProperty DropDownItemSourceProperty =
             DependencyProperty.Register("DropDownItemSource", typeof(object), typeof(CustomDropDown));
 
-        public static readonly DependencyProperty DropDownItemNameProperty =
-            DependencyProperty.Register("DropDownItemName", typeof(string), typeof(CustomDropDown));
-
-        public static readonly DependencyProperty DropDownItemValueProperty =
-            DependencyProperty.Register("DropDownItemValue", typeof(string), typeof(CustomDropDown));
-
-        // Test
         public static readonly DependencyProperty DropDownItemTemplateProperty =
             DependencyProperty.Register("DropDownItemTemplate", typeof(DataTemplate), typeof(CustomDropDown));
 
@@ -41,19 +39,6 @@ namespace DarkwoodEditorWPF.Views.UserControls.DropDowns
             set { SetValue(DropDownItemSourceProperty, value); }
         }
 
-        public string DropDownItemName
-        {
-            get { return (string)GetValue(DropDownItemNameProperty); }
-            set { SetValue(DropDownItemNameProperty, value); }
-        }
-
-        public string DropDownItemValue
-        {
-            get { return (string)GetValue(DropDownItemValueProperty); }
-            set { SetValue(DropDownItemValueProperty, value); }
-        }
-
-        // Test
         public DataTemplate DropDownItemTemplate
         {
             get { return (DataTemplate)GetValue(DropDownItemTemplateProperty); }
@@ -62,7 +47,22 @@ namespace DarkwoodEditorWPF.Views.UserControls.DropDowns
 
         private void openDropdownBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (!isRotated)
+            {
+                openDropdownBtn.RenderTransformOrigin = new Point(0.5, 0.5);
+                openDropdownBtn.RenderTransform = new RotateTransform(180);
+                isRotated = true;
 
+                dropDownItemSource.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                openDropdownBtn.RenderTransformOrigin = new Point(0.5, 0.5);
+                openDropdownBtn.RenderTransform = new RotateTransform(0);
+                isRotated = false;
+
+                dropDownItemSource.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

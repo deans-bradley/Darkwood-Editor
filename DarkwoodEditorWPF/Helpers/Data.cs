@@ -1,6 +1,7 @@
 ﻿using DarkwoodEditorWPF.Models;
 using DarkwoodEditorWPF.ViewModels;
 using DarkwoodEditorWPF.ViewModels.Ps;
+using System.Windows.Media.Effects;
 
 namespace DarkwoodEditorWPF.Helpers
 {
@@ -87,10 +88,16 @@ namespace DarkwoodEditorWPF.Helpers
 				GaveAfterNightRewards = cnS.gaveAfterNightRewards
 			};
 
+			EffectsCopy effectsCopy = root.drS?.effectsCopy ?? throw new NullReferenceException();
+			EffectsCopyViewModel effectsCopyVM = new EffectsCopyViewModel
+			{
+                Effects = convert.ConvertEffectListToObservableCollection(effectsCopy.effects ?? throw new NullReferenceException())
+            };
+
 			DrS drS = root.drS ?? throw new NullReferenceException();
 			DrSViewModel drSViewModel = new DrSViewModel
 			{
-				PresetList = drS.presetList,
+				PresetList = convert.ConvertStringListToObservableCollection(drS.presetList ?? throw new NullReferenceException()),
 				HadDreamAtLvl2 = drS.hadDreamAtLvl2,
 				HadDreamAtLvl3 = drS.hadDreamAtLvl3,
 				HadDreamAtLvl5 = drS.hadDreamAtLvl5,
@@ -100,7 +107,7 @@ namespace DarkwoodEditorWPF.Helpers
 				DreamName = drS.dreamName,
 				TimeCopy = drS.timeCopy,
 				PlaceStartedDreamingID = drS.placeStartedDreamingID,
-				EffectsCopy = drS.effectsCopy,
+				EffectsCopy = effectsCopyVM,
 				InventorySlotsCopy = drS.inventorySlotsCopy,
 				HotbarSlotsCopy = drS.hotbarSlotsCopy,
 				PositionCopy = drS.positionCopy
@@ -336,10 +343,16 @@ namespace DarkwoodEditorWPF.Helpers
 				gaveAfterNightRewards = cnSViewModel.GaveAfterNightRewards
 			};
 
+			EffectsCopyViewModel effectsCopyViewModel = mainViewModel.DrSViewModel?.EffectsCopy ?? throw new NullReferenceException();
+			EffectsCopy effectsCopy = new EffectsCopy
+			{
+                effects = convert.ConvertObservableCollectionToEffectList(effectsCopyViewModel.Effects ?? throw new NullReferenceException())
+            };
+
 			DrSViewModel drSViewModel = mainViewModel.DrSViewModel ?? throw new NullReferenceException();
 			DrS drS = new DrS
 			{
-				presetList = drSViewModel.PresetList,
+				presetList = convert.ConvertObservableCollectionToStringList(drSViewModel.PresetList ?? throw new NullReferenceException()),
 				hadDreamAtLvl2 = drSViewModel.HadDreamAtLvl2,
 				hadDreamAtLvl3 = drSViewModel.HadDreamAtLvl3,
 				hadDreamAtLvl5 = drSViewModel.HadDreamAtLvl5,
@@ -349,7 +362,7 @@ namespace DarkwoodEditorWPF.Helpers
 				dreamName = drSViewModel.DreamName,
 				timeCopy = drSViewModel.TimeCopy,
 				placeStartedDreamingID = drSViewModel.PlaceStartedDreamingID,
-				effectsCopy = drSViewModel.EffectsCopy,
+				effectsCopy = effectsCopy,
 				inventorySlotsCopy = drSViewModel.InventorySlotsCopy,
 				hotbarSlotsCopy = drSViewModel.HotbarSlotsCopy,
 				positionCopy = drSViewModel.PositionCopy

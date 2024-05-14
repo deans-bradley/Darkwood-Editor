@@ -135,7 +135,7 @@
 
             <!-- <controls:RootUserControl x:Name="rootUserControl" DataContext="{Binding DataContext, ElementName=MainWindow}"/> -->
 
-            <Frame Grid.Column="0" x:Name="MainContentList" NavigationUIVisibility="Hidden" DataContext="{Binding DataContext}"/>
+            <Frame Grid.Column="0" x:Name="MainContentPage" NavigationUIVisibility="Hidden" DataContext="{Binding DataContext}"/>
 
             <Frame Grid.Column="1" x:Name="MainContent" NavigationUIVisibility="Hidden" DataContext="{Binding DataContext}"/>
         </Grid>
