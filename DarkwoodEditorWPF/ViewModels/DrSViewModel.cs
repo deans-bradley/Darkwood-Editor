@@ -2,6 +2,8 @@
 using DarkwoodEditorWPF.Models;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
+using System.Text;
 
 namespace DarkwoodEditorWPF.ViewModels
 {
@@ -24,7 +26,25 @@ namespace DarkwoodEditorWPF.ViewModels
 
         public ObservableCollection<StringValue>? PresetList
         {
-            get => presetList;
+            get 
+            {
+                ObservableCollection<StringValue>? formattedList = new ObservableCollection<StringValue>();
+                if (presetList == null)
+                {
+                    return null;
+                }
+
+                foreach (StringValue preset in presetList)
+                {
+                    string presetName = preset?.Value ?? "";
+                    presetName = string.Join(" ", presetName.Split('_').Select(word =>
+                        char.ToUpper(word[0]) + word.Substring(1).ToLower()));
+
+                    formattedList.Add(new StringValue { Value = presetName });
+                }
+
+                return formattedList;
+            }
             set
             {
                 presetList = value;

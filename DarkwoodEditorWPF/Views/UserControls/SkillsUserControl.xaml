@@ -56,6 +56,7 @@
                     </Grid.RowDefinitions>
 
                     <dropdown:CustomDropDown x:Name="availableSkillsDrpDwn" 
+                                             Margin="20,0,0,0"
                                              DropDownTitle="Available Skills"
                                              DropDownItemSource="{Binding AvailableSkills}">
                         <dropdown:CustomDropDown.DropDownItemTemplate>
@@ -69,11 +70,11 @@
                                                    Style="{StaticResource ItemTxtBlk}"/>
 
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                            <!--<TextBlock Text="Times Used:"
+                                            <TextBlock Text="Times Used:"
                                                        HorizontalAlignment="Right"
                                                        VerticalAlignment="Center"
                                                        Style="{StaticResource ItemTxtBlk}"
-                                                       Margin="0,0,6,0"/>-->
+                                                       Margin="0,0,6,0"/>
                                             <TextBox Text="{Binding}"
                                                      HorizontalAlignment="Right"
                                                      Width="120" 
@@ -87,6 +88,7 @@
 
                     <dropdown:CustomDropDown x:Name="skillsStatesDrpDwn" 
                                              Grid.Row="1"
+                                             Margin="20,0,0,0"
                                              DropDownTitle="Skills States"
                                              DropDownItemSource="{Binding SkillsStates}">
                         <dropdown:CustomDropDown.DropDownItemTemplate>

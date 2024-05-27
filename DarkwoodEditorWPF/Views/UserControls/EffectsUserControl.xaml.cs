@@ -1,5 +1,4 @@
-﻿using DarkwoodEditorWPF.Views.UserControls.DropDowns;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace DarkwoodEditorWPF.Views.UserControls

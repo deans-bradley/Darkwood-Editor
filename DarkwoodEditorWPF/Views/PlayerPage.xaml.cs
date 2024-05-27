@@ -16,8 +16,12 @@ namespace DarkwoodEditorWPF.Views
         private void dreamsBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MainContent? mainContent = mainWindow.MainContentPage.Content as MainContent;
 
-            mainWindow.MainContent.Navigate(new Uri("Views/UserControls/DreamsUserControl.xaml", UriKind.Relative));
+            if (mainContent != null)
+            {
+                mainContent.SetContentRight("Views/UserControls/DreamsUserControl.xaml");
+            }
         }
     }
 }

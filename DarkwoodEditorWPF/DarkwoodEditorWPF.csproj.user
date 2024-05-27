@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\MainContent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControls\EffectsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -55,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\ScrollBarDictionary.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MainContent.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\EffectsUserControl.xaml">

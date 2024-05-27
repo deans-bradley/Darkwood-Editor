@@ -20,8 +20,12 @@ namespace DarkwoodEditorWPF.Views.UserControls
         private void closeBtn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MainContent? mainContent = mainWindow.MainContentPage.Content as MainContent;
 
-            mainWindow.MainContent.Content = null;
+            if (mainContent != null)
+            {
+                mainContent.SetContentRight(null);
+            }
         }
 
         private void CheckDropDowns()

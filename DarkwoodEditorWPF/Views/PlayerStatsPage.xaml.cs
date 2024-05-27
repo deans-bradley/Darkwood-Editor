@@ -19,29 +19,45 @@ namespace DarkwoodEditorWPF.Views
         private void recipesBtn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MainContent? mainContent = mainWindow.MainContentPage.Content as MainContent;
 
-            mainWindow.MainContent.Navigate(new Uri("Views/UserControls/EditRecipesUserControl.xaml", UriKind.Relative));
+            if (mainContent != null)
+            {
+                mainContent.SetContentRight("Views/UserControls/EditRecipesUserControl.xaml");
+            }
         }
 
 		private void craftedItemsBtn_Click(object sender, RoutedEventArgs e)
 		{
-			MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MainContent? mainContent = mainWindow.MainContentPage.Content as MainContent;
 
-			mainWindow.MainContent.Navigate(new Uri("Views/UserControls/EditCraftedItemsUserControl.xaml", UriKind.Relative));
+            if (mainContent != null)
+            {
+                mainContent.SetContentRight("Views/UserControls/EditCraftedItemsUserControl.xaml");
+            }
 		}
 
 		private void playerEffectsBtn_Click(object sender, RoutedEventArgs e)
 		{
-			MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MainContent? mainContent = mainWindow.MainContentPage.Content as MainContent;
 
-			mainWindow.MainContent.Navigate(new Uri("Views/UserControls/ChEffsUserControl.xaml", UriKind.Relative));
+            if (mainContent != null)
+            {
+                mainContent.SetContentRight("Views/UserControls/ChEffsUserControl.xaml");
+            }
 		}
 
         private void skillsBtn_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MainContent? mainContent = mainWindow.MainContentPage.Content as MainContent;
 
-            mainWindow.MainContent.Navigate(new Uri("Views/UserControls/SkillsUserControl.xaml", UriKind.Relative));
+            if (mainContent != null)
+            {
+                mainContent.SetContentRight("Views/UserControls/SkillsUserControl.xaml");
+            }
         }
 
         //

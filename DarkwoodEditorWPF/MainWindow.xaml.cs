@@ -6,10 +6,8 @@ using System.IO;
 using DarkwoodEditorWPF.ViewModels;
 using System.Windows.Input;
 using DarkwoodEditorWPF.Views;
-using DarkwoodEditorWPF.Views.UserControls;
 using System.Diagnostics;
 using DarkwoodEditorWPF.Helpers;
-using System.Windows.Controls;
 
 namespace DarkwoodEditorWPF
 {
@@ -25,7 +23,7 @@ namespace DarkwoodEditorWPF
             InitializeComponent();
         }
 
-        private void openFileDialog()
+        private void OpenFileDialog()
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "DAT Files (*.dat)|*.dat|All Files (*.*)|*.*";
@@ -40,12 +38,12 @@ namespace DarkwoodEditorWPF
                 if (DeserializeJson(filePath) != null)
                 {
                     Root root = DeserializeJson(filePath) ?? throw new Exception("Error deserializing JSON.");
-
-                    MainContentPage.Navigate(new Uri("Views/PlayerStatsPage.xaml", UriKind.Relative));
-                    
                     MainViewModel mainViewModel = data.LoadData(filePath, root);
+
                     //rootUserControl.DataContext = mainViewModel.RootViewModel;
                     DataContext = mainViewModel;
+
+                    MainContentPage.Navigate(new Uri("Views/MainContent.xaml", UriKind.Relative));
                 }
             }
             else if (openFile.CheckFileExists == false)
@@ -79,7 +77,7 @@ namespace DarkwoodEditorWPF
         //
         private void OpenCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
         {
-            openFileDialog();
+            OpenFileDialog();
         }
 
         private void SaveCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -143,15 +141,22 @@ namespace DarkwoodEditorWPF
         //
         private void playerStatsMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            Page playerStatsPage = new PlayerStatsPage();
-			playerStatsPage.DataContext = DataContext;
+            MainContent? mainContent = MainContentPage.Content as MainContent;
 
-            MainContentPage.Navigate(new Uri("Views/PlayerStatsPage.xaml", UriKind.Relative));
+            if (mainContent != null)
+            {
+                mainContent.SetContentLeft("Views/PlayerStatsPage.xaml");
+            }
         }
 
         private void playerMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MainContentPage.Navigate(new Uri("Views/PlayerPage.xaml", UriKind.Relative));
+            MainContent? mainContent = MainContentPage.Content as MainContent;
+
+            if (mainContent != null)
+            {
+                mainContent.SetContentLeft("Views/PlayerPage.xaml");
+            }
         }
 
         private void worldMenuItem_Click(object sender, RoutedEventArgs e)
@@ -193,20 +198,30 @@ namespace DarkwoodEditorWPF
         private void windowGrd_MouseDown(object sender, MouseButtonEventArgs e)
         {
                 base.OnMouseLeftButtonDown(e);
-                this.DragMove();
+                DragMove();
+        }
+
+        private void MainContentPage_ContentRendered(object sender, EventArgs e)
+        {
+            MainContent? mainContent = MainContentPage.Content as MainContent;
+
+            if (mainContent != null)
+            {
+                mainContent.SetContentLeft("Views/PlayerStatsPage.xaml");
+            }
         }
 
         //
         // For testing
         //
-		private void testBtn_Click(object sender, RoutedEventArgs e)
-		{
-			//ConvertCollections convert = new ConvertCollections();
+        private void testBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //ConvertCollections convert = new ConvertCollections();
 
-			//MainViewModel mainViewModel = (MainViewModel)DataContext;
-			//PsViewModel psViewModel = mainViewModel.PsViewModel ?? throw new NullReferenceException();
+            //MainViewModel mainViewModel = (MainViewModel)DataContext;
+            //PsViewModel psViewModel = mainViewModel.PsViewModel ?? throw new NullReferenceException();
 
-			//convert.ConvertObservableCollectionToCraftedItemViewModelList(psViewModel.CraftedItems);
-		}
-	}
+            //convert.ConvertObservableCollectionToCraftedItemViewModelList(psViewModel.CraftedItems);
+        }
+    }
 }
