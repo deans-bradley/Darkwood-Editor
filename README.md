@@ -97,4 +97,5 @@ This project is licensed under the MIT License.
 
 Darkwood Editor relies on the following open-source library:
 
--   **Newtonsoft.Json**: A popular JSON framework for .NET
+-   **[Newtonsoft](https://www.newtonsoft.com/json)**: A popular JSON framework for .NET.
+- **[XamlFlair](https://github.com/XamlFlair/XamlFlair)**: An animation library for XAML.
