@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xf="clr-namespace:XamlFlair;assembly=XamlFlair.WPF"
              xmlns:local="clr-namespace:DarkwoodEditorWPF.Views.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -12,17 +13,18 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
                 <ResourceDictionary Source="../../Styles/ScrollBarDictionary.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/XamlFlair.WPF;component/DefaultAnimations.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
 
-    <Grid>
+    <Grid xf:Animations.Primary="{xf:Animate BasedOn={StaticResource SlideFromRight}, OffsetX=500}">
         <Border Grid.Row="1"
                 Margin="10" 
                 Background="#2d2d30" 
                 CornerRadius="5,5,5,5">
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical"> 
                 <DockPanel Margin="0,0,0,24">
                     <TextBlock Text="Edit Recipes" 
                                FontSize="16" 
