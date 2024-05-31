@@ -1,9 +1,6 @@
 ﻿using DarkwoodEditorWPF.Helpers;
-using DarkwoodEditorWPF.Models;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Globalization;
-using System.Text;
 
 namespace DarkwoodEditorWPF.ViewModels
 {
@@ -26,7 +23,7 @@ namespace DarkwoodEditorWPF.ViewModels
 
         public ObservableCollection<StringValue>? PresetList
         {
-            get 
+            get
             {
                 ObservableCollection<StringValue>? formattedList = new ObservableCollection<StringValue>();
                 if (presetList == null)

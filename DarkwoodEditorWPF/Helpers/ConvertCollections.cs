@@ -236,5 +236,68 @@ namespace DarkwoodEditorWPF.Helpers
 
             return list;
         }
+
+        // List<object> to ObservableCollection<InvItemViewModel>
+        public ObservableCollection<InvItemViewModel> ConvertInvItemListToObservableCollection(List<object> list)
+        {
+            ObservableCollection<InvItemViewModel> observableCollection = new ObservableCollection<InvItemViewModel>();
+
+            foreach (object item in list)
+            {
+                JObject? jObject = item as JObject;
+
+                InvItem? invItem = jObject?.ToObject<InvItem>();
+
+                if (invItem != null)
+                {
+                    observableCollection.Add(new InvItemViewModel
+                    {
+                        SlotId = invItem.SlotId,
+                        Type = invItem.Type,
+                        Durability = invItem.Durability,
+                        Amount = invItem.Amount,
+                        IsRecipe = invItem.IsRecipe,
+                        RecipeFor = invItem.RecipeFor,
+                        Modifiers = invItem.Modifiers ?? new List<StringValue>(),
+                        Upgrades = invItem.Upgrades ?? new List<StringValue>(),
+                        TimeDeactivated = invItem.TimeDeactivated,
+                        ShouldBeActive = invItem.ShouldBeActive,
+                        TimeSeen = invItem.TimeSeen
+                    });
+                }
+            }
+
+            return observableCollection;
+        }
+
+        // ObservableCollection<InvItemViewModel> to List<object>
+        public List<object> ConvertObservableCollectionToInvItemList(ObservableCollection<InvItemViewModel> observableCollection)
+        {
+            List<object> list = new List<object>();
+
+            // TODO: Build InventorySlotCopy VM (should fix the error below)
+
+            foreach (InvItemViewModel item in observableCollection)
+            {
+                JObject jObject = new JObject
+                {
+                    { "slotId", item.SlotId },
+                    { "type", item.Type },
+                    { "durability", item.Durability },
+                    { "amount", item.Amount },
+                    { "isRecipe", item.IsRecipe },
+                    { "recipeFor", item.RecipeFor },
+                    { "modifiers", item.Modifiers },
+                    { "upgrades", item.Upgrades },
+                    { "timeDeactivated", item.TimeDeactivated },
+                    { "shouldBeActive", item.ShouldBeActive },
+                    { "timeSeen", item.TimeSeen }
+                };
+
+                list.Add(jObject);
+            }
+
+            return list;
+        }
     }
 }

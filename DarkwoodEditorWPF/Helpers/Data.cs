@@ -5,7 +5,7 @@ using System.Windows.Media.Effects;
 
 namespace DarkwoodEditorWPF.Helpers
 {
-	public class Data
+    public class Data
 	{
 		//
 		// Add data to ViewModels
