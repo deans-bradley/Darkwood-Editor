@@ -16,7 +16,7 @@
     <Compile Update="Views\PlayerPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\PlayerStatsPage.xaml.cs">
+    <Compile Update="Views\PlayerStatePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControlItems\EffectItem.xaml.cs">
@@ -35,6 +35,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\EditRecipesUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\UserControls\InventroySlotCopyUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\RootUserControl.xaml.cs">
@@ -69,7 +72,7 @@
     <Page Update="Views\PlayerPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\PlayerStatsPage.xaml">
+    <Page Update="Views\PlayerStatePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControlItems\EffectItem.xaml">
@@ -88,6 +91,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\EditRecipesUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\InventroySlotCopyUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\RootUserControl.xaml">

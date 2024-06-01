@@ -1,4 +1,5 @@
 ﻿using DarkwoodEditorWPF.Helpers;
+using System.Collections.ObjectModel;
 
 namespace DarkwoodEditorWPF.Models
 {

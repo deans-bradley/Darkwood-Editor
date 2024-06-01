@@ -145,7 +145,7 @@ namespace DarkwoodEditorWPF
 
             if (mainContent != null)
             {
-                mainContent.SetContentLeft("Views/PlayerStatsPage.xaml");
+                mainContent.SetContentLeft("Views/PlayerStatePage.xaml");
             }
         }
 
@@ -207,7 +207,7 @@ namespace DarkwoodEditorWPF
 
             if (mainContent != null)
             {
-                mainContent.SetContentLeft("Views/PlayerStatsPage.xaml");
+                mainContent.SetContentLeft("Views/PlayerStatePage.xaml");
             }
         }
 

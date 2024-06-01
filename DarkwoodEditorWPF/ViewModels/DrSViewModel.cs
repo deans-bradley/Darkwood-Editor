@@ -1,4 +1,5 @@
 ﻿using DarkwoodEditorWPF.Helpers;
+using DarkwoodEditorWPF.Models;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -17,7 +18,7 @@ namespace DarkwoodEditorWPF.ViewModels
         private double timeCopy;
         private int placeStartedDreamingID;
         private EffectsCopyViewModel? effectsCopy;
-        private List<object>? inventorySlotsCopy;
+        private ObservableCollection<InventorySlotCopyViewModel> inventorySlotsCopy = new ObservableCollection<InventorySlotCopyViewModel>();
         private List<object>? hotbarSlotsCopy;
         private List<double>? positionCopy;
 
@@ -156,7 +157,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<object>? InventorySlotsCopy
+        public ObservableCollection<InventorySlotCopyViewModel> InventorySlotsCopy
         {
             get => inventorySlotsCopy;
             set

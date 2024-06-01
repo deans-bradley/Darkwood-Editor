@@ -5,11 +5,11 @@ using System.Windows.Controls;
 namespace DarkwoodEditorWPF.Views
 {
 	/// <summary>
-	/// Interaction logic for PlayerStatsPage.xaml
+	/// Interaction logic for PlayerStatePage.xaml
 	/// </summary>
-	public partial class PlayerStatsPage : Page
+	public partial class PlayerStatePage : Page
     {
-        public PlayerStatsPage()
+        public PlayerStatePage()
         {
             InitializeComponent();
 

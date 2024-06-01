@@ -1,4 +1,5 @@
 ﻿using DarkwoodEditorWPF.Helpers;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace DarkwoodEditorWPF.ViewModels
@@ -11,8 +12,8 @@ namespace DarkwoodEditorWPF.ViewModels
         private int amount;
         private bool isRecipe;
         private string? recipeFor;
-        private List<StringValue> modifiers = new List<StringValue>();
-        private List<StringValue> upgrades = new List<StringValue>();
+        private ObservableCollection<StringValue> modifiers = new ObservableCollection<StringValue>();
+        private ObservableCollection<StringValue> upgrades = new ObservableCollection<StringValue>();
         private double timeDeactivated;
         private bool shouldBeActive;
         private double timeSeen;
@@ -77,7 +78,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<StringValue> Modifiers
+        public ObservableCollection<StringValue> Modifiers
         {
             get => modifiers;
             set
@@ -87,7 +88,7 @@ namespace DarkwoodEditorWPF.ViewModels
             }
         }
 
-        public List<StringValue> Upgrades
+        public ObservableCollection<StringValue> Upgrades
         {
             get => upgrades;
             set

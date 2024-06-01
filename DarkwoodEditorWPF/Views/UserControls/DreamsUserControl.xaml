@@ -103,7 +103,6 @@
                         </DockPanel>
 
                         <dropdown:CustomDropDown x:Name="effectsDrpDwn" 
-                                                 Grid.Row="0"
                                                  DropDownTitle="Effects Copy"
                                                  DropDownItemSource="{Binding EffectsCopy, Mode=TwoWay}"
                                                  DataContext="{Binding EffectsCopy}">
@@ -184,6 +183,18 @@
                                       VerticalAlignment="Center"/>
                         </DockPanel>
                     </StackPanel>
+
+                    <dropdown:CustomDropDown x:Name="invSlotCopyDrpDwn" 
+                                             Grid.Row="2"
+                                             DropDownTitle="Inventory Slot Copy"
+                                             DropDownItemSource="{Binding InventorySlotsCopy, Mode=TwoWay}"
+                                             DataContext="{Binding InventorySlotsCopy}">
+                        <dropdown:CustomDropDown.DropDownItemTemplate>
+                            <DataTemplate>
+                                <local:InventroySlotCopyUserControl DataContext="{Binding InventorySlotsCopy}"/>
+                            </DataTemplate>
+                        </dropdown:CustomDropDown.DropDownItemTemplate>
+                    </dropdown:CustomDropDown>
                 </Grid>
             </ScrollViewer>
         </Grid>

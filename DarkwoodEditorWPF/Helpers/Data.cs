@@ -1,6 +1,7 @@
 ﻿using DarkwoodEditorWPF.Models;
 using DarkwoodEditorWPF.ViewModels;
 using DarkwoodEditorWPF.ViewModels.Ps;
+using System.Collections.ObjectModel;
 using System.Windows.Media.Effects;
 
 namespace DarkwoodEditorWPF.Helpers
@@ -15,6 +16,9 @@ namespace DarkwoodEditorWPF.Helpers
 		{
 			ConvertCollections convert = new ConvertCollections();
 
+			//
+			//	Root
+			//
 			RootViewModel rootVM = new RootViewModel
 			{
 				MajorVersion = root.majorVersion,
@@ -25,12 +29,18 @@ namespace DarkwoodEditorWPF.Helpers
 				RCVersionCompatibility = root.RCVersionCompatibility
 			};
 
+			//
+			// Character Effects
+			//
 			ChEffS chEffS = root.pS?.chEffS ?? throw new NullReferenceException();
 			ChEffsViewModel chEffsVM = new ChEffsViewModel
 			{
 				Effects = convert.ConvertEffectListToObservableCollection(chEffS.effects ?? throw new NullReferenceException())
 			};
 
+			//
+			// Skill States
+			//
 			SkillS skillS = root.pS?.skillS ?? throw new NullReferenceException();
 			SkillsViewModel skillsVM = new SkillsViewModel
 			{
@@ -40,6 +50,9 @@ namespace DarkwoodEditorWPF.Helpers
 				CanActivateSkill = skillS.canActivateSkill
 			};
 
+			//
+			// Player State
+			//
 			PS ps = root.pS ?? throw new NullReferenceException();
 			PsViewModel psVM = new PsViewModel
 			{
@@ -63,6 +76,9 @@ namespace DarkwoodEditorWPF.Helpers
 				DiedAtLeastOnce = ps.diedAtLeastOnce
 			};
 
+			// 
+			// Inventory State
+			//
 			IS iS = root.iS ?? throw new NullReferenceException();
 			IsViewModel isViewModel = new IsViewModel
 			{
@@ -70,6 +86,9 @@ namespace DarkwoodEditorWPF.Helpers
 				InvItems = iS.invItems
 			};
 
+			//
+			// Hotbar State
+			//
 			HS hs = root.hS ?? throw new NullReferenceException();
 			HsViewModel hsViewModel = new HsViewModel
 			{
@@ -77,6 +96,9 @@ namespace DarkwoodEditorWPF.Helpers
 				InvItems = hs.invItems
 			};
 
+			//
+			// CnS (?)
+			//
 			CnS cnS = root.cnS ?? throw new NullReferenceException();
 			CnSViewModel cnSViewModel = new CnSViewModel
 			{
@@ -88,12 +110,18 @@ namespace DarkwoodEditorWPF.Helpers
 				GaveAfterNightRewards = cnS.gaveAfterNightRewards
 			};
 
+			//
+			// Effects Copy
+			//
 			EffectsCopy effectsCopy = root.drS?.effectsCopy ?? throw new NullReferenceException();
 			EffectsCopyViewModel effectsCopyVM = new EffectsCopyViewModel
 			{
                 Effects = convert.ConvertEffectListToObservableCollection(effectsCopy.effects ?? throw new NullReferenceException())
             };
 
+			//
+			// Dream State
+			//
 			DrS drS = root.drS ?? throw new NullReferenceException();
 			DrSViewModel drSViewModel = new DrSViewModel
 			{
@@ -108,11 +136,14 @@ namespace DarkwoodEditorWPF.Helpers
 				TimeCopy = drS.timeCopy,
 				PlaceStartedDreamingID = drS.placeStartedDreamingID,
 				EffectsCopy = effectsCopyVM,
-				InventorySlotsCopy = drS.inventorySlotsCopy,
+				InventorySlotsCopy = convert.ConvertInventorySlotCopyListToObservableCollection(drS.inventorySlotsCopy ?? throw new NullReferenceException()),
 				HotbarSlotsCopy = drS.hotbarSlotsCopy,
 				PositionCopy = drS.positionCopy
 			};
 
+			//
+			// Outside State
+			//
 			OutS outS = root.outS ?? throw new NullReferenceException();
 			OutSViewModel outSViewModel = new OutSViewModel
 			{
@@ -126,6 +157,9 @@ namespace DarkwoodEditorWPF.Helpers
 				ObjectThatTransportedMeID = outS.objectThatTransportedMeID
 			};
 
+			//
+			// Rain State
+			//
 			RaS raS = root.raS ?? throw new NullReferenceException();
 			RaSViewModel raSViewModel = new RaSViewModel
 			{
@@ -142,6 +176,9 @@ namespace DarkwoodEditorWPF.Helpers
 				FogIsActive = raS.fogIsActive
 			};
 
+			//
+			// Flag States
+			//
 			FlaS flaS = root.flaS ?? throw new NullReferenceException();
 			FlaSViewModel flaSViewModel = new FlaSViewModel
 			{
@@ -152,6 +189,9 @@ namespace DarkwoodEditorWPF.Helpers
 				Achievements = flaS.achievements
 			};
 
+			//
+			// Journal State
+			//
 			JoS joS = root.joS ?? throw new NullReferenceException();
 			JoSViewModel joSViewModel = new JoSViewModel
 			{
@@ -163,6 +203,9 @@ namespace DarkwoodEditorWPF.Helpers
 				LocationDirections = joS.locationDirections
 			};
 
+			//
+			// Number State
+			//
 			NumS numS = root.numS ?? throw new NullReferenceException();
 			NumSViewModel numSViewModel = new NumSViewModel
 			{
@@ -170,6 +213,9 @@ namespace DarkwoodEditorWPF.Helpers
 				YPositionOffsets = numS.yPositionOffsets
 			};
 
+			//
+			// Event State
+			//
 			EvS evS = root.evS ?? throw new NullReferenceException();
 			EvSViewModel evSViewModel = new EvSViewModel
 			{
@@ -179,6 +225,9 @@ namespace DarkwoodEditorWPF.Helpers
 				GameEventsToFireAfterLoad = evS.gameEventsToFireAfterLoad
 			};
 
+			//
+			// Character Spawn State
+			//
 			ChspS chspS = root.chspS ?? throw new NullReferenceException();
 			ChspSViewModel chspSViewModel = new ChspSViewModel
 			{
@@ -188,6 +237,9 @@ namespace DarkwoodEditorWPF.Helpers
 				CharactersEscapedFromLocationHolderID = chspS.charactersEscapedFromLocationHolderID
 			};
 
+			//
+			// World Generation State
+			//
 			WorldGenS worldGenS = root.worldGenS ?? throw new NullReferenceException();
 			WorldGenSViewModel worldGenSViewModel = new WorldGenSViewModel
 			{
@@ -203,18 +255,27 @@ namespace DarkwoodEditorWPF.Helpers
 				ChapterID = worldGenS.chapterID
 			};
 
+			//
+			// Grid State
+			//
 			GridS gridS = root.gridS ?? throw new NullReferenceException();
 			GridSViewModel gridSViewModel = new GridSViewModel
 			{
 				GridStates = gridS.gridStates
 			};
 
+			//
+			// Big Biome State
+			//
 			BbdS bbdS = root.bbdS ?? throw new NullReferenceException();
 			BbdSViewModel bbdSViewModel = new BbdSViewModel
 			{
 				BigBiomeStates = bbdS.bigBiomeStates
 			};
 
+			//
+			// Map State
+			//
 			MapS mapS = root.mapS ?? throw new NullReferenceException();
 			MapSViewModel mapSViewModel = new MapSViewModel
 			{
@@ -222,6 +283,9 @@ namespace DarkwoodEditorWPF.Helpers
 				Types = mapS.types
 			};
 
+			//
+			// Night Scenario State
+			//
 			NightScenS nightScenS = root.nightScenS ?? throw new NullReferenceException();
 			NightScenSViewModel nightScenSViewModel = new NightScenSViewModel
 			{
@@ -230,14 +294,23 @@ namespace DarkwoodEditorWPF.Helpers
 				PreviousScenarioDifficulty = nightScenS.previousScenarioDifficulty
 			};
 
+			//
+			// Character Dream Copy
+			//
 			ChDC chDC = root.chDC ?? throw new NullReferenceException();
 			ChDCViewModel chDCViewModel = new ChDCViewModel
 			{
 				CharacterStates = chDC.characterStates
 			};
 
+			//
+			// Saved Objects
+			//
 			List<SavedObj> savedObjs = root.savedObjs ?? throw new NullReferenceException();
 
+			//
+			// Main View Model
+			//
 			MainViewModel mainViewModel = new MainViewModel
 			{
 				FilePath = filePath,
@@ -276,12 +349,18 @@ namespace DarkwoodEditorWPF.Helpers
 
 			SaveMS saveMS = mainViewModel.SaveMS ?? throw new NullReferenceException();
 
+
+			//
+			// Character Effects
 			ChEffsViewModel chEffsViewModel = mainViewModel.PsViewModel?.ChEffS ?? throw new NullReferenceException();
 			ChEffS chEffS = new ChEffS
 			{
 				effects = convert.ConvertObservableCollectionToEffectList(chEffsViewModel.Effects ?? throw new NullReferenceException())
 			};
 
+			//
+			// Skill States
+			//
 			SkillsViewModel skillsViewModel = mainViewModel.PsViewModel?.SkillS ?? throw new NullReferenceException();
 			SkillS skillS = new SkillS
 			{
@@ -291,6 +370,9 @@ namespace DarkwoodEditorWPF.Helpers
                 canActivateSkill = skillsViewModel.CanActivateSkill
             };
 
+			//
+			// Player State
+			//
 			PsViewModel psViewModel = mainViewModel.PsViewModel ?? throw new NullReferenceException();
 			PS ps = new PS
 			{
@@ -318,6 +400,9 @@ namespace DarkwoodEditorWPF.Helpers
 				diedAtLeastOnce = psViewModel.DiedAtLeastOnce
 			};
 
+			//
+			// Inventory State
+			//
 			IsViewModel isViewModel = mainViewModel.IsViewModel ?? throw new NullReferenceException();
 			IS iS = new IS
 			{
@@ -325,6 +410,9 @@ namespace DarkwoodEditorWPF.Helpers
 				invItems = isViewModel.InvItems
 			};
 
+			//
+			// Hotbar State
+			//
 			HsViewModel hsViewModel = mainViewModel.HsViewModel ?? throw new NullReferenceException();
 			HS hS = new HS
 			{
@@ -332,6 +420,8 @@ namespace DarkwoodEditorWPF.Helpers
 				invItems = hsViewModel.InvItems
 			};
 
+			// 
+			// CnS
 			CnSViewModel cnSViewModel = mainViewModel.CnsViewModel ?? throw new NullReferenceException();
 			CnS cnS = new CnS
 			{
@@ -343,12 +433,18 @@ namespace DarkwoodEditorWPF.Helpers
 				gaveAfterNightRewards = cnSViewModel.GaveAfterNightRewards
 			};
 
+			//
+			// Effects Copy
+			// 
 			EffectsCopyViewModel effectsCopyViewModel = mainViewModel.DrSViewModel?.EffectsCopy ?? throw new NullReferenceException();
 			EffectsCopy effectsCopy = new EffectsCopy
 			{
                 effects = convert.ConvertObservableCollectionToEffectList(effectsCopyViewModel.Effects ?? throw new NullReferenceException())
             };
 
+			//
+			// Dream State
+			//
 			DrSViewModel drSViewModel = mainViewModel.DrSViewModel ?? throw new NullReferenceException();
 			DrS drS = new DrS
 			{
@@ -363,11 +459,14 @@ namespace DarkwoodEditorWPF.Helpers
 				timeCopy = drSViewModel.TimeCopy,
 				placeStartedDreamingID = drSViewModel.PlaceStartedDreamingID,
 				effectsCopy = effectsCopy,
-				inventorySlotsCopy = drSViewModel.InventorySlotsCopy,
+				inventorySlotsCopy = convert.ConvertObservableCollectionToInventorySlotCopyList(drSViewModel.InventorySlotsCopy),
 				hotbarSlotsCopy = drSViewModel.HotbarSlotsCopy,
 				positionCopy = drSViewModel.PositionCopy
 			};
-
+			
+			//
+			// Outside State
+			//
 			OutSViewModel outSViewModel = mainViewModel.OutSViewModel ?? throw new NullReferenceException();
 			OutS outS = new OutS
 			{
@@ -381,6 +480,9 @@ namespace DarkwoodEditorWPF.Helpers
 				objectThatTransportedMeID = outSViewModel.ObjectThatTransportedMeID
 			};
 
+			//
+			// Rain State
+			//
 			RaSViewModel raSViewModel = mainViewModel.RaSViewModel ?? throw new NullReferenceException();
 			RaS raS = new RaS
 			{
@@ -397,6 +499,9 @@ namespace DarkwoodEditorWPF.Helpers
 				fogIsActive = raSViewModel.FogIsActive
 			};
 
+			//
+			// Flag States
+			//
 			FlaSViewModel flaSViewModel = mainViewModel.FlaSViewModel ?? throw new NullReferenceException();
 			FlaS flaS = new FlaS
 			{
@@ -407,6 +512,9 @@ namespace DarkwoodEditorWPF.Helpers
 				achievements = flaSViewModel.Achievements
 			};
 
+			//
+			// Journal State
+			//
 			JoSViewModel joSViewModel = mainViewModel.JoSViewModel ?? throw new NullReferenceException();
 			JoS joS = new JoS
 			{
@@ -418,6 +526,9 @@ namespace DarkwoodEditorWPF.Helpers
 				locationDirections = joSViewModel.LocationDirections
 			};
 
+			//
+			// Number State
+			//
 			NumSViewModel numSViewModel = mainViewModel.NumSViewModel ?? throw new NullReferenceException();
 			NumS numS = new NumS
 			{
@@ -425,6 +536,9 @@ namespace DarkwoodEditorWPF.Helpers
 				yPositionOffsets = numSViewModel.YPositionOffsets
 			};
 
+			//
+			// Event State
+			//
 			EvSViewModel evSViewModel = mainViewModel.EvSViewModel ?? throw new NullReferenceException();
 			EvS evS = new EvS
 			{
@@ -434,6 +548,9 @@ namespace DarkwoodEditorWPF.Helpers
 				gameEventsToFireAfterLoad = evSViewModel.GameEventsToFireAfterLoad
 			};
 
+			//
+			// Character Spawn State
+			//
 			ChspSViewModel chspSViewModel = mainViewModel.ChspSViewModel ?? throw new NullReferenceException();
 			ChspS chspS = new ChspS
 			{
@@ -443,6 +560,9 @@ namespace DarkwoodEditorWPF.Helpers
 				charactersEscapedFromLocationHolderID = chspSViewModel.CharactersEscapedFromLocationHolderID
 			};
 
+			//
+			// World Generation State
+			//
 			WorldGenSViewModel worldGenSViewModel = mainViewModel.WorldGenSViewModel ?? throw new NullReferenceException();
 			WorldGenS worldGenS = new WorldGenS
 			{
@@ -458,18 +578,27 @@ namespace DarkwoodEditorWPF.Helpers
 				chapterID = worldGenSViewModel.ChapterID
 			};
 
+			//
+			// Grid State
+			//
 			GridSViewModel gridSViewModel = mainViewModel.GridSViewModel ?? throw new NullReferenceException();
 			GridS gridS = new GridS
 			{
 				gridStates = gridSViewModel.GridStates
 			};
 
+			//
+			// Big Biome State
+			//
 			BbdSViewModel bbdSViewModel = mainViewModel.BbdSViewModel ?? throw new NullReferenceException();
 			BbdS bbdS = new BbdS
 			{
 				bigBiomeStates = bbdSViewModel.BigBiomeStates
 			};
 
+			//
+			// Map State
+			//
 			MapSViewModel mapSViewModel = mainViewModel.MapSViewModel ?? throw new NullReferenceException();
 			MapS mapS = new MapS
 			{
@@ -477,6 +606,9 @@ namespace DarkwoodEditorWPF.Helpers
 				types = mapSViewModel.Types
 			};
 
+			//
+			// Night Scenario State
+			//
 			NightScenSViewModel nightScenSViewModel = mainViewModel.NightScenSViewModel ?? throw new NullReferenceException();
 			NightScenS nightScenS = new NightScenS
 			{
@@ -485,14 +617,23 @@ namespace DarkwoodEditorWPF.Helpers
 				previousScenarioDifficulty = nightScenSViewModel.PreviousScenarioDifficulty
 			};
 
+			//
+			// Character Dream Copy
+			//
 			ChDCViewModel chDCViewModel = mainViewModel.ChDCViewModel ?? throw new NullReferenceException();
 			ChDC chDC = new ChDC
 			{
 				characterStates = chDCViewModel.CharacterStates
 			};
 
+			//
+			// Saved Objects
+			//
 			List<SavedObj> savedObjs = mainViewModel.SavedObjs ?? throw new NullReferenceException();
 
+			//
+			// Root
+			//
 			RootViewModel rootViewModel = mainViewModel.RootViewModel ?? throw new NullReferenceException();
 			Root root = new Root
 			{

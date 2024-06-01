@@ -237,6 +237,51 @@ namespace DarkwoodEditorWPF.Helpers
             return list;
         }
 
+        // InvItem to InvItemViewModel
+        public InvItemViewModel ConvertInvItemToInvItemViewModel(InvItem invItem)
+        {
+            if (invItem != null)
+            {
+                return new InvItemViewModel
+                {
+                    SlotId = invItem.SlotId,
+                    Type = invItem.Type,
+                    Durability = invItem.Durability,
+                    Amount = invItem.Amount,
+                    IsRecipe = invItem.IsRecipe,
+                    RecipeFor = invItem.RecipeFor,
+                    Modifiers = ConvertStringListToObservableCollection(invItem.Modifiers),
+                    Upgrades = ConvertStringListToObservableCollection(invItem.Upgrades),
+                    TimeDeactivated = invItem.TimeDeactivated,
+                    ShouldBeActive = invItem.ShouldBeActive,
+                    TimeSeen = invItem.TimeSeen
+                };
+            }
+            else
+            {
+                return new InvItemViewModel();
+            }
+        }
+
+        // InvItemViewModel to InvItem
+        public InvItem ConvertInvItemViewModelToInvItem(InvItemViewModel invItemViewModel)
+        {
+            return new InvItem
+            {
+                SlotId = invItemViewModel.SlotId,
+                Type = invItemViewModel.Type,
+                Durability = invItemViewModel.Durability,
+                Amount = invItemViewModel.Amount,
+                IsRecipe = invItemViewModel.IsRecipe,
+                RecipeFor = invItemViewModel.RecipeFor,
+                Modifiers = ConvertObservableCollectionToStringList(invItemViewModel.Modifiers),
+                Upgrades = ConvertObservableCollectionToStringList(invItemViewModel.Upgrades),
+                TimeDeactivated = invItemViewModel.TimeDeactivated,
+                ShouldBeActive = invItemViewModel.ShouldBeActive,
+                TimeSeen = invItemViewModel.TimeSeen
+            };
+        }
+
         // List<object> to ObservableCollection<InvItemViewModel>
         public ObservableCollection<InvItemViewModel> ConvertInvItemListToObservableCollection(List<object> list)
         {
@@ -258,8 +303,8 @@ namespace DarkwoodEditorWPF.Helpers
                         Amount = invItem.Amount,
                         IsRecipe = invItem.IsRecipe,
                         RecipeFor = invItem.RecipeFor,
-                        Modifiers = invItem.Modifiers ?? new List<StringValue>(),
-                        Upgrades = invItem.Upgrades ?? new List<StringValue>(),
+                        Modifiers = ConvertStringListToObservableCollection(invItem.Modifiers),
+                        Upgrades = ConvertStringListToObservableCollection(invItem.Upgrades),
                         TimeDeactivated = invItem.TimeDeactivated,
                         ShouldBeActive = invItem.ShouldBeActive,
                         TimeSeen = invItem.TimeSeen
@@ -275,8 +320,6 @@ namespace DarkwoodEditorWPF.Helpers
         {
             List<object> list = new List<object>();
 
-            // TODO: Build InventorySlotCopy VM (should fix the error below)
-
             foreach (InvItemViewModel item in observableCollection)
             {
                 JObject jObject = new JObject
@@ -287,11 +330,60 @@ namespace DarkwoodEditorWPF.Helpers
                     { "amount", item.Amount },
                     { "isRecipe", item.IsRecipe },
                     { "recipeFor", item.RecipeFor },
-                    { "modifiers", item.Modifiers },
-                    { "upgrades", item.Upgrades },
+                    { "modifiers", JToken.FromObject(ConvertObservableCollectionToStringList(item.Modifiers)) },
+                    { "upgrades", JToken.FromObject(ConvertObservableCollectionToStringList(item.Upgrades)) },
                     { "timeDeactivated", item.TimeDeactivated },
                     { "shouldBeActive", item.ShouldBeActive },
                     { "timeSeen", item.TimeSeen }
+                };
+
+                list.Add(jObject);
+            }
+
+            return list;
+        }
+
+        // List<object> to ObservableCollection<InventorySlotCopyViewModel>
+        public ObservableCollection<InventorySlotCopyViewModel> ConvertInventorySlotCopyListToObservableCollection(List<object> list)
+        {
+            ObservableCollection<InventorySlotCopyViewModel> observableCollection = new ObservableCollection<InventorySlotCopyViewModel>();
+
+            foreach (object item in list)
+            {
+                JObject? jObject = item as JObject;
+
+                InventorySlotCopy? inventorySlotCopy = jObject?.ToObject<InventorySlotCopy>();
+
+                if (inventorySlotCopy != null)
+                {
+                    observableCollection.Add(new InventorySlotCopyViewModel
+                    {
+                        Name = inventorySlotCopy.Name ?? "",
+                        InHotbar = inventorySlotCopy.InHotbar,
+                        InvItem = ConvertInvItemToInvItemViewModel(inventorySlotCopy.InvItem),
+                        Selected = inventorySlotCopy.Selected,
+                        InventoryId = inventorySlotCopy.InventoryId
+                    });
+                }
+            }
+
+            return observableCollection;
+        }
+
+        // ObservableCollection<InventorySlotCopyViewModel> to List<object>
+        public List<object> ConvertObservableCollectionToInventorySlotCopyList(ObservableCollection<InventorySlotCopyViewModel> observableCollection)
+        {
+            List<object> list = new List<object>();
+
+            foreach (InventorySlotCopyViewModel item in observableCollection)
+            {
+                JObject jObject = new JObject
+                {
+                    { "name", item.Name },
+                    { "inHotbar", item.InHotbar },
+                    { "invItem", JToken.FromObject(ConvertInvItemViewModelToInvItem(item.InvItem)) },
+                    { "selected", item.Selected },
+                    { "inventoryId", item.InventoryId }
                 };
 
                 list.Add(jObject);
