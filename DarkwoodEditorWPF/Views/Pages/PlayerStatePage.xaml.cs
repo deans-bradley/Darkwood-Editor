@@ -23,7 +23,7 @@ namespace DarkwoodEditorWPF.Views
 
             if (mainContent != null)
             {
-                mainContent.SetContentRight("Views/UserControls/EditRecipesUserControl.xaml");
+                mainContent.SetContentRight("Views/Pages/RecipesPage.xaml");
             }
         }
 
@@ -34,7 +34,7 @@ namespace DarkwoodEditorWPF.Views
 
             if (mainContent != null)
             {
-                mainContent.SetContentRight("Views/UserControls/EditCraftedItemsUserControl.xaml");
+                mainContent.SetContentRight("Views/Pages/CraftedItemsPage.xaml");
             }
 		}
 
@@ -45,7 +45,7 @@ namespace DarkwoodEditorWPF.Views
 
             if (mainContent != null)
             {
-                mainContent.SetContentRight("Views/UserControls/ChEffsUserControl.xaml");
+                mainContent.SetContentRight("Views/Pages/CharacterEffectsPage.xaml");
             }
 		}
 
@@ -56,13 +56,11 @@ namespace DarkwoodEditorWPF.Views
 
             if (mainContent != null)
             {
-                mainContent.SetContentRight("Views/UserControls/SkillsUserControl.xaml");
+                mainContent.SetContentRight("Views/Pages/SkillsPage.xaml");
             }
         }
 
-        //
-        // Input validation
-        //
+        // TODO: Add input validation methods in helper class
         private void IntTextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
 		{
 			foreach (char c in e.Text)

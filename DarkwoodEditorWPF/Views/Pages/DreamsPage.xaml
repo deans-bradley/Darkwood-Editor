@@ -1,16 +1,17 @@
-﻿<UserControl x:Class="DarkwoodEditorWPF.Views.UserControls.DreamsUserControl"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:DarkwoodEditorWPF.Views.UserControls" 
-             xmlns:item="clr-namespace:DarkwoodEditorWPF.Views.UserControlItems" 
-             xmlns:dropdown="clr-namespace:DarkwoodEditorWPF.Views.UserControls.DropDowns"
-             xmlns:xf="clr-namespace:XamlFlair;assembly=XamlFlair.WPF"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    
-    <UserControl.Resources>
+﻿<Page x:Class="DarkwoodEditorWPF.Views.Pages.DreamsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DarkwoodEditorWPF.Views.Pages"
+      xmlns:uc="clr-namespace:DarkwoodEditorWPF.Views.UserControls"
+      xmlns:dropdown="clr-namespace:DarkwoodEditorWPF.Views.UserControls"
+      xmlns:xf="clr-namespace:XamlFlair;assembly=XamlFlair.WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DreamsPage">
+
+    <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
@@ -18,7 +19,7 @@
                 <ResourceDictionary Source="pack://application:,,,/XamlFlair.WPF;component/DefaultAnimations.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </UserControl.Resources>
+    </Page.Resources>
 
     <Border Grid.Row="1"
             Margin="10" 
@@ -94,7 +95,7 @@
 
                         <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                         <DockPanel Style="{StaticResource ItemContainer}">
-                            
+
                             <TextBlock Text="Time Copy" Style="{StaticResource ItemTxtBlk}"/>
 
                             <TextBox Text="{Binding TimeCopy}"
@@ -108,7 +109,7 @@
                                                  DataContext="{Binding EffectsCopy}">
                             <dropdown:CustomDropDown.DropDownItemTemplate>
                                 <DataTemplate>
-                                    <local:EffectsUserControl DataContext="{Binding EffectsCopy}"/>
+                                    <uc:EffectsUserControl/>
                                 </DataTemplate>
                             </dropdown:CustomDropDown.DropDownItemTemplate>
                         </dropdown:CustomDropDown>
@@ -182,21 +183,18 @@
                                       HorizontalAlignment="Right" 
                                       VerticalAlignment="Center"/>
                         </DockPanel>
-                    </StackPanel>
 
-                    <dropdown:CustomDropDown x:Name="invSlotCopyDrpDwn" 
-                                             Grid.Row="2"
-                                             DropDownTitle="Inventory Slot Copy"
-                                             DropDownItemSource="{Binding InventorySlotsCopy, Mode=TwoWay}"
-                                             DataContext="{Binding InventorySlotsCopy}">
-                        <dropdown:CustomDropDown.DropDownItemTemplate>
-                            <DataTemplate>
-                                <local:InventroySlotCopyUserControl DataContext="{Binding InventorySlotsCopy}"/>
-                            </DataTemplate>
-                        </dropdown:CustomDropDown.DropDownItemTemplate>
-                    </dropdown:CustomDropDown>
+                        <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
+                        <DockPanel Style="{StaticResource ItemContainer}">
+
+                            <TextBlock Text="Inventory Slot Copy" Style="{StaticResource ItemTxtBlk}"/>
+
+                            <Button x:Name="invSlotCopyBtn"
+                                    Style="{StaticResource IcEditBtn}" Click="invSlotCopyBtn_Click"/>
+                        </DockPanel>
+                    </StackPanel>
                 </Grid>
             </ScrollViewer>
         </Grid>
     </Border>
-</UserControl>
+</Page>

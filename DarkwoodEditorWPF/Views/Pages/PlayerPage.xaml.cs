@@ -20,7 +20,7 @@ namespace DarkwoodEditorWPF.Views
 
             if (mainContent != null)
             {
-                mainContent.SetContentRight("Views/UserControls/DreamsUserControl.xaml");
+                mainContent.SetContentRight("Views/Pages/DreamsPage.xaml");
             }
         }
     }

@@ -12,14 +12,5 @@ namespace DarkwoodEditorWPF.Views.UserControls
         {
             InitializeComponent();
         }
-
-        public static readonly DependencyProperty EffectsItemSourceProperty =
-            DependencyProperty.Register("EffectsItemSource", typeof(object), typeof(EffectsUserControl));
-
-        public object EffectsItemSource
-        {
-            get { return GetValue(EffectsItemSourceProperty); }
-            set { SetValue(EffectsItemSourceProperty, value); }
-        }
     }
 }

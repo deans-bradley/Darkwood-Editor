@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace DarkwoodEditorWPF.Views.UserControls.DropDowns
+namespace DarkwoodEditorWPF.Views.UserControls
 {
     /// <summary>
     /// Interaction logic for CustomDropDown.xaml

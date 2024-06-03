@@ -10,43 +10,40 @@
     <Compile Update="Views\MainContent.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\CharacterEffectsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\CraftedItemsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\DreamsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\InventorySlotCopyPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\RecipesPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pages\SkillsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\UserControls\EffectsUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\PlayerPage.xaml.cs">
+    <Compile Update="Views\Pages\PlayerPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\PlayerStatePage.xaml.cs">
+    <Compile Update="Views\Pages\PlayerStatePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\UserControlItems\EffectItem.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\UserControls\ChEffsUserControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\UserControls\DreamsUserControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\UserControls\DropDowns\CustomDropDown.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\UserControls\EditCraftedItemsUserControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\UserControls\EditRecipesUserControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\UserControls\InventroySlotCopyUserControl.xaml.cs">
+    <Compile Update="Views\UserControls\CustomDropDown.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\RootUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\UserControls\SkillsUserControl.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Views\UserControls\StringListUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -66,43 +63,40 @@
     <Page Update="Views\MainContent.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Pages\CharacterEffectsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\CraftedItemsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\DreamsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\InventorySlotCopyPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\RecipesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pages\SkillsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\UserControls\EffectsUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\PlayerPage.xaml">
+    <Page Update="Views\Pages\PlayerPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\PlayerStatePage.xaml">
+    <Page Update="Views\Pages\PlayerStatePage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\UserControlItems\EffectItem.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\UserControls\ChEffsUserControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\UserControls\DreamsUserControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\UserControls\DropDowns\CustomDropDown.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\UserControls\EditCraftedItemsUserControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\UserControls\EditRecipesUserControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\UserControls\InventroySlotCopyUserControl.xaml">
+    <Page Update="Views\UserControls\CustomDropDown.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\RootUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\UserControls\SkillsUserControl.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\UserControls\StringListUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

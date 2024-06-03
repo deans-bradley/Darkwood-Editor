@@ -1,14 +1,15 @@
-﻿<UserControl x:Class="DarkwoodEditorWPF.Views.UserControls.StringListUserControl"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:DarkwoodEditorWPF.Views.UserControls"
-             xmlns:xf="clr-namespace:XamlFlair;assembly=XamlFlair.WPF"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+﻿<Page x:Class="DarkwoodEditorWPF.Views.Pages.RecipesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DarkwoodEditorWPF.Views.Pages"
+      xmlns:xf="clr-namespace:XamlFlair;assembly=XamlFlair.WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RecipesPage">
 
-    <UserControl.Resources>
+    <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
@@ -16,7 +17,7 @@
                 <ResourceDictionary Source="pack://application:,,,/XamlFlair.WPF;component/DefaultAnimations.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </UserControl.Resources>
+    </Page.Resources>
 
     <Grid xf:Animations.Primary="{xf:Animate BasedOn={StaticResource SlideFromRight}, OffsetX=500}">
         <Border Grid.Row="1"
@@ -26,7 +27,7 @@
 
             <StackPanel Orientation="Vertical">
                 <DockPanel Margin="0,0,0,24">
-                    <TextBlock Text="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                    <TextBlock Text="Recipes" 
                                FontSize="16" 
                                HorizontalAlignment="Left" 
                                VerticalAlignment="Center"
@@ -35,7 +36,8 @@
                             Style="{DynamicResource IconBtn}"
                             Width="24" 
                             HorizontalAlignment="Right"
-                            Margin="0,4,4,0" Click="closeBtn_Click">
+                            Margin="0,4,4,0" 
+                            Click="closeBtn_Click">
                         <Button.Content>
                             <Image Source="{StaticResource ic_close}" Margin="6"/>
                         </Button.Content>
@@ -44,7 +46,7 @@
 
                 <ScrollViewer>
                     <StackPanel Orientation="Vertical" Margin="20,0,0,0">
-                        <ItemsControl ItemsSource="{Binding ItemSource, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                        <ItemsControl ItemsSource="{Binding Recipes}">
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Vertical" Margin="0,5,0,5">
@@ -55,7 +57,7 @@
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
-                        <Grid Margin="0,15,0,0">
+                        <!--<Grid Margin="0,15,0,0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="2*"/>
@@ -63,15 +65,15 @@
 
                             <Button x:Name="addBtn" 
                                     Style="{DynamicResource DefaultBtn}"
-                                    Content="{Binding ButtonContent, RelativeSource={RelativeSource AncestorType=UserControl}}" 
+                                    Content="Add Recipe" 
                                     FontSize="11"/>
                             <ComboBox x:Name="recipeComBox"
                                       Grid.Column="1"
                                       Margin="20,0,0,0"/>
-                        </Grid>
+                        </Grid>-->
                     </StackPanel>
                 </ScrollViewer>
             </StackPanel>
         </Border>
     </Grid>
-</UserControl>
+</Page>

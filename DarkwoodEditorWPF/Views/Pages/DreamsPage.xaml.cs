@@ -2,14 +2,14 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace DarkwoodEditorWPF.Views.UserControls
+namespace DarkwoodEditorWPF.Views.Pages
 {
     /// <summary>
-    /// Interaction logic for DreamsUserControl.xaml
+    /// Interaction logic for DreamsPage.xaml
     /// </summary>
-    public partial class DreamsUserControl : UserControl
+    public partial class DreamsPage : Page
     {
-        public DreamsUserControl()
+        public DreamsPage()
         {
             InitializeComponent();
 
@@ -24,6 +24,17 @@ namespace DarkwoodEditorWPF.Views.UserControls
             if (mainContent != null)
             {
                 mainContent.SetContentRight(null);
+            }
+        }
+
+        private void invSlotCopyBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = (MainWindow)Application.Current.MainWindow;
+            MainContent? mainContent = mainWindow.MainContentPage.Content as MainContent;
+
+            if (mainContent != null)
+            {
+                mainContent.SetContentRight("Views/Pages/InventorySlotCopyPage.xaml");
             }
         }
     }

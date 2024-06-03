@@ -12,8 +12,8 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/BaseDictionary.xaml"/>
-                <ResourceDictionary Source="../Styles/ScrollBarDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/ScrollBarDictionary.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/XamlFlair.WPF;component/DefaultAnimations.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

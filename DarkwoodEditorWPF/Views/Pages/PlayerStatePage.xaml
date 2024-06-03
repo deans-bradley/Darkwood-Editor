@@ -13,8 +13,8 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/BaseDictionary.xaml"/>
-                <ResourceDictionary Source="../Styles/ScrollBarDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/BaseDictionary.xaml"/>
+                <ResourceDictionary Source="../../Styles/ScrollBarDictionary.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/XamlFlair.WPF;component/DefaultAnimations.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -35,7 +35,7 @@
                                  Width="120"
                                  HorizontalAlignment="Right"
                                  PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3"/>
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -46,7 +46,7 @@
                                  Width="120"
                                  HorizontalAlignment="Right"
                                  PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -57,7 +57,7 @@
                                  Width="120"
                                  HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -68,7 +68,7 @@
                                  Width="120"
                                  HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -79,7 +79,7 @@
                                  Width="120"
                                  HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -90,7 +90,7 @@
                                  Width="120"
                                  HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -101,7 +101,7 @@
                                  Width="120"
                                  HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -112,7 +112,7 @@
                                  Width="120"
                                  HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -123,7 +123,7 @@
                                  Width="120"
                                  HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -134,7 +134,7 @@
                                  Width="120"
                                  HorizontalAlignment="Right"
                                  PreviewTextInput="DoubleTextBox_PreviewTextInput"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -144,7 +144,7 @@
                         <CheckBox IsChecked="{Binding FedToday}"
                                   HorizontalAlignment="Right" 
                                   VerticalAlignment="Center"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -155,7 +155,7 @@
                                  Width="120"
                                  HorizontalAlignment="Right"
                                  PreviewTextInput="IntTextBox_PreviewTextInput"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -165,7 +165,7 @@
                         <Button x:Name="recipesBtn"
                                 Style="{StaticResource IcEditBtn}"
                                 Click="recipesBtn_Click"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -175,7 +175,7 @@
                         <Button x:Name="craftedItemsBtn"
                                 Style="{StaticResource IcEditBtn}"
                                 Click="craftedItemsBtn_Click"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -195,7 +195,7 @@
                         <CheckBox IsChecked="{Binding GotHitAtLeastOnce}"
                                   HorizontalAlignment="Right" 
                                   VerticalAlignment="Center"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
@@ -205,7 +205,7 @@
                         <CheckBox IsChecked="{Binding diedAtLeastOnce}"
                                   HorizontalAlignment="Right" 
                                   VerticalAlignment="Center"/>
-                        
+
                     </DockPanel>
                     <Rectangle Fill="Black" Height="0.5" Opacity="0.3" />
                     <DockPanel Style="{StaticResource ItemContainer}">
