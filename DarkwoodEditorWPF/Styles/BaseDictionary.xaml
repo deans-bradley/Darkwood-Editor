@@ -188,6 +188,84 @@
         </Style.Triggers>
     </Style>
 
+    <!-- Icon Page-Back Button Style -->
+    <Style x:Key="IcPageBackBtn" TargetType="Button">
+        <Setter Property="Background" Value="#00000000"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Image Source="{DynamicResource ic_chevron_left}"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <Image Source="{DynamicResource ic_chevron_left_highlighted}"/>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Height" Value="22"/>
+                <Setter Property="Width" Value="22"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Icon Page-Forward Button Style -->
+    <Style x:Key="IcPageForwardBtn" TargetType="Button">
+        <Setter Property="Background" Value="#00000000"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="Width" Value="20"/>
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Image Source="{DynamicResource ic_chevron_right}"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <Image Source="{DynamicResource ic_chevron_right_highlighted}"/>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Height" Value="22"/>
+                <Setter Property="Width" Value="22"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
     <!-- Icon Dropdown Button Style -->
     <Style x:Key="DropdownBtn" TargetType="Button">
         <Setter Property="Background" Value="#00000000"/>
@@ -323,6 +401,62 @@
     <DrawingImage x:Key="ic_chevron_down_highlighted">
         <DrawingImage.Drawing>
             <GeometryDrawing Geometry="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="White" Thickness="0.5"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Brush>
+                    <SolidColorBrush Color="White"/>
+                </GeometryDrawing.Brush>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Chevron Left Icon -->
+    <DrawingImage x:Key="ic_chevron_left">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Geometry="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="LightGray" Thickness="0.5"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Brush>
+                    <SolidColorBrush Color="LightGray"/>
+                </GeometryDrawing.Brush>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Chevron Left Icon Highlighted -->
+    <DrawingImage x:Key="ic_chevron_left_highlighted">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Geometry="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="White" Thickness="0.5"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Brush>
+                    <SolidColorBrush Color="White"/>
+                </GeometryDrawing.Brush>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Chevron Right Icon -->
+    <DrawingImage x:Key="ic_chevron_right">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Geometry="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z">
+                <GeometryDrawing.Pen>
+                    <Pen Brush="LightGray" Thickness="0.5"/>
+                </GeometryDrawing.Pen>
+                <GeometryDrawing.Brush>
+                    <SolidColorBrush Color="LightGray"/>
+                </GeometryDrawing.Brush>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+
+    <!-- Chevron Right Icon Highlighted -->
+    <DrawingImage x:Key="ic_chevron_right_highlighted">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Geometry="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z">
                 <GeometryDrawing.Pen>
                     <Pen Brush="White" Thickness="0.5"/>
                 </GeometryDrawing.Pen>

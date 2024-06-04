@@ -1,6 +1,8 @@
 ﻿using DarkwoodEditorWPF.ViewModels;
+using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
 
 namespace DarkwoodEditorWPF.Views
 {
@@ -13,6 +15,7 @@ namespace DarkwoodEditorWPF.Views
         {
             InitializeComponent();
 
+            contentRight.JournalOwnership = JournalOwnership.OwnsJournal;
             DataContext = (Application.Current.MainWindow.DataContext as MainViewModel);
         }
 
@@ -37,6 +40,30 @@ namespace DarkwoodEditorWPF.Views
             else
             {
                 contentRight.Content = null;
+            }
+        }
+
+        private void backBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (!contentRight.CanGoBack)
+            {
+                contentRight.Content = null;
+            }
+            else
+            {
+                contentRight.GoBack();
+            }
+        }
+
+        private void forwardBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (!contentRight.CanGoForward)
+            {
+                contentRight.Content = null;
+            }
+            else
+            {
+                contentRight.GoForward();
             }
         }
     }
