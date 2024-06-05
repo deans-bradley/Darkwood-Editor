@@ -1,7 +1,4 @@
-﻿using DarkwoodEditorWPF.Helpers;
-using System.Collections.ObjectModel;
-
-namespace DarkwoodEditorWPF.Models
+﻿namespace DarkwoodEditorWPF.Models
 {
     public class InvItem
     {
