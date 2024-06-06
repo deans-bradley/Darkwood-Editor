@@ -21,6 +21,17 @@ namespace DarkwoodEditorWPF
         public MainWindow()
         {
             InitializeComponent();
+
+#if DEBUG
+            string filePath = $@"C:\\Users\\{Environment.UserName}\\Desktop\\prof1\\sav_test.json";
+
+            Root root = DeserializeJson(filePath) ?? throw new Exception("Error deserializing JSON.");
+            MainViewModel mainViewModel = data.LoadData(filePath, root);
+
+            DataContext = mainViewModel;
+
+            MainContentPage.Navigate(new Uri("Views/MainContent.xaml", UriKind.Relative));
+#endif
         }
 
         private void OpenFileDialog()

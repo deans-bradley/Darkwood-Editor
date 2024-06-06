@@ -69,7 +69,10 @@
                 <CheckBox Grid.Row="3" Grid.Column="1" IsChecked="{Binding InInventory}" VerticalAlignment="Center"/>
             </Grid>
 
-            <local:InventoryItem Grid.Column="1" Grid.Row="5" Margin="0,6,0,0"/>
+            <local:InventoryItem Grid.Column="1" 
+                                 Grid.Row="5" 
+                                 DataContext="{Binding InvItem}" 
+                                 Margin="0,6,0,0"/>
         </Grid>
     </Border>
 </UserControl>
