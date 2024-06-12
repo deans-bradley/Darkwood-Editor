@@ -2,8 +2,6 @@
 {
     public class ItemType
     {
-        public ItemType() { }
-
         public ItemType(string value, string name)
         {
             Value = value;

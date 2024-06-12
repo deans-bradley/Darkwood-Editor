@@ -55,7 +55,12 @@
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding SlotId}" VerticalAlignment="Center"/>
 
                 <TextBlock Grid.Row="1" Text="Type" VerticalAlignment="Center"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Type}" VerticalAlignment="Center"/>
+                <!--<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Type}" VerticalAlignment="Center"/>-->
+                <ComboBox x:Name="typeComBox"
+                          Grid.Row="1" 
+                          Grid.Column="1" 
+                          Foreground="Black"
+                          VerticalAlignment="Center"/>
 
                 <TextBlock Grid.Row="2" Text="Durability" Margin="0,0,0,0" VerticalAlignment="Center"/>
                 <TextBox Grid.Row="2" Grid.Column="1"  Text="{Binding Durability}" VerticalAlignment="Center"/>
