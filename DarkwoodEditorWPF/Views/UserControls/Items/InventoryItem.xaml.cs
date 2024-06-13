@@ -11,11 +11,6 @@ namespace DarkwoodEditorWPF.Views.UserControls.Items
         public InventoryItem()
         {
             InitializeComponent();
-
-            DwItems items = new DwItems();
-
-            // TODO: Fix this
-            typeComBox.ItemsSource = items.InventoryItems;
         }
     }
 }
