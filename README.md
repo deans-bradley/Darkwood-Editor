@@ -6,9 +6,9 @@ Darkwood Editor is a save file editor designed for the video game [Darkwood](htt
 
 ## Features
 
-### Edit Player Stats
+### Edit Player States
 
-Modify your character's stats to suit your playstyle. Whether you want to boost your health, stamina, or any other attribute, Darkwood Editor puts you in control.
+Modify your character's states to suit your playstyle. Whether you want to boost your health, stamina, or manage your inventory, Darkwood Editor puts you in control.
 
 ### Alter Story Progression
 
