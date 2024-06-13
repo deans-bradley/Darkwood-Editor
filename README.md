@@ -82,8 +82,11 @@ If you don't plan on editing the project and would just like to use the app, you
 
 ## Requirements
 
--   **Target Framework**: .NET 8.0 Windows
--   **Dependency**: Newtonsoft.Json (version 13.0.3)
+**Target Framework**: .NET 8.0 Windows
+
+**Dependencies**: 
+- Newtonsoft.Json (version 13.0.3)
+- XamlFlair.WPF (version 1.2.13)
 
 ## Contributing
 
