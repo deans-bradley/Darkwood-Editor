@@ -1,12 +1,10 @@
 ﻿using DarkwoodEditorWPF.Models;
 using DarkwoodEditorWPF.ViewModels;
 using DarkwoodEditorWPF.ViewModels.Ps;
-using System.Collections.ObjectModel;
-using System.Windows.Media.Effects;
 
 namespace DarkwoodEditorWPF.Helpers
 {
-    public class Data
+    public class SavData
 	{
 		//
 		// Add data to ViewModels

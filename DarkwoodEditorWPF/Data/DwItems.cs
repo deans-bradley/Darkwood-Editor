@@ -4,8 +4,8 @@ namespace DarkwoodEditorWPF.Data
 {
     public class DwItems
     {
-        private AmmoItems ammo = new AmmoItems;
-        private ConsumableItems consumables = new ConsumableItems;
+        private AmmoItems ammo = new AmmoItems();
+        private ConsumableItems consumables = new ConsumableItems();
 
         public Dictionary<string, string> Ammo 
         { 
@@ -13,12 +13,12 @@ namespace DarkwoodEditorWPF.Data
             {
                 return new Dictionary<string, string>
                 {
-                    ammo.MediumCalClip,
-                    ammo.SmallCalClip,
-                    ammo.MediumCalSingle,
-                    ammo.PelletSingle,
-                    ammo.ShotgunCalSingle,
-                    ammo.Battery
+                    { ammo.MediumCalClip.Name, ammo.MediumCalClip.Value },
+                    { ammo.SmallCalClip.Name, ammo.SmallCalClip.Value },
+                    { ammo.MediumCalSingle.Name, ammo.MediumCalSingle.Value },
+                    { ammo.PelletSingle.Name, ammo.PelletSingle.Value },
+                    { ammo.ShotgunCalSingle.Name, ammo.ShotgunCalSingle.Value },
+                    { ammo.Battery.Name, ammo.Battery.Value }
                 };
             } 
         }
@@ -29,31 +29,23 @@ namespace DarkwoodEditorWPF.Data
             {
                 return new Dictionary<string, string>
                 {
-                    consumables.Acid,
-                    consumables.Alcohol,
-                    consumables.AntidotePoison,
-                    consumables.Bandages,
-                    consumables.BandagesAlcohol,
-                    consumables.Bread,
-                    consumables.ChickenEgg,
-                    consumables.ChickenEggRed,
-                    consumables.DeadRat,
-                    consumables.Fish,
-                    consumables.Lifepotion,
-                    consumables.Pills,
-                    consumables.Pills02,
-                    consumables.Potato,
-                    consumables.Soup
+                    { consumables.Acid.Name, consumables.Acid.Value },
+                    { consumables.Alcohol.Name, consumables.Alcohol.Value },
+                    { consumables.AntidotePoison.Name, consumables.AntidotePoison.Value },
+                    { consumables.Bandages.Name, consumables.Bandages.Value },
+                    { consumables.BandagesAlcohol.Name, consumables.BandagesAlcohol.Value },
+                    { consumables.Bread.Name, consumables.Bread.Value },
+                    { consumables.ChickenEgg.Name, consumables.ChickenEgg.Value },
+                    { consumables.ChickenEggRed.Name, consumables.ChickenEggRed.Value },
+                    { consumables.DeadRat.Name, consumables.DeadRat.Value },
+                    { consumables.Fish.Name, consumables.Fish.Value },
+                    { consumables.Lifepotion.Name, consumables.Lifepotion.Value },
+                    { consumables.Pills.Name, consumables.Pills.Value },
+                    { consumables.Pills02.Name, consumables.Pills02.Value },
+                    { consumables.Potato.Name, consumables.Potato.Value },
+                    { consumables.Soup.Name, consumables.Soup.Value }
                 };
             }
-        }
-    }
-
-    public static class DictionaryExtensions
-    {
-        public static void Add(this Dictionary<string, string> dictionary, KeyValuePair<string, string> kvp)
-        {
-            dictionary.Add(kvp.Key, kvp.Value);
         }
     }
 }

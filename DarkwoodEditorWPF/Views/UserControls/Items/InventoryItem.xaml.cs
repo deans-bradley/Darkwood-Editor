@@ -1,5 +1,4 @@
 ﻿using System.Windows.Controls;
-using DarkwoodEditorWPF.GameItems;
 
 namespace DarkwoodEditorWPF.Views.UserControls.Items
 {

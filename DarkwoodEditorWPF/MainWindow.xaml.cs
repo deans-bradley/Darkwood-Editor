@@ -16,7 +16,7 @@ namespace DarkwoodEditorWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Data data = new Data();
+        private SavData data = new SavData();
 
         public MainWindow()
         {
