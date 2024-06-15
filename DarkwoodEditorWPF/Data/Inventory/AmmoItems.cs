@@ -8,5 +8,21 @@
         public ItemType PelletSingle { get { return new ItemType("ammo_single_pellet", "Pellet single"); } }
         public ItemType ShotgunCalSingle { get { return new ItemType("ammo_single_shotgun", "Shotgun single"); } }
         public ItemType Battery { get { return new ItemType("battery9v", "Battery 9V"); } }
+
+        public Dictionary<string, string> Ammo
+        {
+            get
+            {
+                return new Dictionary<string, string>
+                {
+                    { MediumCalClip.Name, MediumCalClip.Value },
+                    { SmallCalClip.Name, SmallCalClip.Value },
+                    { MediumCalSingle.Name, MediumCalSingle.Value },
+                    { PelletSingle.Name, PelletSingle.Value },
+                    { ShotgunCalSingle.Name, ShotgunCalSingle.Value },
+                    { Battery.Name, Battery.Value }
+                };
+            }
+        }
     }
 }

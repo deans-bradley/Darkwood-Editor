@@ -17,5 +17,30 @@
         public ItemType Pills02 { get { return new ItemType("pills_02", "Pills 2"); } }
         public ItemType Potato { get { return new ItemType("potato_01", "Potato"); } }
         public ItemType Soup { get { return new ItemType("soup_01", "Soup"); } }
+
+        public Dictionary<string, string> Consumables
+        {
+            get
+            {
+                return new Dictionary<string, string>
+                {
+                    { Acid.Name, Acid.Value },
+                    { Alcohol.Name, Alcohol.Value },
+                    { AntidotePoison.Name, AntidotePoison.Value },
+                    { Bandages.Name, Bandages.Value },
+                    { BandagesAlcohol.Name, BandagesAlcohol.Value },
+                    { Bread.Name, Bread.Value },
+                    { ChickenEgg.Name, ChickenEgg.Value },
+                    { ChickenEggRed.Name, ChickenEggRed.Value },
+                    { DeadRat.Name, DeadRat.Value },
+                    { Fish.Name, Fish.Value },
+                    { Lifepotion.Name, Lifepotion.Value },
+                    { Pills.Name, Pills.Value },
+                    { Pills02.Name, Pills02.Value },
+                    { Potato.Name, Potato.Value },
+                    { Soup.Name, Soup.Value }
+                };
+            }
+        }
     }
 }

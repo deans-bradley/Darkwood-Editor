@@ -2,8 +2,7 @@
 {
     public class FirearmItems
     {
-        // TODO: Fix this property
-        public ItemType FirecraftBolthandle { get { return new ItemType("", ""); } }
+        public ItemType FirecraftBolthandle { get { return new ItemType("firecraft_bolthandle", "Bolt handle"); } }
         public ItemType FirecraftHandgunframe { get { return new ItemType("firecraft_handgunframe", "Handgun frame"); } }
         public ItemType FirecraftLongbarrel { get { return new ItemType("firecraft_longbarrel", "Long-barrel"); } }
         public ItemType FirecraftTubularmagazine { get { return new ItemType("firecraft_tubularmagazine", "Tubular-magazine"); } }

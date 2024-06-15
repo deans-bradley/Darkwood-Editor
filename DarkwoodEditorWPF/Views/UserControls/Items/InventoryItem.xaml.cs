@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using DarkwoodEditorWPF.Data;
+using DarkwoodEditorWPF.Data.Inventory;
+using System.Windows.Controls;
 
 namespace DarkwoodEditorWPF.Views.UserControls.Items
 {
@@ -10,6 +12,7 @@ namespace DarkwoodEditorWPF.Views.UserControls.Items
         public InventoryItem()
         {
             InitializeComponent();
+
         }
     }
 }
