@@ -1,5 +1,4 @@
-﻿using DarkwoodEditorWPF.Helpers;
-using DarkwoodEditorWPF.Models;
+﻿using DarkwoodEditorWPF.Helpers.PropertyValues;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 

@@ -59,6 +59,7 @@
                 <ComboBox x:Name="typeComBox"
                           Grid.Row="1" 
                           Grid.Column="1" 
+                          SelectedValue="{Binding Type}"
                           Foreground="Black"
                           VerticalAlignment="Center"/>
 

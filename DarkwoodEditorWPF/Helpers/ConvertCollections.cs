@@ -1,4 +1,5 @@
-﻿using DarkwoodEditorWPF.Models;
+﻿using DarkwoodEditorWPF.Helpers.PropertyValues;
+using DarkwoodEditorWPF.Models;
 using DarkwoodEditorWPF.ViewModels;
 using Newtonsoft.Json.Linq;
 using System.Collections.ObjectModel;
